@@ -25,6 +25,8 @@ Route::get('/daftarLowongan', function () {return view('user.daftarLowongan');})
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 
 Route::get('/exam', function () {return view('user.exam');});
+Route::get('/exam-2', function () {return view('user.exam__2');});
+Route::get('/exam-nilai', function () {return view('user.exam__nilai');});
 
 // Route::get('/lowongan', function () {return view('user.lowongan');});
 

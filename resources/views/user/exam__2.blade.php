@@ -56,10 +56,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-end my-auto">
-                    <a class="btn btn-next" href="/exam-2" role="button">
+                    <a class="btn btn-next" href="/exam" role="button">
+                        <div class="bn__isi d-flex gap-2">
+                            <img class="rotasigambar" src="{{asset('../img/play-icon.png')}} " alt="">
+                            <p class="mb-0">Kembali</p>
+                        </div>
+                    </a>
+                    <a class="btn btn-next" href="/exam-nilai" role="button">
                         <div class="bn__isi d-flex gap-2">
                             <img src="{{ asset('../img/play-icon.png')}}" alt="">
-                            <p class="mb-0">Selanjutnya</p>
+                            <p class="mb-0">Selesai</p>
                         </div>
                     </a>
                 </div>
@@ -69,7 +75,7 @@
                 <div class="col-md-12 mt-5">
                     <div class="pg__question d-flex gap-4">
                         <h4 class="mt-1">1.</h4>
-                        <p class="mb-1">Apakah kecenderungan karakter anda?</p>
+                        <p class="mb-1">Apa artinya karakter Melankolis?</p>
                     </div>
                 </div>
                 <div class="col-md-12 px-lg-5 px-2">
@@ -78,7 +84,7 @@
                             <h4 class="mb-0 text-center">A</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Sanguinis</p>
+                            <p class="mb-0">Berpikir negatif</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -86,7 +92,7 @@
                             <h4 class="mb-0 text-center">B</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Koleris</p>
+                            <p class="mb-0">Pendendam</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -94,7 +100,7 @@
                             <h4 class="mb-0 text-center">C</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Melankolis</p>
+                            <p class="mb-0">Pemurung</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -102,7 +108,7 @@
                             <h4 class="mb-0 text-center">D</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Phlegmatis</p>
+                            <p class="mb-0">Perkasa</p>
                         </div>
                     </div>
                 </div>
