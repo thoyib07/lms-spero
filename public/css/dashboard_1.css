@@ -134,6 +134,10 @@ nav{
 .pcc__c{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.pcc__c .c-left{
+    width: 80%;
 }
 .pcc__c p{
     font-family: 'Poppins';

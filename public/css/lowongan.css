@@ -78,6 +78,14 @@ nav{
 .pcc__c{
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
+}
+.pcc__c .c-left{
+    width: 80%;
+}
+.pcc__c .c-right p{
+    text-align: right;
+    color: rgb(10, 75, 10);
 }
 .pcc__c p{
     font-family: 'Poppins';
