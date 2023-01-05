@@ -120,7 +120,7 @@
                 <div class="col-md-8 mt-sm-0 mt-5">
                     <div class="row d-flex gap-3">
                         <div class="col-md-5 dl__content">
-                            <a href="lowongan_2.html">
+                            <a href="/daftarLowongan-2">
                                 <div class="top__content d-flex my-auto">
                                     <div class="tc__left">
                                         <img src="{{asset('../img/spero-under.png')}}" alt="">

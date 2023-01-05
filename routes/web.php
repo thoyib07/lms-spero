@@ -23,6 +23,7 @@ Route::get('/dashboard', function () {return view('user.lowongan');});
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});
 
 Route::get('/daftarLowongan', function () {return view('user.daftarLowongan');});
+Route::get('/daftarLowongan-2', function () {return view('user.daftarLowongan_2');});
 
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 
