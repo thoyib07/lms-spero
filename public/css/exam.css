@@ -142,7 +142,7 @@ nav{
     font-size: 20px;
 }
 .pg__question{
-    align-items: flex-start;
+    align-items: center;
 }
 .pg__question h4, p{
     font-family: 'Poppins';

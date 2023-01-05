@@ -57,7 +57,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12 back_home">
-              <a href="lowongan.html">
+              <a href="/dashboard">
                 <div class="back__he d-flex gap-2">
                   <div class="bh__left">
                     <i class="fa fa-angle-left"></i>
@@ -81,8 +81,8 @@
               <div class="left__side d-flex gap-5">
                 <div class="is__right"> 
                   <div class="isr__top px-auto">
-                    <h1 class="mt-lg-0 mt-5">Seni Budaya</h1>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti fuga id, dicta placeat eveniet enim iusto beatae recusandae deserunt illum et odio ullam cum sed.</p>
+                    <h1 class="mt-lg-0 mt-5 mapel">Seni Budaya</h1>
+                    <p class="desc__mapel mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti fuga id, dicta placeat eveniet enim iusto beatae recusandae deserunt illum et odio ullam cum sed.</p>
                   </div>
                   <button type="button" class="btn btn-play-vid w-100">
                     <a href="/exam" class="btn__isi d-flex gap-2">

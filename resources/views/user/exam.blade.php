@@ -7,7 +7,7 @@
 
     <nav style="z-index: 2;" class="navbar navbar-expand-lg navbar-light bg-light position-relative w-100 py-3">
      <div class="container-fluid px-4 px-lg-5">
-      <a class="navbar-brand" href="#"><img src="{{ asset('')}}assets/img/spero-logo-removebg-preview-edit.png" class="w-75" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="{{ asset('assets/img/spero-logo-removebg-preview-edit.png')}}" class="w-75" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,13 +35,13 @@
           </div>
         <div class="notification d-flex gap-3">
             <button type="button" class="btn btn-notif position-relative">
-                <img class="" src="assets/img/lonceng-logo.png" alt="">
+                <img class="" src="{{asset('assets/img/lonceng-logo.png')}}  " alt="">
                 <span class="position-absolute top-25 start-75 translate-middle p-2 bg-danger border border-light rounded-circle">
                   <span class="visually-hidden">New alerts</span>
                 </span>
               </button>
               <button type="button" class="btn btn-notif position-relative">
-                <img class="" src="assets/img/profil-icon.png" alt="">
+                <img class="" src="{{asset('assets/img/profil-icon.png')}}" alt="">
                 <span class="position-absolute top-25 start-75 translate-middle p-2 bg-danger border border-light rounded-circle">
                   <span class="visually-hidden">New alerts</span>
                 </span>
@@ -52,7 +52,7 @@
     </nav>
 
 
-    <section class="exam mt-3">
+    <section class="exam mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-end my-auto">
@@ -68,17 +68,17 @@
                 </div>
                 <div class="col-md-12 mt-5">
                     <div class="pg__question d-flex gap-4">
-                        <h4 class="mb-0">1.</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum necessitatibus magni dignissimos neque aperiam doloremque veritatis facilis omnis sed. Illo, fuga. Blanditiis beatae provident optio!</p>
+                        <h4 class="mt-1">1.</h4>
+                        <p class="mb-1">Apakah kecenderungan karakter anda?</p>
                     </div>
                 </div>
-                <div class="col-md-12 px-5">
+                <div class="col-md-12 px-lg-5 px-2">
                     <div class="pg__answer d-flex gap-4 mt-3">
                         <div class="pa__left">
                             <h4 class="mb-0 text-center">A</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, repudiandae!</p>
+                            <p class="mb-0">Sanguinis</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -86,7 +86,7 @@
                             <h4 class="mb-0 text-center">B</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, repudiandae!</p>
+                            <p class="mb-0">Koleris</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -94,7 +94,7 @@
                             <h4 class="mb-0 text-center">C</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, repudiandae!</p>
+                            <p class="mb-0">Melankolis</p>
                         </div>
                     </div>
                     <div class="pg__answer d-flex gap-4 mt-3">
@@ -102,7 +102,7 @@
                             <h4 class="mb-0 text-center">D</h4>
                         </div>
                         <div class="pa__right">
-                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, repudiandae!</p>
+                            <p class="mb-0">Phlegmatis</p>
                         </div>
                     </div>
                 </div>
