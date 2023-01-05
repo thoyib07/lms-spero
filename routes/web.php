@@ -16,6 +16,8 @@ use App\Http\Controllers\newsController;
 
 Route::get('/', function () {return view('welcome');});
 
+Route::get('/profil', function () {return view('user.profil');});
+
 Route::get('/dashboard', function () {return view('user.lowongan');});
 
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});

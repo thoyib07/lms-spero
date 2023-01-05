@@ -94,7 +94,7 @@
               </li>
             </ul>
           </li>
-          <a href="profil.html" class="my-auto mt-4 mt-sm-2">
+          <a href="/profil" class="my-auto mt-4 mt-sm-2">
             <button type="button" class="btn btn-notif position-relative">
               <img src="{{asset('../img/profil-nav.png')}}" alt="">
                 <span class="position-absolute top-25 start-100 translate-middle badge rounded-pill bg-danger">
