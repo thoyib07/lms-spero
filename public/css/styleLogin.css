@@ -29,6 +29,8 @@ body a{
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
+    align-items: center;
+    justify-content: center;
 }
 .login-remember{
     display: flex;

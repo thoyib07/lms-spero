@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="left__content__profil mt-3">
-                        <a href="login.html ">
+                        <a href="/">
                             <button type="button" class="btn btn-primary w-100 gap-2 btn-logout">
                                 <div class="left">
                                     <img src="{{asset('../img/profil-logout.png')}} " alt="" class="w-75">

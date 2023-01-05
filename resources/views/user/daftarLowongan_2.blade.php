@@ -56,7 +56,7 @@
       <div class="container daftarLowonganContainerx`">
           <div class="row">
             <div class="col-12 back_home mb-5">
-              <a href="daftarLowongan.html">
+              <a href="/daftarLowongan">
                 <div class="back__he d-flex gap-2">
                   <div class="bh__left">
                     <i class="fa fa-angle-left fs-5"></i>

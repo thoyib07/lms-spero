@@ -1,12 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;500;700&display=swap');
 
+.outer {
+    width: 10px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .inner {
+    /* position: absolute; */
+    width:100%;
+    height: 40%;
+    background: rgb(0, 0, 0);
+    top: 30%;
+    box-shadow: 0px 0px 30px 20px grey;
+  }
+
+.root{
+    
+}
 @font-face {
     font-family: "seven segment";
     src: url('../fonts/Seven-Segment.ttf');
 }
 
 *{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins';
     z-index: 2;
 }
 
@@ -33,8 +52,8 @@ nav{
     color: #000;
 }
 .news__dropdown {
-    position: absolute;
-    z-index: 1000;
+    /* position: absolute; */
+    /* z-index: 1000; */
     display: none;
     min-width: 1rem;
     padding: 0.5rem 1rem;
@@ -48,14 +67,31 @@ nav{
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 0.25rem;
 }
+.notification .dropdown-menu{
+    margin-left: -500%;
+}
+@media only screen and (max-width: 902px) {
+    .notification .dropdown-menu{
+        margin-left: 0;
+    }
+}
+
+
 .news{
-    width: 20rem;
+    width: 100%;
+    align-items: center;
 }
 .news__left{
-    width: 20rem;
+    width: 100%;
 }
 .news__left p{
     width: 15rem;
+    white-space: normal;
+}
+.news__left a{
+    text-decoration: none;
+    color: #000;
+    text-transform: none;
 }
 .dropdown-menu{
     background: #F1F1F1;
@@ -94,11 +130,69 @@ nav{
 
 
 
+
 /* === EXAM - VID === */
+.exam-vid{
+    padding-bottom: 20px;
+}
+
+br{
+    margin-top: 20rem;
+}
 
 .title__left{
     justify-content: space-between;
     align-items: center;
+}
+.tl__left{
+    align-items: center;
+}
+.tl__right{
+    justify-content: end;
+}
+.tl__right .btn{
+    align-items: center;
+}
+.pdf__download .btn{
+    background-color: transparent;
+    border: 2px solid #768FA1;
+    color: grey;
+}
+.pdf__download .btn:hover{
+    background-color: green;
+    border: 2px solid transparent;
+    color: white;
+}
+.pdf__download p{
+    height: 20px;
+}
+
+.right__content{
+    flex-wrap: wrap;
+}
+
+.right__exam{
+    padding: 0 50px;
+}
+.form-floating textarea{
+    background: none;
+    border: 2px solid grey;
+}
+.form-floating textarea:focus{
+    background: none;
+    border: 2px solid grey;
+}
+
+@media only screen and (max-width: 770px) {
+    .tl__right{
+        justify-content: start;
+    }
+    .tl__right .btn{
+        font-size: 15px;
+    }
+    .right__exam{
+        padding: 0 10px;
+    }
 }
 
 
