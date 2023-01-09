@@ -18,6 +18,8 @@ use App\Http\Controllers\SuperAdminController;
 |
 */
 
+// ini tambahan dari Thoyib
+
 Route::get('/', function () {return view('user.login');});
 Route::get('/regist', function () {return view('user.register');});
 
