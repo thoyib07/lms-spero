@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('agensis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('nama_panjang');
-            $table->date('tanggal_lahir');
+            $table->foreignId('direktur_id')->references('id')->on('direkturs')->onDelete('cascade');
+            $table->string('logo')->nullable();
+            $table->string('nama_usaha');
             $table->string('alamat');
-            $table->string('no_hp');
+            $table->string('nib');
+            $table->string('telepon');
+            $table->string('status_verifikasi')->nullable();
             $table->string('status_aktif')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
@@ -34,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('agensis');
     }
 };

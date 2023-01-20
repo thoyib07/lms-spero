@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('agencies', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('director_id');
-            $table->string('business_name');
-            $table->string('business_identification_number');
-            $table->string('telephone_number');
-            $table->string('address');
+            $table->foreignId('agensi_id')->references('id')->on('agensis')->onDelete('cascade');
+            $table->string('judul_project');
+            $table->string('deskripsi');
+            $table->string('status_aktif')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agencies');
+        Schema::dropIfExists('projects');
     }
 };

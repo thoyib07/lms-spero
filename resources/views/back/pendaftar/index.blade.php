@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', 'Admin')
+@section('title', 'Pendaftar')
 @section('content')
 <div class="row">
   <div class="col-lg-12">
@@ -10,10 +10,13 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Admin</h4>
-            <div class="nav nav-pills">
-              <a href="{{ route('superadmin.admin.create') }}" class="btn mb-1 btn-primary">Tambah</a>
-            </div>
+            <h4 class="card-title">Pendaftar</h4>
+            @if(auth()->user()->level == 1)
+                <a href="{{ route('superadmin.user.create') }}" class="btn mb-1 btn-primary">Tambah</a>
+            @endif
+            @if(auth()->user()->level == 2)
+                <a href="{{ route('admin.user.create') }}" class="btn mb-1 btn-primary">Tambah</a>
+            @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
                     <thead>
@@ -22,35 +25,33 @@
                             <th scope="col">Nama Panjang</th>
                             <th scope="col">Tanggal Lahir</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Nomor Handphone</th>
-                            <th scope="col">Alamat</th>
+                            <th scope="col">KTP</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($admin as $admins)
+                      @foreach($pendaftar as $pendaftars)
                         <tr>
                             <th>{{ $loop->iteration }}</th>
-                            <td>{{ $admins->nama_panjang }}</td>
-                            <td>{{ $admins->tanggal_lahir }}</td>
-                            <td>{{ $admins->users->email }}</td>
-                            <td>{{ $admins->no_hp }}</td>
-                            <td>{{ $admins->alamat }}</td>
+                            <td>{{ $pendaftars->nama_panjang }}</td>
+                            <td>{{ $pendaftars->tanggal_lahir }}</td>
+                            <td>{{ $pendaftars->users->email }}</td>
+                            <td><img src="/ktp/{{ $pendaftars->ktp }}" alt="" width="100px"></td>
                             <td>
-                              @if($admins->users->status_aktif == 1)
+                              @if($pendaftars->users->status_aktif == 1)
                                 <span class="label gradient-1 rounded">Enable</span>
                               @endif
-                              @if($admins->users->status_aktif == 2)
+                              @if($pendaftars->users->status_aktif == 2)
                                 <span class="label gradient-2 rounded">Disable</span>
                               @endif
                             </td>
                             <td>
-                              <form action="{{ route('superadmin.admin.destroy', $admins->id) }}" method="POST">
+                              <form action="{{ route('superadmin.user.destroy', $pendaftars->id) }}" method="POST">
                                   @csrf
                                   @method('DELETE')
-                                  <a href="{{ route('superadmin.admin.show', $admins->id) }}" class="btn mb-1 btn-info">Show</a>
-                                  <a href="{{ route('superadmin.admin.edit', $admins->id) }}" class="btn mb-1 btn-primary">Edit</a>
+                                  <a href="{{ route('superadmin.user.show', $pendaftars->id) }}" class="btn mb-1 btn-info">Show</a>
+                                  <a href="{{ route('superadmin.user.edit', $pendaftars->id) }}" class="btn mb-1 btn-primary">Edit</a>
                                   <button type="submit" class="btn mb-1 btn-danger">Delete</button>
                                 </form>
                             </td>

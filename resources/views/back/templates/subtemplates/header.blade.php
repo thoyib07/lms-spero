@@ -92,9 +92,17 @@
                   </a>
                   <div class="drop-down dropdown-language animated fadeIn dropdown-menu">
                       <div class="dropdown-content-body">
+                        @if(auth()->user()->level == 1 or auth()->user()->level == 2)
                           <ul>
                               <li><a href="{{ route('logout') }}">Logout</a></li>
                           </ul>
+                        @endif
+                        @if(auth()->user()->level == 3)
+                          <ul>
+                              <li><a href="{{ route('agensi.settings') }}">Profile</a></li>
+                              <li><a href="{{ route('logout') }}">Logout</a></li>
+                          </ul>
+                        @endif
                       </div>
                   </div>
               </li>
