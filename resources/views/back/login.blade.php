@@ -12,7 +12,7 @@
               </div>
             @endif
 
-          <form action="{{ route('postlogin') }}" method="POST" class="mt-2 mb-2">
+          <form action="{{ route('postlogin') }}" method="POST" class="">
             @csrf
               <div class="form-group">
                   <label>Email</label>
@@ -26,7 +26,6 @@
               </div>
               <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
           </form>
-          <p class="mt-3 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p>
       </div>
   </div>
 </div>

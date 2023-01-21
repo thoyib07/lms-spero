@@ -2,26 +2,27 @@
 
 namespace App\Models;
 
-use App\Models\User;
-use Laravel\Sanctum\HasApiTokens;
+use App\Models\Agensi;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class SuperAdmin extends Authenticatable
+class Direktur extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    protected $table = 'super_admins';
+    protected $table = 'direkturs';
+
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'user_id',
         'nama_panjang',
-        'tanggal_lahir',
+        'email',
         'alamat',
+        'tanggal_lahir',
         'no_hp',
+        'status_aktif',
         'created_by',
         'updated_by',
     ];
@@ -37,7 +38,7 @@ class SuperAdmin extends Authenticatable
         });
     }
 
-    public function users(){
-        return $this->belongsTo(User::class, 'user_id');
+    public function agensis(){
+        return $this->hasMany(Agensi::class);
     }
 }
