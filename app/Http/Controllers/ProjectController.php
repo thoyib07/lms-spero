@@ -29,7 +29,6 @@ class ProjectController extends Controller
             'agensi_id' => $request->agensi_id,
             'judul_project' => $request['judul_project'],
             'deskripsi' => $request['deskripsi'],
-            'status_aktif' => 1,
         );
 
         Project::create($input_array_project);
@@ -51,14 +50,12 @@ class ProjectController extends Controller
         $request->validate([
             'judul_project' => 'required',
             'deskripsi' => 'required',
-            'status_aktif' => 'required',
         ]);
 
         $project = Project::find($id);
         $project->update([
             'judul_project' => $request->judul_project,
             'deskripsi' => $request->deskripsi,
-            'status_aktif' => $request->status_aktif,
         ]);
 
         return redirect()->route('agensi.project.index')->with('success', 'Data successfully updated');
@@ -66,7 +63,9 @@ class ProjectController extends Controller
 
     public function destroy($id){
         $project = Project::find($id);
-        $project->delete();
+        $project->update([
+            'status_aktif' => 2,
+        ]);
         return redirect()->route('agensi.project.index')->with('success', 'Data deleted successfully');
     }
 }

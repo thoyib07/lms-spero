@@ -27,13 +27,12 @@ class AdminController extends Controller
             'tanggal_lahir' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required',
-            'email' => 'required|email|exists:users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
 
         $input_array_user = array(
             'level' => 2,
-            'status_aktif' => 1,
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
         );
@@ -69,8 +68,7 @@ class AdminController extends Controller
             'tanggal_lahir' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required',
-            'status_aktif' => 'required',
-            'email' => 'required|email|exists:users,email',
+            'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
 
@@ -83,7 +81,6 @@ class AdminController extends Controller
             'no_hp' => $request->no_hp,
         ]);
         $admin->users()->update([
-            'status_aktif' => $request->status_aktif,
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -92,8 +89,13 @@ class AdminController extends Controller
     }
 
     public function destroy($id){
-        $admin = Admin::find($id);
-        $admin->users()->delete();
+        $admin = Admin::with('users')->find($id);
+        $admin->update([
+            'status_aktif' => 2,
+        ]);
+        $admin->users()->update([
+            'status_aktif' => 2,
+        ]);
         return redirect()->route('superadmin.admin.index')->with('success', 'Data deleted successfully');
     }
 }

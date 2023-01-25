@@ -62,9 +62,6 @@
                           <label>KTP</label>
                           <ul>
                             <li>
-                              <span class="text-danger">{{ $pendaftar->ktp }}</span>
-                            </li>
-                            <li>
                               <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
                             </li>
                           </ul>

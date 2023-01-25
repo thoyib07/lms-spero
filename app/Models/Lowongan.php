@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Materi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -42,5 +43,9 @@ class Lowongan extends Model
 
     public function projects(){
         return $this->belongsTo(Project::class, 'project_id');
+    }
+
+    public function materis(){
+        return $this->hasMany(Materi::class);
     }
 }

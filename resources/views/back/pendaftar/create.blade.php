@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" class="form-control h-150px" rows="3" id="comment" placeholder="Alamat"></textarea>
+                          <textarea name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat"></textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-row">

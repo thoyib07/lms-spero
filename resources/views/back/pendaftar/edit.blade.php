@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" class="form-control h-150px" rows="3" id="comment" placeholder="Alamat">{{ $pendaftar->alamat }}</textarea>
+                          <textarea name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $pendaftar->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-row">
@@ -73,17 +73,6 @@
                           <label>Password</label>
                           <input type="text" name="password" value="{{ $pendaftar->users->password }}" class="form-control" placeholder="Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
-                        </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="1" {{ $pendaftar->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="2" {{ $pendaftar->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
                         </div>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.user.index') }}" class="btn btn-dark">Back</a>

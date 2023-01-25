@@ -41,7 +41,6 @@ class LowonganController extends Controller
             'skill_pekerjaan' => $request['skill_pekerjaan'],
             'deskripsi_pekerjaan' => $request['deskripsi_pekerjaan'],
             'syarat_pekerjaan' => $request['syarat_pekerjaan'],
-            'status_aktif' => 1,
         );
 
         Lowongan::create($input_array_lowongan);
@@ -82,7 +81,6 @@ class LowonganController extends Controller
             'skill_pekerjaan' => $request->skill_pekerjaan,
             'deskripsi_pekerjaan' => $request->deskripsi_pekerjaan,
             'syarat_pekerjaan' => $request->syarat_pekerjaan,
-            'status_aktif' => $request->status_aktif,
         ]);
 
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data successfully updated');
@@ -90,7 +88,9 @@ class LowonganController extends Controller
 
     public function destroy($id){
         $lowongan = Lowongan::find($id);
-        $lowongan->delete();
+        $lowongan->update([
+            'status_aktif' => 2,
+        ]);
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
     }
 }

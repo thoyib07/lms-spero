@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Admin;
 use App\Models\Agensi;
-use App\Models\SuperAdmin;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
@@ -61,7 +60,7 @@ class User extends Authenticatable
         return $this->hasMany(Agensi::class);
     }
 
-    public function agensis2(){
-        return $this->belongsTo(Agensi::class);
+    public function materis(){
+        return $this->hasMany(Materis::class);
     }
 }

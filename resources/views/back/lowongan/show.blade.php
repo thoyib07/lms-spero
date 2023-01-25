@@ -10,8 +10,8 @@
                     <form action="{{ route('agensi.lowongan.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label>project_id</label>
-                            <input type="text" disabled name="project_id" value="{{ $lowongan->project_id }}" class="form-control" placeholder="project_id">
+                            <label>Project</label>
+                            <input type="text" disabled name="project_id" value="{{ $lowongan->projects->judul_project }}" class="form-control" placeholder="Project">
                             <span class="text-danger">@error('project_id'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -63,17 +63,6 @@
                           <label>Lokasi</label>
                           <textarea disabled name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
-                        </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="1" {{ $lowongan->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="2" {{ $lowongan->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
                         </div>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.lowongan.index') }}" class="btn btn-dark">Back</a>

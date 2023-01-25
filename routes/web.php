@@ -99,6 +99,7 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
     Route::middleware(['auth:web', 'checklevel:3'])->group(function(){
         Route::get('/dashboard', [AgensiController::class, 'dashboard'])->name('dashboard');
         Route::get('/settings', [AgensiController::class, 'settings'])->name('settings');
+        Route::put('/postsettings', [AgensiController::class, 'postsettings'])->name('postsettings');
         Route::get('create-step-one', [AgensiController::class, 'createstepone'])->name('create-step-one');
         Route::post('post-create-step-one', [AgensiController::class, 'postcreatestepone'])->name('post-create-step-one');
         Route::get('create-step-two', [AgensiController::class, 'createsteptwo'])->name('create-step-two');

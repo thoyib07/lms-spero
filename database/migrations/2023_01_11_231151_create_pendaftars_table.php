@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('provinsi');
             $table->string('no_hp');
             $table->string('ktp');
-            $table->string('level');
-            $table->string('status_aktif')->nullable();
+            $table->string('level')->default(1);
+            $table->string('status_aktif')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();

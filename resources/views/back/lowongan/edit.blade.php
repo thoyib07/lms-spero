@@ -64,17 +64,6 @@
                           <textarea name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="1" {{ $lowongan->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="2" {{ $lowongan->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
-                        </div>
                         <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
                         <button type="submit" class="btn btn-dark">Submit</button>
                     </form>

@@ -62,16 +62,6 @@
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Logo</label>
-                          <input type="file" name="logo" value="{{ $agensi->logo }}" id="image" onchange="file(event)" class="form-control" placeholder="">
-                          <span class="text-danger">@error('logo'){{ $message }}@enderror</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <img src="/logo/{{ $agensi->logo }}" id="output" alt="" width="200px">
-                          </li>
-                        </ul>
-                        <div class="form-group">
                           <label>Email</label>
                           <input type="email" name="email"  value="{{ $agensi->users->email }}" class="form-control" placeholder="Email">
                           <span class="text-danger">@error('email'){{ $message }}@enderror</span>
@@ -82,16 +72,15 @@
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="1" {{ $agensi->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="2" {{ $agensi->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
+                          <label>Logo</label>
+                          <input type="file" name="logo" value="{{ $agensi->logo }}" id="image" onchange="file(event)" class="form-control" placeholder="">
+                          <span class="text-danger">@error('logo'){{ $message }}@enderror</span>
                         </div>
+                        <ul>
+                          <li>
+                            <img src="/logo/{{ $agensi->ktp }}" id="output" alt="" width="200px">
+                          </li>
+                        </ul>
                         @if(auth()->user()->level == 1)
                           <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
                         @endif

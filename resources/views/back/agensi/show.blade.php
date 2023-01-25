@@ -39,6 +39,18 @@
                         </div>
                         <label>Agensi</label>
                         <div class="form-group">
+                          <label>Logo</label>
+                          <ul>
+                            <li>
+                              @if($agensi->logo == null)
+                                <td><img src="/default.jpg" alt="" width="200px"></td>
+                              @else
+                                <td><img src="/logo/{{ $agensi->logo }}" alt="" width="200px"></td>
+                              @endif
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="form-group">
                           <label>Nama Usaha</label>
                           <input type="text" disabled name="nama_usaha" value="{{ $agensi->nama_usaha }}" class="form-control" placeholder="Nama Usaha">
                           <span class="text-danger">@error('nama_usaha'){{ $message }}@enderror</span>
@@ -70,33 +82,18 @@
                           <input type="text" disabled name="password"  value="{{ $agensi->users->password }}" class="form-control" placeholder="Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="1" {{ $agensi->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="2" {{ $agensi->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label>KTP</label>
-                          <ul>
-                            <li>
-                              <span class="text-danger">{{ $agensi->logo }}</span>
-                            </li>
-                            <li>
-                              <img src="/logo/{{ $agensi->logo }}" id="output" alt="" width="200px">
-                            </li>
-                          </ul>
-                        </div>
-                        @if(auth()->user()->level == 1)
-                          <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
-                          <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
+                        @if($agensi->status_verifikasi == 1)
+                          @if(auth()->user()->level == 1)
+                            <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                            <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
+                          @endif
+                        @elseif($agensi->status_verifikasi == 2)
+                          @if(auth()->user()->level == 1)
+                            <a href="{{ route('superadmin.agensi.verification') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                            <a href="{{ route('admin.agensi.verification') }}" class="btn btn-dark">Back</a>
+                          @endif
                         @endif
                     </form>
                 </div>

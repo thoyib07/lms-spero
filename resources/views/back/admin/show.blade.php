@@ -40,17 +40,6 @@
                             <input type="text" name="password" disabled value="{{ $admin->users->password }}" class="form-control" placeholder="Password">
                             <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <div class="form-group">
-                                <label class="radio-inline mr-3">
-                                    <input type="radio" disabled name="status_aktif" value="1" {{ $admin->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                                </label>
-                                <label class="radio-inline mr-3">
-                                    <input type="radio" disabled name="status_aktif" value="2" {{ $admin->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                                </label>
-                            </div>
-                          </div>
                         <a href="{{ route('superadmin.admin.index') }}" class="btn btn-dark">Back</a>
                     </form>
                 </div>

@@ -12,7 +12,7 @@
         <div class="card-body">
             <h4 class="card-title">Project</h4>
             @if(auth()->user()->level == 3)
-              <a href="{{ route('agensi.project.create') }}" class="btn mb-1 btn-primary">Tambah</a>
+              <a href="{{ route('agensi.project.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
@@ -24,13 +24,12 @@
                             @if(auth()->user()->level == 1 or auth()->user()->level == 2)
                               <th scope="col">Agensi</th>
                             @endif
-                            <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach($project as $projects)
-                        @if($projects->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $projects->created_by == auth()->user()->id)
+                        @if($projects->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $projects->created_by == auth()->user()->id and $projects->status_aktif == 1)
                           <tr>
                               <th>{{ $loop->iteration }}</th>
                               <td>{{ $projects->judul_project }}</td>
@@ -39,27 +38,19 @@
                                 <td>{{ $projects->agensis->nama_usaha }}</td>
                               @endif
                               <td>
-                                @if($projects->status_aktif == 1)
-                                  <span class="label gradient-1 rounded">Enable</span>
-                                @endif
-                                @if($projects->status_aktif == 2)
-                                  <span class="label gradient-2 rounded">Disable</span>
-                                @endif
-                              </td>
-                              <td>
                                 <form action="{{ route('agensi.project.destroy', $projects->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     @if(auth()->user()->level == 1)
-                                      <a href="{{ route('superadmin.project.show', $projects->id) }}" class="btn mb-1 btn-info">Show</a>
+                                      <a href="{{ route('superadmin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     @endif
                                     @if(auth()->user()->level == 2)
-                                      <a href="{{ route('admin.project.show', $projects->id) }}" class="btn mb-1 btn-info">Show</a>
+                                      <a href="{{ route('admin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     @endif
                                     @if(auth()->user()->level == 3)
-                                      <a href="{{ route('agensi.project.show', $projects->id) }}" class="btn mb-1 btn-info">Show</a>
-                                      <a href="{{ route('agensi.project.edit', $projects->id) }}" class="btn mb-1 btn-primary">Edit</a>
-                                      <button type="submit" class="btn mb-1 btn-danger">Delete</button>
+                                      <a href="{{ route('agensi.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
+                                      <a href="{{ route('agensi.project.edit', $projects->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
+                                      <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>
                                     @endif
                                   </form>
                               </td>
