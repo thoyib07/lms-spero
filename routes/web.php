@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AgensiController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SuperAdminController;
@@ -82,6 +83,7 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
         Route::resource('user', PendaftarController::class);
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
+        Route::resource('materi', MateriController::class);
     });
 });
 
@@ -92,6 +94,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::resource('user', PendaftarController::class);
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
+        Route::resource('materi', MateriController::class);
     });
 });
 
@@ -107,5 +110,6 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
+        Route::resource('materi', MateriController::class);
     });
 });
