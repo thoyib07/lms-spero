@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Materi')
+@section('title', isset($title) ? $title : 'Edit')
 @section('content')
 <div class="row">
     <div class="col-md-12">

@@ -279,9 +279,18 @@ class AgensiController extends Controller
     }
 
     public function destroy($id){
-        $agensi = Agensi::find($id);
-        $agensi->direkturs()->delete();
-        $agensi->users()->delete();
+        $agensi = Agensi::with('users', 'direkturs')->find($id);
+
+        $agensi->update([
+            'status_aktif' => 2,
+        ]);
+        $agensi->direkturs()->update([
+            'status_aktif' => 2,
+        ]);
+        $agensi->users()->update([
+            'status_aktif' => 2,
+        ]);
+        
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.agensi.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 2){

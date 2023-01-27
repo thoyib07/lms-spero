@@ -36,6 +36,15 @@
             </ul>
           </li>
           <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
             <a href="{{ route('superadmin.project.index') }}" aria-expanded="false">
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Project</span>
             </a>
@@ -72,6 +81,15 @@
             </ul>
           </li>
           <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
             <a href="{{ route('admin.project.index') }}" aria-expanded="false">
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Project</span>
             </a>
@@ -104,6 +122,15 @@
             <ul aria-expanded="false">
                 <li><a href="{{ route('superadmin.lowongan.index') }}">Lowongan</a></li>
                 <li><a href="{{ route('superadmin.lowongan.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
             </ul>
           </li>
         @endif

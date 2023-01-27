@@ -60,11 +60,8 @@ class User extends Authenticatable
     public function agensis(){
         return $this->hasMany(Agensi::class);
     }
-<<<<<<< Updated upstream
 
     public function agensis2(){
         return $this->belongsTo(Agensi::class);
     }
-=======
->>>>>>> Stashed changes
 }
