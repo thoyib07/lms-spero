@@ -36,6 +36,15 @@
             </ul>
           </li>
           <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
             <a href="{{ route('superadmin.project.index') }}" aria-expanded="false">
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Project</span>
             </a>
@@ -45,8 +54,7 @@
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Lowongan</span>
             </a>
           </li>
-        @endif
-        @if(auth()->user()->level == 2)
+        @elseif(auth()->user()->level == 2)
           <li>
               <a href="{{ route('admin.dashboard') }}" aria-expanded="false">
                 <i class="icon-badge menu-icon"></i><span class="nav-text">Dashboard</span>
@@ -72,6 +80,15 @@
             </ul>
           </li>
           <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
             <a href="{{ route('admin.project.index') }}" aria-expanded="false">
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Project</span>
             </a>
@@ -81,8 +98,7 @@
               <i class="icon-envelope menu-icon"></i><span class="nav-text">Lowongan</span>
             </a>
           </li>
-        @endif
-        @if(auth()->user()->level == 3)
+        @elseif(auth()->user()->level == 3)
           <li>
               <a href="{{ route('agensi.dashboard') }}" aria-expanded="false">
                 <i class="icon-badge menu-icon"></i><span class="nav-text">Dashboard</span>
@@ -93,8 +109,8 @@
                 <i class="icon-envelope menu-icon"></i><span class="nav-text">Project</span>
             </a>
             <ul aria-expanded="false">
-                <li><a href="{{ route('superadmin.project.index') }}">Project</a></li>
-                <li><a href="{{ route('superadmin.project.create') }}">Tambah</a></li>
+                <li><a href="{{ route('agensi.project.index') }}">Project</a></li>
+                <li><a href="{{ route('agensi.project.create') }}">Tambah</a></li>
             </ul>
           </li>
           <li>
@@ -102,8 +118,33 @@
                 <i class="icon-envelope menu-icon"></i><span class="nav-text">Lowongan</span>
             </a>
             <ul aria-expanded="false">
-                <li><a href="{{ route('superadmin.lowongan.index') }}">Lowongan</a></li>
-                <li><a href="{{ route('superadmin.lowongan.create') }}">Tambah</a></li>
+                <li><a href="{{ route('agensi.lowongan.index') }}">Lowongan</a></li>
+                <li><a href="{{ route('agensi.lowongan.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">Materi</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('agensi.materi.index') }}">Materi</a></li>
+                <li><a href="{{ route('agensi.materi.create') }}">Tambah</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">PostTest</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('agensi.posttest.index') }}">PostTest</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="icon-envelope menu-icon"></i><span class="nav-text">PreTest</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('agensi.pretest.index') }}">PreTest</a></li>
             </ul>
           </li>
         @endif

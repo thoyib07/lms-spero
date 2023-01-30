@@ -59,8 +59,4 @@ class User extends Authenticatable
     public function agensis(){
         return $this->hasMany(Agensi::class);
     }
-
-    public function materis(){
-        return $this->hasMany(Materis::class);
-    }
 }

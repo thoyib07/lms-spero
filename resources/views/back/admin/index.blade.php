@@ -10,7 +10,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Admin</h4>
+            <h4 class="card-title">@yield('title')</h4>
             <a href="{{ route('superadmin.admin.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">

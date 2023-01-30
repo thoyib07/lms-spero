@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Show')
+@section('title', 'Show')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -34,22 +34,10 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" disabled class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->direkturs->alamat }}</textarea>
+                          <textarea disabled name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->direkturs->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <label>Agensi</label>
-                        <div class="form-group">
-                          <label>Logo</label>
-                          <ul>
-                            <li>
-                              @if($agensi->logo == null)
-                                <td><img src="/default.jpg" alt="" width="200px"></td>
-                              @else
-                                <td><img src="/logo/{{ $agensi->logo }}" alt="" width="200px"></td>
-                              @endif
-                            </li>
-                          </ul>
-                        </div>
                         <div class="form-group">
                           <label>Nama Usaha</label>
                           <input type="text" disabled name="nama_usaha" value="{{ $agensi->nama_usaha }}" class="form-control" placeholder="Nama Usaha">
@@ -69,7 +57,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" disabled class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->alamat }}</textarea>
+                          <textarea disabled name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -81,6 +69,18 @@
                           <label>Password</label>
                           <input type="text" disabled name="password"  value="{{ $agensi->users->password }}" class="form-control" placeholder="Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
+                        </div>
+                        <div class="form-group">
+                          <label>Logo</label>
+                          <ul>
+                            <li>
+                              @if($agensi->logo == null)
+                                <td><img src="/default.jpg" alt="" width="200px"></td>
+                              @else
+                                <td><img src="/logo/{{ $agensi->logo }}" alt="" width="200px"></td>
+                              @endif
+                            </li>
+                          </ul>
                         </div>
                         @if($agensi->status_verifikasi == 1)
                           @if(auth()->user()->level == 1)

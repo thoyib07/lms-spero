@@ -10,11 +10,10 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Verifikasi</h4>
+            <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 1)
               <a href="{{ route('superadmin.agensi.index') }}" class="btn mb-1 btn-primary"><i class="fa fa-close color-muted"></i></a>
-            @endif
-            @if(auth()->user()->level == 2)
+            @elseif(auth()->user()->level == 2)
               <a href="{{ route('admin.agensi.index') }}" class="btn mb-1 btn-primary"><i class="fa fa-close color-muted"></i></a>
             @endif
             <div class="table-responsive">
@@ -34,7 +33,7 @@
                       @foreach($agensi as $agensis)
                         @if($agensis->status_verifikasi == 2)
                           <tr>
-                            <th>{{ $loop->iteration }}</th>
+                            <td>{{ $loop->iteration }}</td>
                             @if($agensis->logo == null)
                               <td><img src="/default.jpg" alt="" width="100px"></td>
                             @else
@@ -52,8 +51,7 @@
                                     <a href="{{ route('superadmin.agensi.show', $agensis->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     <button type="submit" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></button>
                                 </form>
-                              @endif
-                              @if(auth()->user()->level == 2)
+                              @elseif(auth()->user()->level == 2)
                                 <form action="{{ route('admin.agensi.postverification', $agensis->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')

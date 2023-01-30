@@ -63,9 +63,11 @@ class ProjectController extends Controller
 
     public function destroy($id){
         $project = Project::find($id);
+
         $project->update([
             'status_aktif' => 2,
         ]);
+        
         return redirect()->route('agensi.project.index')->with('success', 'Data deleted successfully');
     }
 }

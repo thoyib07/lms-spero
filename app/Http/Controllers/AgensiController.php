@@ -60,7 +60,7 @@ class AgensiController extends Controller
 
         $agensi->users()->update([
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => $request->password,
         ]);
 
         return redirect()->route('agensi.settings')->with('success', 'Data successfully updated');
@@ -73,6 +73,7 @@ class AgensiController extends Controller
 
     public function postverification($id){
         $agensi = Agensi::find($id);
+
         $agensi->update([
             'status_verifikasi' => 1,
         ]);
@@ -308,7 +309,7 @@ class AgensiController extends Controller
 
         $agensi->users()->update([
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => $request->password,
         ]);
 
         if(auth()->user()->level == 1){
@@ -320,6 +321,7 @@ class AgensiController extends Controller
 
     public function destroy($id){
         $agensi = Agensi::with('users', 'direkturs')->find($id);
+
         $agensi->update([
             'status_aktif' => 2,
         ]);
@@ -329,6 +331,7 @@ class AgensiController extends Controller
         $agensi->users()->update([
             'status_aktif' => 2,
         ]);
+        
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.agensi.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 2){

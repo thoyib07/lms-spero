@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Edit')
+@section('title', 'Edit')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -53,16 +53,6 @@
                           <span class="text-danger">@error('no_hp'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>KTP</label>
-                          <input type="file" name="ktp" value="{{ $pendaftar->ktp }}" id="image" onchange="file(event)" class="form-control" placeholder="KTP">
-                          <span class="text-danger">@error('ktp'){{ $message }}@enderror</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
-                          </li>
-                        </ul>
-                        <div class="form-group">
                         </div>
                         <div class="form-group">
                           <label>Email</label>
@@ -74,10 +64,19 @@
                           <input type="text" name="password" value="{{ $pendaftar->users->password }}" class="form-control" placeholder="Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
+                        <div class="form-group">
+                          <label>KTP</label>
+                          <input type="file" name="ktp" value="{{ $pendaftar->ktp }}" id="image" onchange="file(event)" class="form-control" placeholder="KTP">
+                          <span class="text-danger">@error('ktp'){{ $message }}@enderror</span>
+                        </div>
+                        <ul>
+                          <li>
+                            <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
+                          </li>
+                        </ul>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.user.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @else(auth()->user()->level == 2)
                             <a href="{{ route('admin.user.index') }}" class="btn btn-dark">Back</a>
                         @endif
                         <button type="submit" class="btn btn-dark">Submit</button>

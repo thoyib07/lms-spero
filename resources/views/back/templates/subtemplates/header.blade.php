@@ -96,8 +96,7 @@
                           <ul>
                               <li><a href="{{ route('logout') }}">Logout</a></li>
                           </ul>
-                        @endif
-                        @if(auth()->user()->level == 3)
+                        @elseif(auth()->user()->level == 3)
                           <ul>
                               <li><a href="{{ route('agensi.settings') }}">Profile</a></li>
                               <li><a href="{{ route('logout') }}">Logout</a></li>

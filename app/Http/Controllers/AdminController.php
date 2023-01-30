@@ -90,12 +90,14 @@ class AdminController extends Controller
 
     public function destroy($id){
         $admin = Admin::with('users')->find($id);
+        
         $admin->update([
             'status_aktif' => 2,
         ]);
         $admin->users()->update([
             'status_aktif' => 2,
         ]);
+        
         return redirect()->route('superadmin.admin.index')->with('success', 'Data deleted successfully');
     }
 }

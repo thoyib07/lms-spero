@@ -10,7 +10,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Lowongan</h4>
+            <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 3)
               <a href="{{ route('agensi.lowongan.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             @endif
@@ -31,7 +31,7 @@
                       @foreach($lowongan as $lowongans)
                         @if($lowongans->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 1)
                           <tr>
-                              <th>{{ $loop->iteration }}</th>
+                              <td>{{ $loop->iteration }}</td>
                               <td>{{ $lowongans->projects->judul_project }}</td>
                               <td>{{ $lowongans->client }}</td>
                               <td>{{ $lowongans->kuota }}</td>
@@ -43,11 +43,9 @@
                                     @method('DELETE')
                                     @if(auth()->user()->level == 1)
                                       <a href="{{ route('superadmin.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @endif
-                                    @if(auth()->user()->level == 2)
+                                    @elseif(auth()->user()->level == 2)
                                       <a href="{{ route('admin.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @endif
-                                    @if(auth()->user()->level == 3)
+                                    @elseif(auth()->user()->level == 3)
                                       <a href="{{ route('agensi.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                       <a href="{{ route('agensi.lowongan.edit', $lowongans->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
                                       <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>

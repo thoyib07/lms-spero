@@ -10,7 +10,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Project</h4>
+            <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 3)
               <a href="{{ route('agensi.project.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             @endif
@@ -31,9 +31,9 @@
                       @foreach($project as $projects)
                         @if($projects->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $projects->created_by == auth()->user()->id and $projects->status_aktif == 1)
                           <tr>
-                              <th>{{ $loop->iteration }}</th>
+                              <td>{{ $loop->iteration }}</td>
                               <td>{{ $projects->judul_project }}</td>
-                              <td>{{ $projects->deskripsi }}</td>
+                              <td>{!! $projects->deskripsi !!}</td>
                               @if(auth()->user()->level == 1 or auth()->user()->level == 2)
                                 <td>{{ $projects->agensis->nama_usaha }}</td>
                               @endif
@@ -43,8 +43,7 @@
                                     @method('DELETE')
                                     @if(auth()->user()->level == 1)
                                       <a href="{{ route('superadmin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @endif
-                                    @if(auth()->user()->level == 2)
+                                    @elseif(auth()->user()->level == 2)
                                       <a href="{{ route('admin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     @endif
                                     @if(auth()->user()->level == 3)

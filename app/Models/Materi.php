@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\PreTest;
 use App\Models\Lowongan;
+use App\Models\PostTest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -51,11 +53,15 @@ class Materi extends Model
         });
     }
 
-    public function users(){
-        return $this->belongsTo(User::class, 'user_id');
-    }
-
     public function lowongans(){
         return $this->belongsTo(Lowongan::class, 'lowongan_id');
+    }
+
+    public function pre_tests(){
+        return $this->hasMany(PreTest::class);
+    }
+
+    public function post_tests(){
+        return $this->hasMany(PostTest::class);
     }
 }

@@ -27,9 +27,9 @@ class PendaftarController extends Controller
         ]);
 
         $input_array_user = array(
-            'level' => 4,
             'email' => $request['email'],
             'password' => $request['password'],
+            'level' => 4,
         );
 
         $user = User::create($input_array_user);
@@ -81,9 +81,9 @@ class PendaftarController extends Controller
         ]);
 
         $input_array_user = array(
-            'level' => 4,
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
+            'level' => 4,
         );
 
         $user = User::create($input_array_user);
@@ -172,12 +172,14 @@ class PendaftarController extends Controller
 
     public function destroy($id){
         $pendaftar = Pendaftar::with('users')->find($id);
+
         $pendaftar->update([
             'status_aktif' => 2,
         ]);
         $pendaftar->users()->update([
             'status_aktif' => 2,
         ]);
+        
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.user.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 2){

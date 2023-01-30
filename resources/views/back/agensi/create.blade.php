@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Create')
+@section('title', 'Create')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -82,8 +82,7 @@
                         </ul>
                         @if(auth()->user()->level == 1)
                           <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @elseif(auth()->user()->level == 2)
                           <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
                         @endif
                         <button type="submit" class="btn btn-dark">Submit</button>

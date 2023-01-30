@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Profile')
+@section('title', 'Settings')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -15,13 +15,6 @@
                     <form action="{{ route('agensi.postsettings') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       @method('PUT')
-                      <ul>
-                        @if($agensi->logo == null)
-                          <li><img src="/default.jpg" alt="" width="200px"></li>
-                        @else
-                          <li><img src="/logo/{{ $agensi->logo }}" alt="" width="200px"></li>
-                        @endif
-                      </ul>
                       <label>Direktur</label>
                         <div class="form-group">
                             <label>Nama Panjang</label>

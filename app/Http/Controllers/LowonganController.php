@@ -88,9 +88,11 @@ class LowonganController extends Controller
 
     public function destroy($id){
         $lowongan = Lowongan::find($id);
+
         $lowongan->update([
             'status_aktif' => 2,
         ]);
+        
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
     }
 }

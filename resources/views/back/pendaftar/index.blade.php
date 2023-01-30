@@ -10,11 +10,10 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Pendaftar</h4>
+            <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 1)
                 <a href="{{ route('superadmin.user.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
-            @endif
-            @if(auth()->user()->level == 2)
+            @else(auth()->user()->level == 2)
                 <a href="{{ route('admin.user.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             @endif
             <div class="table-responsive">
@@ -33,7 +32,7 @@
                       @foreach($pendaftar as $pendaftars)
                         @if($pendaftars->users->status_aktif == 1)
                           <tr>
-                              <th>{{ $loop->iteration }}</th>
+                              <td>{{ $loop->iteration }}</td>
                               <td>{{ $pendaftars->nama_panjang }}</td>
                               <td>{{ $pendaftars->tanggal_lahir }}</td>
                               <td>{{ $pendaftars->users->email }}</td>
@@ -47,8 +46,7 @@
                                     <a href="{{ route('superadmin.user.edit', $pendaftars->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
                                     <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>
                                 </form>
-                                @endif
-                                @if(auth()->user()->level == 2)
+                                @else(auth()->user()->level == 2)
                                 <form action="{{ route('admin.user.destroy', $pendaftars->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
