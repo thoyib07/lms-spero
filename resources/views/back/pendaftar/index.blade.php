@@ -29,10 +29,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($pendaftar as $pendaftars)
                         @if($pendaftars->users->status_aktif == 1)
+                        <?php $id++; ?>
                           <tr>
-                              <td>{{ $loop->iteration }}</td>
+                              <td>{{ $id }}</td>
                               <td>{{ $pendaftars->nama_panjang }}</td>
                               <td>{{ $pendaftars->tanggal_lahir }}</td>
                               <td>{{ $pendaftars->users->email }}</td>

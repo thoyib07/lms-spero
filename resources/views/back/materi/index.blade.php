@@ -32,10 +32,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($materi as $materis)
                         @if($materis->created_by == auth()->user()->id and $materis->status_aktif == 1)
+                        <?php $id++; ?>
                           <tr>
-                              <td>{{ $loop->iteration }}</td>
+                              <td>{{ $id }}</td>
                               <td>{{ $materis->judul_materi }}</td>
                               <td><video width="200" height="200" muted controls><source src="/video_1/{{ $materis->video_1 }}" type="video/mp4"></video></td>
                               <td><video width="200" height="200" muted controls><source src="/video_2/{{ $materis->video_2 }}" type="video/mp4"></video></td>

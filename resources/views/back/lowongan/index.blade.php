@@ -28,10 +28,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($lowongan as $lowongans)
                         @if($lowongans->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 1)
+                        <?php $id++; ?>
                           <tr>
-                              <td>{{ $loop->iteration }}</td>
+                              <td>{{ $id }}</td>
                               <td>{{ $lowongans->projects->judul_project }}</td>
                               <td>{{ $lowongans->client }}</td>
                               <td>{{ $lowongans->kuota }}</td>

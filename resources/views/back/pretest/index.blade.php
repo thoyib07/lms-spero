@@ -23,11 +23,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($pretest as $pretests)
+                        @if($pretests->created_by == auth()->user()->id and $pretests->status_aktif == 1)
+                        <?php $id++; ?>
                           <tr>
-                              <td>{{ $loop->iteration }}</td>
+                              <td>{{ $id }}</td>
                               <td>{{ $pretests->materis->judul_materi }}</td>
-                              <td>{{ $pretests->soal }}</td>
+                              <td>{!! $pretests->soal !!}</td>
                               <td>
                                 <form action="{{ route('agensi.pretest.destroy', $pretests->id) }}" method="POST">
                                     @csrf
@@ -38,6 +41,7 @@
                                   </form>
                               </td>
                           </tr>
+                        @endif
                       @endforeach
                     </tbody>
                 </table>

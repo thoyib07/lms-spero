@@ -30,10 +30,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($agensi as $agensis)
                         @if($agensis->status_verifikasi == 2)
+                        <?php $id++; ?>
                           <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $id }}</td>
                             @if($agensis->logo == null)
                               <td><img src="/default.jpg" alt="" width="100px"></td>
                             @else

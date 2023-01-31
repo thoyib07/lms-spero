@@ -20,6 +20,7 @@ class LowonganController extends Controller
 
     public function store(Request $request){
         $request->validate([
+            'project_id' => 'required',
             'level' => 'required',
             'client' => 'required',
             'kuota' => 'required',

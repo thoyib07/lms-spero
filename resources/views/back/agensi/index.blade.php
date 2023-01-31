@@ -32,8 +32,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($agensi as $agensis)
                         @if($agensis->users->status_aktif == 1 and $agensis->status_verifikasi == 1)
+                        <?php $id++; ?>
                           <tr>
                               <td>{{ $loop->iteration }}</td>
                               @if($agensis->logo == null)

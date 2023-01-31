@@ -40,6 +40,6 @@ class PreTest extends Model
     }
 
     public function materis(){
-        return $this->belongsTo(Lowongan::class, 'materi_id');
+        return $this->belongsTo(Materi::class, 'materi_id');
     }
 }
