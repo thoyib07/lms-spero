@@ -13,6 +13,7 @@
             <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 3)
               <a href="{{ route('agensi.lowongan.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('agensi.lowongan.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">

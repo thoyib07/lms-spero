@@ -77,6 +77,9 @@ foreach($routes as $routes){
         Route::get('/agensi/verification', [AgensiController::class, 'verification'])->name($routes.'.agensi.verification');
         Route::put('/agensi/verification/{id}', [AgensiController::class, 'postverification'])->name($routes.'.agensi.postverification');
 
+        Route::get('/lowongan/terhapus', [LowonganController::class, 'terhapus'])->name($routes.'.lowongan.terhapus');
+        Route::put('/lowongan/pulihkan/{id}', [LowonganController::class, 'pulihkan'])->name($routes.'.lowongan.pulihkan');
+
         Route::get('/materi/terhapus', [MateriController::class, 'terhapus'])->name($routes.'.materi.terhapus');
         Route::put('/materi/pulihkan/{id}', [MateriController::class, 'pulihkan'])->name($routes.'.materi.pulihkan');
 

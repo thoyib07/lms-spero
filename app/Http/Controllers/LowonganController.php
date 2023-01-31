@@ -96,4 +96,19 @@ class LowonganController extends Controller
         
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
     }
+
+    public function terhapus(){
+        $lowongan = Lowongan::with('projects')->get();
+        return view('back.lowongan.terhapus', compact('lowongan'));
+    }
+
+    public function pulihkan($id){
+        $lowongan = Lowongan::find($id);
+        
+        $lowongan->update([
+            'status_aktif' => 1,
+        ]);
+
+        return redirect()->route('agensi.lowongan.terhapus')->with('success', 'Data recovered successfully');
+    }
 }
