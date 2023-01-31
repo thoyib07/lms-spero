@@ -13,10 +13,13 @@
             <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 1)
               <a href="{{ route('superadmin.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('superadmin.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @elseif(auth()->user()->level == 2)
               <a href="{{ route('admin.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('admin.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @elseif(auth()->user()->level == 3)
               <a href="{{ route('agensi.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('agensi.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">

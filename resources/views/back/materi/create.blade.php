@@ -14,8 +14,14 @@
                             <select class="form-control" name="lowongan_id" id="">
                               <option selected disabled>Select</option>
                               @foreach ($lowongan as $lowongans)
-                                @if($lowongans->status_aktif == 1)
-                                  <option value="{{ $lowongans->id }}">{{ $lowongans->projects->judul_project }}</option>
+                                @if(auth()->user()->level == 1 or auth()->user()->level == 2)
+                                    @if($lowongans->status_aktif == 1)
+                                        <option value="{{ $lowongans->id }}">Project {{ $lowongans->projects->judul_project }} dengan client {{ $lowongans->client }}</option>
+                                    @endif
+                                @elseif(auth()->user()->level == 3)
+                                    @if($lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 1)
+                                        <option value="{{ $lowongans->id }}">Project {{ $lowongans->projects->judul_project }} dengan client {{ $lowongans->client }}</option>
+                                    @endif
                                 @endif
                               @endforeach
                             </select>

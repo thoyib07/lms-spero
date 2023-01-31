@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materi;
+use App\Models\PreTest;
 use App\Models\Lowongan;
+use App\Models\PostTest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -166,8 +168,18 @@ class MateriController extends Controller
 
     public function destroy($id){
         $materi = Materi::find($id);
+        $pretest = PreTest::where('materi_id', $id)->first();
+        $posttest = PostTest::where('materi_id', $id)->first();
         
         $materi->update([
+            'status_aktif' => 2,
+        ]);
+
+        $pretest->update([
+            'status_aktif' => 2,
+        ]);
+
+        $posttest->update([
             'status_aktif' => 2,
         ]);
 
@@ -177,6 +189,37 @@ class MateriController extends Controller
             return redirect()->route('admin.materi.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 3){
             return redirect()->route('agensi.materi.index')->with('success', 'Data deleted successfully');
+        }
+    }
+
+    public function terhapus(){
+        $materi = Materi::all();
+        return view('back.materi.terhapus', compact('materi'));
+    }
+
+    public function pulihkan($id){
+        $materi = Materi::find($id);
+        $pretest = PreTest::where('materi_id', $id)->first();
+        $posttest = PostTest::where('materi_id', $id)->first();
+        
+        $materi->update([
+            'status_aktif' => 1,
+        ]);
+
+        $pretest->update([
+            'status_aktif' => 1,
+        ]);
+
+        $posttest->update([
+            'status_aktif' => 1,
+        ]);
+
+        if(auth()->user()->level == 1){
+            return redirect()->route('superadmin.materi.terhapus')->with('success', 'Data recovered successfully');
+        }elseif(auth()->user()->level == 2){
+            return redirect()->route('admin.materi.terhapus')->with('success', 'Data recovered successfully');
+        }elseif(auth()->user()->level == 3){
+            return redirect()->route('agensi.materi.terhapus')->with('success', 'Data recovered successfully');
         }
     }
 }

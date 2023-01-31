@@ -32,13 +32,8 @@
                               <td>{{ $pretests->materis->judul_materi }}</td>
                               <td>{!! $pretests->soal !!}</td>
                               <td>
-                                <form action="{{ route('agensi.pretest.destroy', $pretests->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a href="{{ route('agensi.pretest.show', $pretests->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    <a href="{{ route('agensi.pretest.edit', $pretests->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
-                                    <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>
-                                  </form>
+                                <a href="{{ route('agensi.pretest.show', $pretests->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
+                                <a href="{{ route('agensi.pretest.edit', $pretests->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
                               </td>
                           </tr>
                         @endif

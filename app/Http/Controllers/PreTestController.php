@@ -76,14 +76,4 @@ class PreTestController extends Controller
 
         return redirect()->route('agensi.pretest.index')->with('success', 'Data successfully updated');
     }
-
-    public function destroy($id){
-        $pretest = PreTest::find($id);
-
-        $pretest->update([
-            'status_aktif' => 2,
-        ]);
-        
-        return redirect()->route('agensi.pretest.index')->with('success', 'Data deleted successfully');
-    }
 }

@@ -93,14 +93,46 @@
                             <textarea disabled name="urutan_materi" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Urutan Materi">{{ $materi->urutan_materi }}</textarea>
                             <span class="text-danger">@error('urutan_materi'){{ $message }}@enderror</span>
                         </div>
-                        @if(auth()->user()->level == 1)
-                            <a href="{{ route('superadmin.materi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
-                            <a href="{{ route('admin.materi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 3)
-                            <a href="{{ route('agensi.materi.index') }}" class="btn btn-dark">Back</a>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Created By</label>
+                            <input type="text" disabled name="created_by" value="{{ $materi->created_by }}" class="form-control" placeholder="">
+                            <span class="text-danger">@error('created_by'){{ $message }}@enderror</span>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Updated By</label>materi
+                            <input type="text" disabled name="updated_by" value="{{ $materi->updated_by }}" class="form-control" placeholder="">
+                            <span class="text-danger">@error('updated_by'){{ $message }}@enderror</span>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Created At</label>
+                            <input type="text" disabled name="created_at" value="{{ $materi->created_at }}" class="form-control" placeholder="">
+                            <span class="text-danger">@error('created_at'){{ $message }}@enderror</span>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Updated At</label>
+                            <input type="text" disabled name="updated_at" value="{{ $materi->updated_at }}" class="form-control" placeholder="">
+                            <span class="text-danger">@error('updated_at'){{ $message }}@enderror</span>
+                          </div>
+                        </div>
+                        @if($materi->status_aktif == 1)
+                          @if(auth()->user()->level == 1)
+                              <a href="{{ route('superadmin.materi.index') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                              <a href="{{ route('admin.materi.index') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 3)
+                              <a href="{{ route('agensi.materi.index') }}" class="btn btn-dark">Back</a>
+                          @endif
+                        @elseif($materi->status_aktif == 2)
+                          @if(auth()->user()->level == 1)
+                            <a href="{{ route('superadmin.materi.terhapus') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                            <a href="{{ route('admin.materi.terhapus') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 3)
+                            <a href="{{ route('agensi.materi.terhapus') }}" class="btn btn-dark">Back</a>
+                          @endif
                         @endif
                     </form>
                 </div>
