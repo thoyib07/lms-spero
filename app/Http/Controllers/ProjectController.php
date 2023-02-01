@@ -70,4 +70,19 @@ class ProjectController extends Controller
         
         return redirect()->route('agensi.project.index')->with('success', 'Data deleted successfully');
     }
+
+    public function terhapus(){
+        $project = Project::with('agensis')->get();
+        return view('back.project.terhapus', compact('project'));
+    }
+
+    public function pulihkan($id){
+        $project = Project::find($id);
+        
+        $project->update([
+            'status_aktif' => 1,
+        ]);
+
+        return redirect()->route('agensi.project.terhapus')->with('success', 'Data recovered successfully');
+    }
 }
