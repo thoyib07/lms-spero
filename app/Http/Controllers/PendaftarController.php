@@ -22,15 +22,14 @@ class PendaftarController extends Controller
             'provinsi' => 'required',
             'no_hp' => 'required',
             'ktp' => 'required',
-            'email' => 'required|email|exists:users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
 
         $input_array_user = array(
-            'level' => 4,
-            'status_aktif' => 1,
             'email' => $request['email'],
             'password' => $request['password'],
+            'level' => 4,
         );
 
         $user = User::create($input_array_user);
@@ -51,7 +50,6 @@ class PendaftarController extends Controller
             'alamat' => $request['alamat'],
             'kota' => $request['kota'],
             'provinsi' => $request['provinsi'],
-            'level' => 1,
         );
 
         $user->pendaftars()->create($input_array_pendaftar);
@@ -78,15 +76,14 @@ class PendaftarController extends Controller
             'provinsi' => 'required',
             'no_hp' => 'required',
             'ktp' => 'required',
-            'email' => 'required|email|exists:users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
 
         $input_array_user = array(
-            'level' => 4,
-            'status_aktif' => 1,
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
+            'level' => 4,
         );
 
         $user = User::create($input_array_user);
@@ -100,7 +97,6 @@ class PendaftarController extends Controller
             'alamat' => $request['alamat'],
             'kota' => $request['kota'],
             'provinsi' => $request['provinsi'],
-            'level' => 1,
         );
 
         if($ktp = $request->file('ktp')){
@@ -139,8 +135,7 @@ class PendaftarController extends Controller
             'provinsi' => 'required',
             'no_hp' => 'required',
             'ktp' => 'nullable',
-            'status_aktif' => 'required',
-            'email' => 'required|email|exists:users,email',
+            'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
 
@@ -164,8 +159,6 @@ class PendaftarController extends Controller
         ]);
 
         $pendaftar->users()->update([
-            'level' => 4,
-            'status_aktif' => $request->status_aktif,
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -178,8 +171,15 @@ class PendaftarController extends Controller
     }
 
     public function destroy($id){
-        $pendaftar = Pendaftar::find($id);
-        $pendaftar->users()->delete();
+        $pendaftar = Pendaftar::with('users')->find($id);
+
+        $pendaftar->update([
+            'status_aktif' => 2,
+        ]);
+        $pendaftar->users()->update([
+            'status_aktif' => 2,
+        ]);
+        
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.user.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 2){

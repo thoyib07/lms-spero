@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Create')
+@section('title', 'Create')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -61,16 +61,6 @@
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Logo</label>
-                          <input type="file" id="image" onchange="file(event)" name="logo" class="form-control" placeholder="">
-                          <span class="text-danger">@error('logo'){{ $message }}@enderror</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <img src="" id="output" alt="" width="200px">
-                          </li>
-                        </ul>
-                        <div class="form-group">
                           <label>Email</label>
                           <input type="email" name="email" class="form-control" placeholder="Email">
                           <span class="text-danger">@error('email'){{ $message }}@enderror</span>
@@ -80,10 +70,19 @@
                           <input type="text" name="password" class="form-control" placeholder="Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
+                        <div class="form-group">
+                          <label>Logo</label>
+                          <input type="file" id="image" onchange="file(event)" name="logo" class="form-control" placeholder="">
+                          <span class="text-danger">@error('logo'){{ $message }}@enderror</span>
+                        </div>
+                        <ul>
+                          <li>
+                            <img src="" id="output" alt="" width="200px">
+                          </li>
+                        </ul>
                         @if(auth()->user()->level == 1)
                           <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @elseif(auth()->user()->level == 2)
                           <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
                         @endif
                         <button type="submit" class="btn btn-dark">Submit</button>

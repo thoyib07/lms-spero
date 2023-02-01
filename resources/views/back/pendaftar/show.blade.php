@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Show')
+@section('title', 'Show')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -62,17 +62,13 @@
                           <label>KTP</label>
                           <ul>
                             <li>
-                              <span class="text-danger">{{ $pendaftar->ktp }}</span>
-                            </li>
-                            <li>
                               <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
                             </li>
                           </ul>
                         </div>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.user.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @elseif(auth()->user()->level == 2)
                             <a href="{{ route('admin.user.index') }}" class="btn btn-dark">Back</a>
                         @endif
                     </form>

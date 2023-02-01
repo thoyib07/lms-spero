@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('nib');
             $table->string('telepon');
-            $table->string('status_verifikasi')->nullable();
-            $table->string('status_aktif')->nullable();
+            $table->string('status_verifikasi')->default(1);
+            $table->string('status_aktif')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();

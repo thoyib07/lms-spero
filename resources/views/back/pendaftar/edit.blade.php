@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Edit')
+@section('title', 'Edit')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" class="form-control h-150px" rows="3" id="comment" placeholder="Alamat">{{ $pendaftar->alamat }}</textarea>
+                          <textarea name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $pendaftar->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-row">
@@ -53,16 +53,6 @@
                           <span class="text-danger">@error('no_hp'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>KTP</label>
-                          <input type="file" name="ktp" value="{{ $pendaftar->ktp }}" id="image" onchange="file(event)" class="form-control" placeholder="KTP">
-                          <span class="text-danger">@error('ktp'){{ $message }}@enderror</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
-                          </li>
-                        </ul>
-                        <div class="form-group">
                         </div>
                         <div class="form-group">
                           <label>Email</label>
@@ -75,20 +65,18 @@
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="1" {{ $pendaftar->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="2" {{ $pendaftar->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
+                          <label>KTP</label>
+                          <input type="file" name="ktp" value="{{ $pendaftar->ktp }}" id="image" onchange="file(event)" class="form-control" placeholder="KTP">
+                          <span class="text-danger">@error('ktp'){{ $message }}@enderror</span>
                         </div>
+                        <ul>
+                          <li>
+                            <img src="/ktp/{{ $pendaftar->ktp }}" id="output" alt="" width="200px">
+                          </li>
+                        </ul>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.user.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @else(auth()->user()->level == 2)
                             <a href="{{ route('admin.user.index') }}" class="btn btn-dark">Back</a>
                         @endif
                         <button type="submit" class="btn btn-dark">Submit</button>

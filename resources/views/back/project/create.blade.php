@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Create')
+@section('title', 'Create')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                           <label>Deskripsi</label>
-                          <textarea name="deskripsi" class="form-control h-150px" rows="6" id="comment" placeholder="Deskripsi"></textarea>
+                          <textarea name="deskripsi" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Deskripsi"></textarea>
                           <span class="text-danger">@error('deskripsi'){{ $message }}@enderror</span>
                         </div>
                         <a href="{{ route('agensi.project.index') }}" class="btn btn-dark">Back</a>
@@ -36,4 +36,6 @@
         </div>
     </div>
 </div>
+
+<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection

@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Show')
+@section('title', 'Show')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" disabled class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->direkturs->alamat }}</textarea>
+                          <textarea disabled name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->direkturs->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <label>Agensi</label>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="form-group">
                           <label>Alamat</label>
-                          <textarea name="alamat" disabled class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->alamat }}</textarea>
+                          <textarea disabled name="alamat" class="form-control h-150px" rows="6" id="comment" placeholder="Alamat">{{ $agensi->alamat }}</textarea>
                           <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -71,32 +71,29 @@
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="1" {{ $agensi->users->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="2" {{ $agensi->users->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label>KTP</label>
+                          <label>Logo</label>
                           <ul>
                             <li>
-                              <span class="text-danger">{{ $agensi->logo }}</span>
-                            </li>
-                            <li>
-                              <img src="/logo/{{ $agensi->logo }}" id="output" alt="" width="200px">
+                              @if($agensi->logo == null)
+                                <td><img src="/default.jpg" alt="" width="200px"></td>
+                              @else
+                                <td><img src="/logo/{{ $agensi->logo }}" alt="" width="200px"></td>
+                              @endif
                             </li>
                           </ul>
                         </div>
-                        @if(auth()->user()->level == 1)
-                          <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
-                          <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
+                        @if($agensi->status_verifikasi == 1)
+                          @if(auth()->user()->level == 1)
+                            <a href="{{ route('superadmin.agensi.index') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                            <a href="{{ route('admin.agensi.index') }}" class="btn btn-dark">Back</a>
+                          @endif
+                        @elseif($agensi->status_verifikasi == 2)
+                          @if(auth()->user()->level == 1)
+                            <a href="{{ route('superadmin.agensi.verification') }}" class="btn btn-dark">Back</a>
+                          @elseif(auth()->user()->level == 2)
+                            <a href="{{ route('admin.agensi.verification') }}" class="btn btn-dark">Back</a>
+                          @endif
                         @endif
                     </form>
                 </div>

@@ -1,5 +1,5 @@
 <div class="footer">
   <div class="copyright">
-      <p></p>
+      <p>{{ auth()->user()->email }}</p>
   </div>
 </div>

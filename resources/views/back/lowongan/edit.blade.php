@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Create')
+@section('title', 'Edit')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -12,26 +12,18 @@
                         @method('PUT')
                         <div class="form-group">
                             <label>Skill Pekerjaan</label>
-                            <input type="text" name="skill_pekerjaan" value="{{ $lowongan->skill_pekerjaan }}" class="form-control" placeholder="Skill Pekerjaan">
+                            <textarea name="skill_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
                             <span class="text-danger">@error('skill_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Syarat Pekerjaan</label>
-                            <textarea name="syarat_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
+                            <textarea name="syarat_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
                             <span class="text-danger">@error('syarat_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Deskripsi Pekerjaan</label>
-                            <textarea name="deskripsi_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
+                            <textarea name="deskripsi_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
                             <span class="text-danger">@error('deskripsi_pekerjaan'){{ $message }}@enderror</span>
-                        </div>
-                        <div class="form-group">
-                            <label>Minimal Pengalaman</label>
-                            <div class="input-group">
-                                <input type="number" name="tahun_pengalaman" value="{{ $lowongan->tahun_pengalaman }}" class="form-control" placeholder="0">
-                                <div class="input-group-append"><span class="input-group-text">Tahun Pengalaman</span></div>
-                            </div>
-                            <span class="text-danger">@error('tahun_pengalaman'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Level</label>
@@ -42,6 +34,15 @@
                             </select>
                             <span class="text-danger">@error('level'){{ $message }}@enderror</span>
                         </div>
+                        <div class="form-group">
+                            <label>Minimal Pengalaman</label>
+                            <div class="input-group">
+                                <input type="number" name="tahun_pengalaman" value="{{ $lowongan->tahun_pengalaman }}" class="form-control" placeholder="0">
+                                <div class="input-group-append"><span class="input-group-text">Tahun Pengalaman</span></div>
+                            </div>
+                            <span class="text-danger">@error('tahun_pengalaman'){{ $message }}@enderror</span>
+                        </div>
+                        
                         <div class="form-group">
                             <label>Client</label>
                             <input type="text" name="client" value="{{ $lowongan->client }}" class="form-control" placeholder="Client">
@@ -64,17 +65,6 @@
                           <textarea name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="1" {{ $lowongan->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" name="status_aktif" value="2" {{ $lowongan->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
-                        </div>
                         <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
                         <button type="submit" class="btn btn-dark">Submit</button>
                     </form>
@@ -83,4 +73,6 @@
         </div>
     </div>
 </div>
+
+<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection

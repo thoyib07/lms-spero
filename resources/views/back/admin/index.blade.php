@@ -10,10 +10,8 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Admin</h4>
-            <div class="nav nav-pills">
-              <a href="{{ route('superadmin.admin.create') }}" class="btn mb-1 btn-primary">Tambah</a>
-            </div>
+            <h4 class="card-title">@yield('title')</h4>
+            <a href="{{ route('superadmin.admin.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
                     <thead>
@@ -24,37 +22,32 @@
                             <th scope="col">Email</th>
                             <th scope="col">Nomor Handphone</th>
                             <th scope="col">Alamat</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $id = 0; ?>
                       @foreach($admin as $admins)
-                        <tr>
-                            <th>{{ $loop->iteration }}</th>
-                            <td>{{ $admins->nama_panjang }}</td>
-                            <td>{{ $admins->tanggal_lahir }}</td>
-                            <td>{{ $admins->users->email }}</td>
-                            <td>{{ $admins->no_hp }}</td>
-                            <td>{{ $admins->alamat }}</td>
-                            <td>
-                              @if($admins->users->status_aktif == 1)
-                                <span class="label gradient-1 rounded">Enable</span>
-                              @endif
-                              @if($admins->users->status_aktif == 2)
-                                <span class="label gradient-2 rounded">Disable</span>
-                              @endif
-                            </td>
-                            <td>
-                              <form action="{{ route('superadmin.admin.destroy', $admins->id) }}" method="POST">
-                                  @csrf
-                                  @method('DELETE')
-                                  <a href="{{ route('superadmin.admin.show', $admins->id) }}" class="btn mb-1 btn-info">Show</a>
-                                  <a href="{{ route('superadmin.admin.edit', $admins->id) }}" class="btn mb-1 btn-primary">Edit</a>
-                                  <button type="submit" class="btn mb-1 btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+                        @if($admins->users->status_aktif == 1)
+                        <?php $id++; ?>
+                          <tr>
+                              <th>{{ $id }}</th>
+                              <td>{{ $admins->nama_panjang }}</td>
+                              <td>{{ $admins->tanggal_lahir }}</td>
+                              <td>{{ $admins->users->email }}</td>
+                              <td>{{ $admins->no_hp }}</td>
+                              <td>{{ $admins->alamat }}</td>
+                              <td>
+                                <form action="{{ route('superadmin.admin.destroy', $admins->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a href="{{ route('superadmin.admin.show', $admins->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
+                                    <a href="{{ route('superadmin.admin.edit', $admins->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
+                                    <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>
+                                  </form>
+                              </td>
+                          </tr>
+                        @endif
                       @endforeach
                     </tbody>
                 </table>

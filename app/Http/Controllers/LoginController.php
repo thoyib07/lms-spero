@@ -34,8 +34,7 @@ class LoginController extends Controller
             }elseif(auth()->user()->status_aktif == 2){
                 Auth::guard('web')->logout();
                 return redirect()->route('login')->with('fail', 'Your account has been disabled');
-            }elseif(auth()->user()->status_aktif == 3){
-                Auth::guard('web')->logout();
+            }else{
                 return redirect()->route('login')->with('fail', 'Your account has been disabled');
             }
         }else{

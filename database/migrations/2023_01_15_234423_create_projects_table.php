@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('agensi_id')->references('id')->on('agensis')->onDelete('cascade');
             $table->string('judul_project');
             $table->string('deskripsi');
-            $table->string('status_aktif')->nullable();
+            $table->string('status_aktif')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();

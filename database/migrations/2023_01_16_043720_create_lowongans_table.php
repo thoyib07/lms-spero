@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('skill_pekerjaan');
             $table->string('deskripsi_pekerjaan');
             $table->string('syarat_pekerjaan');
-            $table->string('status_aktif')->nullable();
+            $table->string('status_aktif')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();

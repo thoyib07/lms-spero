@@ -1,5 +1,5 @@
 @extends('back.templates.pages')
-@section('title', isset($title) ? $title : 'Create')
+@section('title', 'Show')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -10,23 +10,18 @@
                     <form action="{{ route('agensi.lowongan.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label>project_id</label>
-                            <input type="text" disabled name="project_id" value="{{ $lowongan->project_id }}" class="form-control" placeholder="project_id">
-                            <span class="text-danger">@error('project_id'){{ $message }}@enderror</span>
-                        </div>
-                        <div class="form-group">
                             <label>Skill Pekerjaan</label>
-                            <input type="text" disabled name="skill_pekerjaan" value="{{ $lowongan->skill_pekerjaan }}" class="form-control" placeholder="Skill Pekerjaan">
+                            <textarea disabled name="skill_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
                             <span class="text-danger">@error('skill_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Syarat Pekerjaan</label>
-                            <textarea disabled name="syarat_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
+                            <textarea disabled name="syarat_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
                             <span class="text-danger">@error('syarat_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Deskripsi Pekerjaan</label>
-                            <textarea disabled name="deskripsi_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
+                            <textarea disabled name="deskripsi_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
                             <span class="text-danger">@error('deskripsi_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -64,24 +59,11 @@
                           <textarea disabled name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-group">
-                          <label>Status</label>
-                          <div class="form-group">
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="1" {{ $lowongan->status_aktif == 1 ? 'checked' : '' }}>    Enable
-                              </label>
-                              <label class="radio-inline mr-3">
-                                  <input type="radio" disabled name="status_aktif" value="2" {{ $lowongan->status_aktif == 2 ? 'checked' : '' }}>    Disable
-                              </label>
-                          </div>
-                        </div>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.lowongan.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @elseif(auth()->user()->level == 2)
                             <a href="{{ route('admin.lowongan.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 3)
+                        @elseif(auth()->user()->level == 3)
                             <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
                         @endif
                     </form>
@@ -90,4 +72,6 @@
         </div>
     </div>
 </div>
+
+<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection
