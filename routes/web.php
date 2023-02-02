@@ -66,6 +66,13 @@ Route::prefix('user')->name('user.')->group(function(){
     Route::post('post-register', [PendaftarController::class, 'postregister'])->name('post-register');
 });
 
+Route::get('create-step-one', [AgensiController::class, 'createstepone'])->name('create-step-one');
+Route::post('post-create-step-one', [AgensiController::class, 'postcreatestepone'])->name('post-create-step-one');
+Route::get('create-step-two', [AgensiController::class, 'createsteptwo'])->name('create-step-two');
+Route::post('post-create-step-two', [AgensiController::class, 'postcreatesteptwo'])->name('post-create-step-two');
+Route::get('create-step-three', [AgensiController::class, 'createstepthree'])->name('create-step-three');
+Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
+
 $routes = [
     'superadmin',
     'admin',
@@ -127,12 +134,7 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::get('/dashboard', [AgensiController::class, 'dashboard'])->name('dashboard');
         Route::get('/settings', [AgensiController::class, 'settings'])->name('settings');
         Route::put('/postsettings', [AgensiController::class, 'postsettings'])->name('postsettings');
-        Route::get('create-step-one', [AgensiController::class, 'createstepone'])->name('create-step-one');
-        Route::post('post-create-step-one', [AgensiController::class, 'postcreatestepone'])->name('post-create-step-one');
-        Route::get('create-step-two', [AgensiController::class, 'createsteptwo'])->name('create-step-two');
-        Route::post('post-create-step-two', [AgensiController::class, 'postcreatesteptwo'])->name('post-create-step-two');
-        Route::get('create-step-three', [AgensiController::class, 'createstepthree'])->name('create-step-three');
-        Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
+        
 
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
