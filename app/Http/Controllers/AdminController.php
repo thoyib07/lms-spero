@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -14,120 +13,92 @@ class AdminController extends Controller
     }
 
     public function index(){
-        $post = Admin::with('users')->get();
-        return view('back.admin.index', compact('post'));
+        $admin = Admin::with('users')->paginate();
+        return view('back.admin.index', compact('admin'));
     }
 
     public function create(){
         return view('back.admin.create');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
-            'name' => 'required',
-            'date_of_birth' => 'required',
-            'phone_number' => 'required',
-            'email' => 'required',
-            'address' => 'required',
-            'password' => 'required',
+            'nama_panjang' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
         ]);
 
-        $user = new User;
-        $user->level = 2;
-        $user->status = 1;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->created_by = Auth::id();
-        $user->updated_by = Auth::id();
+        $input_array_user = array(
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'level' => 2,
+        );
 
-        $user->save();
+        $user = User::create($input_array_user);
 
-        $admin = new Admin;
-        $admin->user_id = $user->id;
-        $admin->name = $request->name;
-        $admin->date_of_birth = $request->date_of_birth;
-        $admin->phone_number = $request->phone_number;
-        $admin->address = $request->address;
-        $admin->created_by = Auth::id();
-        $admin->updated_by = Auth::id();
+        $input_array_admin = array(
+            'user_id' => $user->id,
+            'nama_panjang' => $request['nama_panjang'],
+            'tanggal_lahir' => $request['tanggal_lahir'],
+            'alamat' => $request['alamat'],
+            'no_hp' => $request['no_hp'],
+        );
 
-        $admin->save();
+        $user->admins()->create($input_array_admin);
 
         return redirect()->route('superadmin.admin.index')->with('success', 'Data added successfully');
     }
 
-    public function show($id)
-    {
-        $admin = Admin::find($id);
+    public function show($id){
+        $admin = Admin::with('users')->find($id);
         return view('back.admin.show', compact('admin'));
     }
 
-    public function edit(Admin $user_id)
-    {
-        // $admin = Admin::with('users')->find($user_id);
-        $admin = Admin::join('users', 'admins.user_id', '=', 'users.id')->get()[0];
-        //dd($admin);
+    public function edit($id){
+        $admin = Admin::with('users')->find($id);
         return view('back.admin.edit', compact('admin'));
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         $request->validate([
-            'name' => 'required',
-            'date_of_birth' => 'required',
-            'phone_number' => 'required',
-            'email' => 'required',
-            'address' => 'required',
-            'status' => 'required',
-            'password' => 'required',
+            'nama_panjang' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         ]);
 
-        // dd($request->post());
-
-        // dd($id);
-
-        // $user = User::find($id);
-        // $user->level = 2;
-        // $user->status = $request->status;
-        // $user->email = $request->email;
-        // $user->password = bcrypt($request->password);
-        // $user->created_by = Auth::id();
-        // $user->updated_by = Auth::id();
-        // $user->save();
-
-        $user = array(
-            'level' => 2,
-            'status' => $request->status,
+        $admin = Admin::find($id);
+        
+        $admin->update([
+            'nama_panjang' => $request->nama_panjang,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
+        ]);
+        
+        $admin->users()->update([
             'email' => $request->email,
             'password' => $request->password,
-            'created_by' => $request->created_by,
-            'updated_by' => $request->updated_by,
-        );
-
-        User::where('id', $id)->update($user);
-
-        $admin = array(
-            'name' => $request->name,
-            'date_of_birth' => $request->date_of_birth,
-            'phone_number' => $request->phone_number,
-            'address' => $request->address,
-            'created_by' => Auth::id(),
-            'updated_by' => Auth::id(),
-        );
-
-        Admin::where('user_id', $id)->update($admin);
-
-        // $admin = Admin::find($id);
-        // $admin->user_id = $user->id;
-        // $admin->name = $request->name;
-        // $admin->date_of_birth = $request->date_of_birth;
-        // $admin->phone_number = $request->phone_number;
-        // $admin->address = $request->address;
-        // $admin->created_by = Auth::id();
-        // $admin->updated_by = Auth::id();
-        // $admin->save();
+        ]);
 
         return redirect()->route('superadmin.admin.index')->with('success', 'Data successfully updated');
+    }
+
+    public function destroy($id){
+        $admin = Admin::with('users')->find($id);
+        
+        $admin->update([
+            'status_aktif' => 2,
+        ]);
+        $admin->users()->update([
+            'status_aktif' => 2,
+        ]);
+        
+        return redirect()->route('superadmin.admin.index')->with('success', 'Data deleted successfully');
     }
 }

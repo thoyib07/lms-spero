@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('super_admins', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('name');
-            $table->date('date_of_birth');
-            $table->string('phone_number');
-            $table->string('address');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('nama_panjang');
+            $table->date('tanggal_lahir');
+            $table->string('alamat');
+            $table->string('no_hp');
+            $table->string('status_aktif')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();
