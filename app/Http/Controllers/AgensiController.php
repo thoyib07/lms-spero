@@ -72,7 +72,19 @@ class AgensiController extends Controller
     }
 
     public function postverification($id){
-        $agensi = Agensi::find($id);
+        $agensi = Agensi::with('users', 'direkturs')->find($id);
+
+        $agensi->update([
+            'status_aktif' => 1,
+        ]);
+
+        $agensi->direkturs()->update([
+            'status_aktif' => 1,
+        ]);
+
+        $agensi->users()->update([
+            'status_aktif' => 1,
+        ]);
 
         $agensi->update([
             'status_verifikasi' => 1,
@@ -94,18 +106,19 @@ class AgensiController extends Controller
     public function postcreatestepone(Request $request){
         $request->validate([
             'nama_panjang' => 'required',
-            'email2' => 'required|email|unique:direkturs,email',
-            'alamat2' => 'required',
+            'email' => 'required|email|unique:direkturs,email',
+            'alamat' => 'required',
             'tanggal_lahir' => 'required',
             'no_hp' => 'required',
         ]);
 
         $input_array_direktur = array(
             'nama_panjang' => $request['nama_panjang'],
-            'email' => $request['email2'],
-            'alamat' => $request['alamat2'],
+            'email' => $request['email'],
+            'alamat' => $request['alamat'],
             'tanggal_lahir' => $request['tanggal_lahir'],
             'no_hp' => $request['no_hp'],
+            'status_aktif' => 2,
         );
 
         if(empty($request->session()->get('direktur'))){
@@ -118,7 +131,7 @@ class AgensiController extends Controller
             $request->session()->put('direktur', $direktur);
         }
 
-        return redirect()->route('agensi.create-step-two');
+        return redirect()->route('create-step-two');
         return view('back.agensi.create-step-two', compact('direktur', 'agensi'));
     }
 
@@ -143,8 +156,10 @@ class AgensiController extends Controller
             $input_array_user = array(
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
+                'status_aktif' => 2,
                 'level' => 3,
             );
+
             $user = User::create($input_array_user);
 
             $direktur = $request->session()->get('direktur');
@@ -156,6 +171,7 @@ class AgensiController extends Controller
                 'alamat' => $request['alamat'],
                 'nib' => $request['nib'],
                 'telepon' => $request['telepon'],
+                'status_aktif' => 2,
             );
 
             $agensi = $user->agensis()->create($input_array_agensi);
@@ -167,7 +183,7 @@ class AgensiController extends Controller
             $request->session()->put('agensi', $agensi);
         }
 
-        return redirect()->route('agensi.create-step-three');
+        return redirect()->route('create-step-three');
     }
 
     public function createstepthree(Request $request){
@@ -187,7 +203,7 @@ class AgensiController extends Controller
         $request->session()->forget('direktur');
         $request->session()->forget('agensi');
 
-        return redirect()->route('agensi.create-step-one')->with('success', 'Data added successfully, please wait for further notification');
+        return redirect()->route('create-step-one')->with('success', 'Data added successfully, please wait for further notification');
     }
 
     public function index(){
