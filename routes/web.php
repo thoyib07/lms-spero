@@ -8,10 +8,12 @@ use App\Http\Controllers\AgensiController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\SuperAdminController;
+use App\Models\Notifikasi;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,30 +75,40 @@ foreach($routes as $routes){
     Route::prefix($routes)->group(function() use ($routes){
         Route::get('/agensi/verification', [AgensiController::class, 'verification'])->name($routes.'.agensi.verification');
         Route::put('/agensi/verification/{id}', [AgensiController::class, 'postverification'])->name($routes.'.agensi.postverification');
-        Route::get('/agensi/show/{id}', [AgensiController::class, 'show2'])->name($routes.'.agensi.show2');
+
+        Route::get('/notifikasi/terhapus', [NotifikasiController::class, 'terhapus'])->name($routes.'.notifikasi.terhapus');
+        Route::put('/notifikasi/pulihkan/{id}', [NotifikasiController::class, 'pulihkan'])->name($routes.'.notifikasi.pulihkan');
     });
 }
 
 Route::prefix('superadmin')->name('superadmin.')->group(function(){
     Route::middleware(['auth:web', 'checklevel:1'])->group(function(){
         Route::get('/dashboard', [SuperAdminController::class, 'dashboard'])->name('dashboard');
+
         Route::resource('admin', AdminController::class);
         Route::resource('agensi', AgensiController::class);
         Route::resource('user', PendaftarController::class);
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
+        Route::resource('pretest', PreTestController::class);
+        Route::resource('posttest', PostTestController::class);
+        Route::resource('notifikasi', NotifikasiController::class);
     });
 });
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['auth:web', 'checklevel:2'])->group(function(){
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
         Route::resource('agensi', AgensiController::class);
         Route::resource('user', PendaftarController::class);
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
+        Route::resource('pretest', PreTestController::class);
+        Route::resource('posttest', PostTestController::class);
+        Route::resource('notifikasi', NotifikasiController::class);
     });
 });
 
@@ -111,10 +123,12 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::post('post-create-step-two', [AgensiController::class, 'postcreatesteptwo'])->name('post-create-step-two');
         Route::get('create-step-three', [AgensiController::class, 'createstepthree'])->name('create-step-three');
         Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
+
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
         Route::resource('pretest', PreTestController::class);
         Route::resource('posttest', PostTestController::class);
+        Route::resource('notifikasi', NotifikasiController::class);
     });
 });

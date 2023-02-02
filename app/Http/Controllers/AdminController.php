@@ -32,9 +32,9 @@ class AdminController extends Controller
         ]);
 
         $input_array_user = array(
-            'level' => 2,
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
+            'level' => 2,
         );
 
         $user = User::create($input_array_user);
@@ -80,6 +80,7 @@ class AdminController extends Controller
             'alamat' => $request->alamat,
             'no_hp' => $request->no_hp,
         ]);
+        
         $admin->users()->update([
             'email' => $request->email,
             'password' => $request->password,

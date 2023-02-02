@@ -98,11 +98,9 @@
                         </div>
                         @if(auth()->user()->level == 1)
                             <a href="{{ route('superadmin.materi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 2)
+                        @elseif(auth()->user()->level == 2)
                             <a href="{{ route('admin.materi.index') }}" class="btn btn-dark">Back</a>
-                        @endif
-                        @if(auth()->user()->level == 3)
+                        @elseif(auth()->user()->level == 3)
                             <a href="{{ route('agensi.materi.index') }}" class="btn btn-dark">Back</a>
                         @endif
                         <button type="submit" class="btn btn-dark">Submit</button>

@@ -141,9 +141,9 @@ class AgensiController extends Controller
 
         if(empty($request->session()->get('agensi'))){
             $input_array_user = array(
-                'level' => 3,
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
+                'level' => 3,
             );
             $user = User::create($input_array_user);
 
