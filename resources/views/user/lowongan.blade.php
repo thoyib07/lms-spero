@@ -80,6 +80,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="pc__content mt-2">
+                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
+                            <div class="pcc__c">
+                                <div class="c-left">
+                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
+                                </div>
+                                <div class="c-right">
+                                    <p>25 Juni 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pc__content mt-2">
+                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
+                            <div class="pcc__c">
+                                <div class="c-left">
+                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
+                                </div>
+                                <div class="c-right">
+                                    <p>25 Juni 2022</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
