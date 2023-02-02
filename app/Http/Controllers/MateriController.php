@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materi;
+use App\Models\PreTest;
 use App\Models\Lowongan;
+use App\Models\PostTest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,9 +45,11 @@ class MateriController extends Controller
             'user_id' => Auth::id(),
             'lowongan_id' => $request['lowongan_id'],
             'judul_materi' => $request['judul_materi'],
+            'video_1' => $request['video_1'],
             'intruksi_1' => $request['intruksi_1'],
             'penjelasan_1' => $request['penjelasan_1'],
             'pertanyaan_1' => $request['pertanyaan_1'],
+            'video_2' => $request['video_2'],
             'intruksi_2' => $request['intruksi_2'],
             'penjelasan_2' => $request['penjelasan_2'],
             'instruksi_studi_kasus' => $request['instruksi_studi_kasus'],
@@ -56,25 +60,11 @@ class MateriController extends Controller
             'urutan_materi' => $request['urutan_materi'],
         );
 
-        if($video_1 = $request->file('video_1')){
-            $destination_path = 'video_1/';
-            $var_video_1 = date('YmdHis') . "." . $video_1->getClientOriginalExtension();
-            $video_1->move($destination_path, $var_video_1);
-            $input_array_materi['video_1'] = $var_video_1;
-        }
-        
         if($file_pdf = $request->file('file_pdf')){
             $destination_path = 'pdf/';
             $var_file_pdf = date('YmdHis') . "." . $file_pdf->getClientOriginalExtension();
             $file_pdf->move($destination_path, $var_file_pdf);
             $input_array_materi['file_pdf'] = $var_file_pdf;
-        }
-
-        if($video_2 = $request->file('video_2')){
-            $destination_path = 'video_2/';
-            $var_video_2 = date('YmdHis') . "." . $video_2->getClientOriginalExtension();
-            $video_2->move($destination_path, $var_video_2);
-            $input_array_materi['video_2'] = $var_video_2;
         }
 
         Materi::create($input_array_materi);
@@ -101,12 +91,12 @@ class MateriController extends Controller
     public function update(Request $request, $id){
         $request->validate([
             'judul_materi' => 'required',
-            'video_1' => 'nullable',
+            'video_1' => 'required',
             'intruksi_1' => 'required',
             'penjelasan_1' => 'required',
             'pertanyaan_1' => 'required',
             'file_pdf' => 'nullable',
-            'video_2' => 'nullable',
+            'video_2' => 'required',
             'intruksi_2' => 'required',
             'penjelasan_2' => 'required',
             'instruksi_studi_kasus' => 'required',
@@ -119,13 +109,6 @@ class MateriController extends Controller
 
         $materi = Materi::find($id);
 
-        if($video_1 = $request->file('video_1')){
-            $destination_path = 'video_1/';
-            $var_video_1 = date('YmdHis') . "." . $video_1->getClientOriginalExtension();
-            $video_1->move($destination_path, $var_video_1);
-            $materi['video_1'] = $var_video_1;
-        }
-        
         if($file_pdf = $request->file('file_pdf')){
             $destination_path = 'pdf/';
             $var_file_pdf = date('YmdHis') . "." . $file_pdf->getClientOriginalExtension();
@@ -133,18 +116,13 @@ class MateriController extends Controller
             $materi['file_pdf'] = $var_file_pdf;
         }
 
-        if($video_2 = $request->file('video_2')){
-            $destination_path = 'video_2/';
-            $var_video_2 = date('YmdHis') . "." . $video_2->getClientOriginalExtension();
-            $video_2->move($destination_path, $var_video_2);
-            $materi['video_2'] = $var_video_2;
-        }
-        
         $materi->update([
             'judul_materi' => $request->judul_materi,
+            'video_1' => $request['video_1'],
             'intruksi_1' => $request->intruksi_1,
             'penjelasan_1' => $request->penjelasan_1,
             'pertanyaan_1' => $request->pertanyaan_1,
+            'video_2' => $request['video_2'],
             'intruksi_2' => $request->intruksi_2,
             'penjelasan_2' => $request->penjelasan_2,
             'instruksi_studi_kasus' => $request->instruksi_studi_kasus,
@@ -166,8 +144,18 @@ class MateriController extends Controller
 
     public function destroy($id){
         $materi = Materi::find($id);
+        $pretest = PreTest::where('materi_id', $id)->first();
+        $posttest = PostTest::where('materi_id', $id)->first();
         
         $materi->update([
+            'status_aktif' => 2,
+        ]);
+
+        $pretest->update([
+            'status_aktif' => 2,
+        ]);
+
+        $posttest->update([
             'status_aktif' => 2,
         ]);
 
@@ -177,6 +165,37 @@ class MateriController extends Controller
             return redirect()->route('admin.materi.index')->with('success', 'Data deleted successfully');
         }elseif(auth()->user()->level == 3){
             return redirect()->route('agensi.materi.index')->with('success', 'Data deleted successfully');
+        }
+    }
+
+    public function terhapus(){
+        $materi = Materi::all();
+        return view('back.materi.terhapus', compact('materi'));
+    }
+
+    public function pulihkan($id){
+        $materi = Materi::find($id);
+        $pretest = PreTest::where('materi_id', $id)->first();
+        $posttest = PostTest::where('materi_id', $id)->first();
+        
+        $materi->update([
+            'status_aktif' => 1,
+        ]);
+
+        $pretest->update([
+            'status_aktif' => 1,
+        ]);
+
+        $posttest->update([
+            'status_aktif' => 1,
+        ]);
+
+        if(auth()->user()->level == 1){
+            return redirect()->route('superadmin.materi.terhapus')->with('success', 'Data recovered successfully');
+        }elseif(auth()->user()->level == 2){
+            return redirect()->route('admin.materi.terhapus')->with('success', 'Data recovered successfully');
+        }elseif(auth()->user()->level == 3){
+            return redirect()->route('agensi.materi.terhapus')->with('success', 'Data recovered successfully');
         }
     }
 }

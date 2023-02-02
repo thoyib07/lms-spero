@@ -36,7 +36,7 @@
                     <tbody>
                       <?php $id = 0; ?>
                       @foreach($notifikasi as $notifikasis)
-                        @if($notifikasis->status_aktif == 1)
+                        @if($notifikasis->created_by == auth()->user()->id and $notifikasis->status_aktif == 1)
                         <?php $id++; ?>
                           <tr>
                               <td>{{ $id }}</td>

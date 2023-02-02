@@ -76,14 +76,4 @@ class PostTestController extends Controller
 
         return redirect()->route('agensi.posttest.index')->with('success', 'Data successfully updated');
     }
-
-    public function destroy($id){
-        $posttest = PostTest::find($id);
-
-        $posttest->update([
-            'status_aktif' => 2,
-        ]);
-        
-        return redirect()->route('agensi.posttest.index')->with('success', 'Data deleted successfully');
-    }
 }

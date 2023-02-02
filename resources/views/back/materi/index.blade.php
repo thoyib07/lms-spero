@@ -13,10 +13,13 @@
             <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 1)
               <a href="{{ route('superadmin.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('superadmin.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @elseif(auth()->user()->level == 2)
               <a href="{{ route('admin.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('admin.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @elseif(auth()->user()->level == 3)
               <a href="{{ route('agensi.materi.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('agensi.materi.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
@@ -37,8 +40,8 @@
                           <tr>
                               <td>{{ $id }}</td>
                               <td>{{ $materis->judul_materi }}</td>
-                              <td><video width="200" height="200" muted controls><source src="/video_1/{{ $materis->video_1 }}" type="video/mp4"></video></td>
-                              <td><video width="200" height="200" muted controls><source src="/video_2/{{ $materis->video_2 }}" type="video/mp4"></video></td>
+                              <td><a href="{{ $materis->video_1 }}" target="_blank">{{ $materis->video_1 }}</a></td>
+                              <td><a href="{{ $materis->video_2 }}" target="_blank">{{ $materis->video_2 }}</a></td>
                               <td>
                                 @if(auth()->user()->level == 1)
                                   <form action="{{ route('superadmin.materi.destroy', $materis->id) }}" method="POST">

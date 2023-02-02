@@ -14,8 +14,14 @@
                             <select class="form-control" name="lowongan_id" id="">
                               <option selected disabled>Select</option>
                               @foreach ($lowongan as $lowongans)
-                                @if($lowongans->status_aktif == 1)
-                                  <option value="{{ $lowongans->id }}">{{ $lowongans->projects->judul_project }}</option>
+                                @if(auth()->user()->level == 1 or auth()->user()->level == 2)
+                                    @if($lowongans->status_aktif == 1)
+                                        <option value="{{ $lowongans->id }}">Project {{ $lowongans->projects->judul_project }} dengan client {{ $lowongans->client }}</option>
+                                    @endif
+                                @elseif(auth()->user()->level == 3)
+                                    @if($lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 1)
+                                        <option value="{{ $lowongans->id }}">Project {{ $lowongans->projects->judul_project }} dengan client {{ $lowongans->client }}</option>
+                                    @endif
                                 @endif
                               @endforeach
                             </select>
@@ -28,7 +34,7 @@
                         </div>
                         <div class="form-group">
                           <label>Video 1</label>
-                          <input type="file" name="video_1" class="form-control" placeholder="Video 1">
+                          <input type="text" name="video_1" class="form-control" placeholder="Video 1">
                           <span class="text-danger">@error('video_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -53,7 +59,7 @@
                         </div>
                         <div class="form-group">
                           <label>Video 2</label>
-                          <input type="file" name="video_2" class="form-control" placeholder="Video 2">
+                          <input type="text" name="video_2" class="form-control" placeholder="Video 2">
                           <span class="text-danger">@error('video_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">

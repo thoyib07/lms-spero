@@ -69,12 +69,16 @@ Route::prefix('user')->name('user.')->group(function(){
 $routes = [
     'superadmin',
     'admin',
+    'agensi',
 ];
 
 foreach($routes as $routes){
     Route::prefix($routes)->group(function() use ($routes){
         Route::get('/agensi/verification', [AgensiController::class, 'verification'])->name($routes.'.agensi.verification');
         Route::put('/agensi/verification/{id}', [AgensiController::class, 'postverification'])->name($routes.'.agensi.postverification');
+
+        Route::get('/materi/terhapus', [MateriController::class, 'terhapus'])->name($routes.'.materi.terhapus');
+        Route::put('/materi/pulihkan/{id}', [MateriController::class, 'pulihkan'])->name($routes.'.materi.pulihkan');
 
         Route::get('/notifikasi/terhapus', [NotifikasiController::class, 'terhapus'])->name($routes.'.notifikasi.terhapus');
         Route::put('/notifikasi/pulihkan/{id}', [NotifikasiController::class, 'pulihkan'])->name($routes.'.notifikasi.pulihkan');
