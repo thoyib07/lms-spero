@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                           <label>Video 1</label>
-                          <input type="file" name="video_1" class="form-control" placeholder="Video 1">
+                          <input type="text" name="video_1" class="form-control" placeholder="Video 1">
                           <span class="text-danger">@error('video_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                           <label>Video 2</label>
-                          <input type="file" name="video_2" class="form-control" placeholder="Video 2">
+                          <input type="text" name="video_2" class="form-control" placeholder="Video 2">
                           <span class="text-danger">@error('video_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">

@@ -16,11 +16,8 @@
                         </div>
                         <div class="form-group">
                           <label>Video 1</label>
-                          <ul>
-                            <li>
-                              <video width="300" height="300" muted controls><source src="/video_1/{{ $materi->video_1 }}" type="video/mp4"></video>
-                            </li>
-                          </ul>
+                          <input type="text" disabled name="video_1" value="{{ $materi->video_1 }}" class="form-control" placeholder="Video 1">
+                          <span class="text-danger">@error('video_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Intruksi 1</label>
@@ -47,11 +44,8 @@
                         </div>
                         <div class="form-group">
                           <label>Video 2</label>
-                          <ul>
-                            <li>
-                              <video width="300" height="300" muted controls><source src="/video_2/{{ $materi->video_2 }}" type="video/mp4"></video>
-                            </li>
-                          </ul>
+                          <input type="text" disabled name="video_2" value="{{ $materi->video_2 }}" class="form-control" placeholder="Video 2">
+                          <span class="text-danger">@error('video_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Intruksi 2</label>

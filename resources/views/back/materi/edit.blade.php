@@ -17,14 +17,9 @@
                         </div>
                         <div class="form-group">
                           <label>Video 1</label>
-                          <input type="file" name="video_1" id="video_1" value="{{ $materi->video_1 }}" class="form-control" placeholder="Video 1">
+                          <input type="text" name="video_1" id="video_1" value="{{ $materi->video_1 }}" class="form-control" placeholder="Video 1">
                           <span class="text-danger">@error('video_1'){{ $message }}@enderror</span>
                         </div>
-                        <ul>
-                          <li>
-                            <video id="output_video_1" width="200" height="200" muted controls><source src="/video_1/{{ $materi->video_1 }}" type="video/mp4"></video>
-                          </li>
-                        </ul>
                         <div class="form-group">
                             <label>Intruksi 1</label>
                             <textarea name="intruksi_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 1">{{ $materi->intruksi_1 }}</textarea>
@@ -52,14 +47,9 @@
                         </div>
                         <div class="form-group">
                           <label>Video 2</label>
-                          <input type="file" name="video_2" id="video_2" value="{{ $materi->video_2 }}" class="form-control" placeholder="Video 2">
+                          <input type="text" name="video_2" id="video_2" value="{{ $materi->video_2 }}" class="form-control" placeholder="Video 2">
                           <span class="text-danger">@error('video_2'){{ $message }}@enderror</span>
                         </div>
-                        <ul>
-                          <li>
-                            <video id="output_video_2" width="200" height="200" muted controls><source src="/video_2/{{ $materi->video_2 }}" type="video/mp4"></video>
-                          </li>
-                        </ul>
                         <div class="form-group">
                             <label>Intruksi 2</label>
                             <textarea name="intruksi_2" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 2">{{ $materi->intruksi_2 }}</textarea>
@@ -116,20 +106,6 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-  document.getElementById("video_1").onchange = function(event) {
-    let file = event.target.files[0];
-    let blobURL = URL.createObjectURL(file);
-    document.getElementById("output_video_1").src = blobURL;
-  }
-
-  document.getElementById("video_2").onchange = function(event) {
-    let file = event.target.files[0];
-    let blobURL = URL.createObjectURL(file);
-    document.getElementById("output_video_2").src = blobURL;
-  }
-</script>
 
 <script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection
