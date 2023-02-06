@@ -58,49 +58,12 @@
                 <div class="col-md-8 top mt-5">
                  <h2 class="mb-4">Pengumuman</h2>
                     <div class="pengumuman__content mt-2">
-                        <div class="pc__content mt-2">
-                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
-                            <div class="pcc__c">
-                                <div class="c-left">
-                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
-                                </div>
-                                <div class="c-right">
-                                    <p>25 Juni 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pc__content mt-2">
-                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
-                            <div class="pcc__c">
-                                <div class="c-left">
-                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
-                                </div>
-                                <div class="c-right">
-                                    <p>25 Juni 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pc__content mt-2">
-                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
-                            <div class="pcc__c">
-                                <div class="c-left">
-                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
-                                </div>
-                                <div class="c-right">
-                                    <p>25 Juni 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pc__content mt-2">
-                            <h4>Pembelajaran Semester Genap 2022/2023</h4>
-                            <div class="pcc__c">
-                                <div class="c-left">
-                                    <p>Pembelajaran Semester Genap 2022/2023 Akan Berjalan Sejak 8 Agustus</p>
-                                </div>
-                                <div class="c-right">
-                                    <p>25 Juni 2022</p>
-                                </div>
-                            </div>
+                        <div class="pc__content mt-2" id="place__notifikasi">
+                          {{-- @foreach ($notifikasi as $item)
+                           
+                            @endforeach --}}
+                        
+                        
                         </div>
                     </div>
 
@@ -477,4 +440,22 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('custom__script')
+<script type="text/javascript">
+$(function() {
+  $.ajax({
+    type    :"GET",
+    url     :"{{env('APP_URL')}}/api/notifikasi",
+    dataType:"json",
+    data    :{},
+    success: function (data) {
+      $.each(data.data, function(k, v) {
+          $("#place__notifikasi").prepend(' <h4>'+v.judul_notifikasi+'</h4> <div class="pcc__c"> <div class="c-left"> <p>'+v.keterangan+'</p></div><div class="c-right"> <p>'+v.tanggal+'</p></div></div>');
+        });
+    }
+    })
+});
+</script>
 @endsection
