@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\newsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AgensiController;
@@ -10,8 +9,6 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\PendaftarController;
-use App\Http\Controllers\PostTestController;
-use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\SuperAdminController;
 use App\Models\Notifikasi;
 
@@ -95,8 +92,6 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });
@@ -110,8 +105,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });
@@ -131,8 +124,6 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });

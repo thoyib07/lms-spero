@@ -111,6 +111,89 @@
                             <span class="text-danger">@error('updated_at'){{ $message }}@enderror</span>
                           </div>
                         </div>
+
+                        <?php $id = 0; ?>
+                        <h4 class="card-title">Pretest</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates facilis molestias quos impedit recusandae nesciunt maiores accusantium, voluptatum cumque ea eaque ipsum. Iusto rem id laboriosam repudiandae laborum dolores reiciendis!</p>
+                        @foreach($materi->pre_tests as $pretest)
+                        <?php $id++; ?>
+                            <div class="form-group">
+                                <label>Soal {{ $id }}</label>
+                                <textarea disabled name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $pretest->soal }}</textarea>
+                                <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban A</label>
+                                    <input type="text" disabled name="jawaban_a" value="{{ $pretest->jawaban_a }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban B</label>
+                                    <input type="text" disabled name="jawaban_b" value="{{ $pretest->jawaban_b }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban C</label>
+                                    <input type="text" disabled name="jawaban_c" value="{{ $pretest->jawaban_c }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban D</label>
+                                    <input type="text" disabled name="jawaban_d" value="{{ $pretest->jawaban_d }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban Benar</label>
+                                <input type="text" disabled name="jawaban_true" value="{{ $pretest->jawaban_true }}" class="form-control" placeholder="">
+                                <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
+                            </div>
+                        @endforeach
+
+                        <?php $id = 0; ?>
+                        <h4 class="card-title">Posttest</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste laboriosam odio veritatis eum vero delectus, iure repudiandae deserunt minus nulla odit error voluptas quas minima itaque animi magni officia nostrum!</p>
+                        @foreach($materi->post_tests as $posttest)
+                        <?php $id++; ?>
+                            <div class="form-group">
+                                <label>Soal {{ $id }}</label>
+                                <textarea disabled name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $posttest->soal }}</textarea>
+                                <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban A</label>
+                                    <input type="text" disabled name="jawaban_a" value="{{ $posttest->jawaban_a }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban B</label>
+                                    <input type="text" disabled name="jawaban_b" value="{{ $posttest->jawaban_b }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban C</label>
+                                    <input type="text" disabled name="jawaban_c" value="{{ $posttest->jawaban_c }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban D</label>
+                                    <input type="text" disabled name="jawaban_d" value="{{ $posttest->jawaban_d }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban Benar</label>
+                                <input type="text" disabled name="jawaban_true" value="{{ $posttest->jawaban_true }}" class="form-control" placeholder="">
+                                <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
+                            </div>
+                        @endforeach
+
                         @if($materi->status_aktif == 1)
                           @if(auth()->user()->level == 1)
                               <a href="{{ route('superadmin.materi.index') }}" class="btn btn-dark">Back</a>

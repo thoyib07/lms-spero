@@ -39,6 +39,18 @@ class MateriController extends Controller
             'praktekkan' => 'required',
             'instruksi_essay' => 'required',
             'urutan_materi' => 'required',
+            'soal_pretest' => 'required',
+            'jawaban_a_pretest' => 'required',
+            'jawaban_b_pretest' => 'required',
+            'jawaban_c_pretest' => 'required',
+            'jawaban_d_pretest' => 'required',
+            'jawaban_true_pretest' => 'required',
+            'soal_posttest' => 'required',
+            'jawaban_a_posttest' => 'required',
+            'jawaban_b_posttest' => 'required',
+            'jawaban_c_posttest' => 'required',
+            'jawaban_d_posttest' => 'required',
+            'jawaban_true_posttest' => 'required',
         ]);
 
         $input_array_materi = array(
@@ -67,7 +79,37 @@ class MateriController extends Controller
             $input_array_materi['file_pdf'] = $var_file_pdf;
         }
 
-        Materi::create($input_array_materi);
+        $materi = Materi::create($input_array_materi);
+
+        if($request['soal_pretest'] > 0){
+            foreach($request['soal_pretest'] as $pretest => $pretests){
+                $input_array_pretest = array(
+                    'materi_id' => $materi->id,
+                    'soal' => $request['soal_pretest'][$pretest],
+                    'jawaban_a' => $request['jawaban_a_pretest'][$pretest],
+                    'jawaban_b' => $request['jawaban_b_pretest'][$pretest],
+                    'jawaban_c' => $request['jawaban_c_pretest'][$pretest],
+                    'jawaban_d' => $request['jawaban_d_pretest'][$pretest],
+                    'jawaban_true' => $request['jawaban_true_pretest'][$pretest],
+                );
+                PreTest::create($input_array_pretest);
+            }
+        }
+
+        if($request['soal_posttest'] > 0){
+            foreach($request['soal_posttest'] as $posttest => $posttests){
+                $input_array_posttest = array(
+                    'materi_id' => $materi->id,
+                    'soal' => $request['soal_posttest'][$posttest],
+                    'jawaban_a' => $request['jawaban_a_posttest'][$posttest],
+                    'jawaban_b' => $request['jawaban_b_posttest'][$posttest],
+                    'jawaban_c' => $request['jawaban_c_posttest'][$posttest],
+                    'jawaban_d' => $request['jawaban_d_posttest'][$posttest],
+                    'jawaban_true' => $request['jawaban_true_posttest'][$posttest],
+                );
+                PostTest::create($input_array_posttest);
+            }
+        }
 
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.materi.index')->with('success', 'Data added successfully');
