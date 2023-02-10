@@ -59,12 +59,22 @@
                           <textarea disabled name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
                         </div>
-                        @if(auth()->user()->level == 1)
-                            <a href="{{ route('superadmin.lowongan.index') }}" class="btn btn-dark">Back</a>
-                        @elseif(auth()->user()->level == 2)
-                            <a href="{{ route('admin.lowongan.index') }}" class="btn btn-dark">Back</a>
-                        @elseif(auth()->user()->level == 3)
-                            <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
+                        @if($lowongan->status_aktif == 1)
+                            @if(auth()->user()->level == 1)
+                                <a href="{{ route('superadmin.lowongan.index') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 2)
+                                <a href="{{ route('admin.lowongan.index') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 3)
+                                <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
+                            @endif
+                        @elseif($lowongan->status_aktif == 2)
+                            @if(auth()->user()->level == 1)
+                                <a href="{{ route('superadmin.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 2)
+                                <a href="{{ route('admin.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 3)
+                                <a href="{{ route('agensi.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @endif
                         @endif
                     </form>
                 </div>

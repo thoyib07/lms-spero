@@ -11,10 +11,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">@yield('title')</h4>
-            @if(auth()->user()->level == 3)
-              <a href="{{ route('agensi.lowongan.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
-              <a href="{{ route('agensi.lowongan.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
-            @endif
+            <a href="{{ route('agensi.lowongan.index') }}" class="btn mb-1 btn-primary"><i class="fa fa-close color-muted"></i></a>
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
                     <thead>
@@ -31,7 +28,7 @@
                     <tbody>
                       <?php $id = 0; ?>
                       @foreach($lowongan as $lowongans)
-                        @if($lowongans->created_by == (auth()->user()->level == 1 or auth()->user()->level == 2) or $lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 1)
+                        @if($lowongans->created_by == auth()->user()->id and $lowongans->status_aktif == 2)
                         <?php $id++; ?>
                           <tr>
                               <td>{{ $id }}</td>
@@ -41,18 +38,11 @@
                               <td>{{ $lowongans->level }}</td>
                               <td>{{ $lowongans->lokasi }}</td>
                               <td>
-                                <form action="{{ route('agensi.lowongan.destroy', $lowongans->id) }}" method="POST">
+                                <form action="{{ route('agensi.lowongan.pulihkan', $lowongans->id) }}" method="POST">
                                     @csrf
-                                    @method('DELETE')
-                                    @if(auth()->user()->level == 1)
-                                      <a href="{{ route('superadmin.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @elseif(auth()->user()->level == 2)
-                                      <a href="{{ route('admin.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @elseif(auth()->user()->level == 3)
-                                      <a href="{{ route('agensi.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                      <a href="{{ route('agensi.lowongan.edit', $lowongans->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
-                                      <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>
-                                    @endif
+                                    @method('PUT')
+                                    <a href="{{ route('agensi.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
+                                    <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-plus color-muted"></i></button>
                                   </form>
                               </td>
                           </tr>
