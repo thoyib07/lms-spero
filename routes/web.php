@@ -14,6 +14,7 @@ use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\SuperAdminController;
 use App\Models\Notifikasi;
+// use App\Http\Controllers\Api\lowonganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,8 @@ Route::get('/dashboard', function () {return view('user.lowongan');});
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});
 
 Route::get('/daftarLowongan', function () {return view('user.daftarLowongan');});
-Route::get('/daftarLowongan-2', function () {return view('user.daftarLowongan_2');});
+
+Route::get('/daftarLowongan/{id}', [lowonganController::class, 'show']);
 
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 

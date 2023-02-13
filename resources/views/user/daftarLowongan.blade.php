@@ -57,77 +57,81 @@
                 <div class="col-md-3 me-5 left__content">
                     <h2>Filter Pencarianmu</h2>
                     <hr class="bg-dark border-2 border-top border-dark">
-                    <div class="dl__filter">
+                    <div class="print_value mb-4">
+                        <p id="value_list">Filter By :</p>
+                    </div>
+                    <div class="dl__filter" name="searchData" id="searchData">
                         <h3>Level Pekerjaan</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault"> Sales</label>
+                            <input class="checkbox" type="checkbox" value="Sales" id="Sales">
+                            <label class="form-check-label" for="Sales"> Sales</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault"> Team Leader</label>
+                            <input class="checkbox" type="checkbox" value="Team_Leader" id="Team_Leader">
+                            <label class="form-check-label" for="Team_Leader"> Team Leader</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault"> Area Koordinator</label>
+                            <input class="checkbox" type="checkbox" value="Area_Koordinator" id="Area_Koordinator">
+                            <label class="form-check-label" for="Area_Koordinator"> Area Koordinator</label>
                         </div>
                     </div>
                     <hr class="bg-dark border-2 border-top border-dark">
                     <div class="dl__filter">
                         <h3>Kota</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Depok, Indonesia</label>
+                            <input class="checkbox" type="checkbox" value="depok" id="depok">
+                            <label class="form-check-label" for="depok">Depok, Indonesia</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Jakarta, Indonesia</label>
+                            <input class="checkbox" type="checkbox" value="jakarta" id="jakarta">
+                            <label class="form-check-label" for="jakarta">Jakarta, Indonesia</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Bandung, Indonesia</label>
+                            <input class="checkbox" type="checkbox" value="bandung" id="bandung">
+                            <label class="form-check-label" for="bandung">Bandung, Indonesia</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Surabaya, Indonesia</label>
+                            <input class="checkbox" type="checkbox" value="surabaya" id="surabaya">
+                            <label class="form-check-label" for="surabaya">Surabaya, Indonesia</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Tangerang, Indonesia</label>
+                            <input class="checkbox" type="checkbox" value="tangerang" id="tangerang">
+                            <label class="form-check-label" for="tangerang">Tangerang, Indonesia</label>
                         </div>
                     </div>
                     <hr class="bg-dark border-2 border-top border-dark">
                     <div class="dl__filter">
                         <h3>Pengalaman</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">1-3 Tahun</label>
+                            <input class="checkbox" type="checkbox" value="1-3" id="1-3">
+                            <label class="form-check-label" for="1-3">1-3 Tahun</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">3-5 Tahun</label>
+                            <input class="checkbox" type="checkbox" value="3-5" id="3-5">
+                            <label class="form-check-label" for="3-5">3-5 Tahun</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">5-10 Tahun</label>
+                            <input class="checkbox" type="checkbox" value="5-10" id="5-10">
+                            <label class="form-check-label" for="5-10">5-10 Tahun</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Lebih Dari 10 Tahun</label>
+                            <input class="checkbox" type="checkbox" value="lebih10" id="lebih10">
+                            <label class="form-check-label" for="lebih10">Lebih Dari 10 Tahun</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 mt-sm-0 mt-5">
-                    <div class="row d-flex gap-3">
-                        <div class="col-md-5 dl__content" id="daftarLowongan">
-                            <a href="/daftarLowongan-2">
+                    <div class="row d-flex gap-3" id="par_daftarLowongan">
+
+                        {{-- <div class="col-md-5 dl__content" id="daftarLowongan">
+                            <a href="/daftarLowongan-2" id="tag_lowongan">
                                 <div class="top__content d-flex my-auto">
                                     <div class="tc__left">
                                         <img src="{{asset('../img/spero-under.png')}}" alt="">
                                     </div>
                                     <div class="tc__right my-auto mb-0">
-                                        <h1>Sales (Chemical)</h1>
-                                        <p>PT. Spero Mahakarya Nusantara</p>
+                                        <h1>'+v.sales+'</h1>
+                                        <p>'+v.client+'</p>
                                     </div>
                                 </div>
                                 <hr class="bg-dark border-2 border-top border-dark">
@@ -137,7 +141,7 @@
                                             <img src="{{asset('../img/location-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>Depok</p>
+                                            <p>'+v.lokasi+'</p>
                                         </div>
                                     </div>
                                     <div class="bc__gaji d-flex gap-2">
@@ -145,7 +149,7 @@
                                             <img src="{{asset('../img/dollar-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>Perusahaan Tidak Menampilkan Gaji</p>
+                                            <p>'+v.gaji+'</p>
                                         </div>
                                     </div>
                                     <div class="bc__pengalaman d-flex gap-2">
@@ -153,12 +157,12 @@
                                             <img src="{{asset('../img/pengalaman-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>1-3 Tahun Pengalaman</p>
+                                            <p>'+v.tahun_pengalaman+'</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> --}}
                         
                     </div>
                 </div>
@@ -166,3 +170,54 @@
         </div>
     </section>
 @endsection
+
+
+
+@section('custom__script')
+    <script type="text/javascript">
+    let html = '';
+        $(function() {
+        $.ajax({
+            type    :"GET",
+            url     :"{{env('APP_URL')}}/api/lowongan",
+            dataType:"json",
+            data    :{},
+            success: function (data) {
+            $.each(data.data, function(k, v,) {
+                let appendHtml = '<button href="" class="col-md-5 dl__content" id="daftarLowongan"><div class="top__content d-flex my-auto"><div class="tc__left"><img src="{{asset('../img/spero-under.png')}}" alt=""></div><div class="tc__right my-auto mb-0 text-start"><h1>'+v.level+'</h1><p>'+v.client+'</p></div></div><hr class="bg-dark border-2 border-top border-dark"><div class="bottom__content"><div class="bc__location d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/location-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.lokasi+'</p></div></div><div class="bc__gaji d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/dollar-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.gaji+'</p></div></div><div class="bc__pengalaman d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/pengalaman-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.tahun_pengalaman+'</p></div></div></div></button>';
+                $("#par_daftarLowongan").prepend(appendHtml);
+                html += appendHtml
+                });
+                console.log(data);
+            }
+        })
+    });
+    var dataLowongan = html;
+
+
+    </script>
+@endsection
+
+{{-- @section('custom__script__filter')
+    <script type="text/javascript" name="Filtering">
+       var valueList =  document.getElementById('value_list');
+       var text = '<span> You Have Selected : </span>';
+       var listArray = [];
+
+       var checkBox = document.querySelectorAll('.checkbox');
+       console.log(checkBox);
+
+       for(var checkbox of checkBox){
+        checkbox.addEventListener('click',function(){
+            if(this.checked == true){
+                listArray.push(this.value);
+                valueList.innerHTML = text + listArray.join(' , ')
+            }else{
+                //REMOVE VALUE FROM ARRAY 
+                listArray = listArray.filter(e => e !== this.value);
+                valueList.innerHTML = text + listArray.join(' , ')
+            }
+        })
+       }
+    </script>
+@endsection --}}
