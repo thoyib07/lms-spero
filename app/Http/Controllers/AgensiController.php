@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Agensi;
 use App\Models\Direktur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AgensiController extends Controller
 {
@@ -90,6 +91,12 @@ class AgensiController extends Controller
             'status_verifikasi' => 1,
         ]);
 
+        Mail::send('back.emails.agensi-verifikasi-akun', $agensi->toArray(),
+        function($message){
+            $message->to('emmanuelpablobenjamin@gmail.com', 'Kepada Yth.')
+            ->subject('Akun telah terverifikasi');
+        });
+
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.agensi.verification')->with('success', 'Data verified successfully');
         }elseif(auth()->user()->level == 2){
@@ -171,6 +178,7 @@ class AgensiController extends Controller
                 'alamat' => $request['alamat'],
                 'nib' => $request['nib'],
                 'telepon' => $request['telepon'],
+                'status_verifikasi' => 2,
                 'status_aktif' => 2,
             );
 
@@ -203,7 +211,7 @@ class AgensiController extends Controller
         $request->session()->forget('direktur');
         $request->session()->forget('agensi');
 
-        return redirect()->route('create-step-one')->with('success', 'Data added successfully, please wait for further notification');
+        return redirect()->route('create-step-one')->with('success', 'Data berhasil dikirim, tunggu pemberitahuan lebih lanjut dan periksa email anda');
     }
 
     public function index(){
