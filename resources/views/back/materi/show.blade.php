@@ -21,17 +21,17 @@
                         </div>
                         <div class="form-group">
                             <label>Intruksi 1</label>
-                            <textarea disabled name="intruksi_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 1">{{ $materi->intruksi_1 }}</textarea>
+                            <textarea disabled name="intruksi_1" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi 1">{{ $materi->intruksi_1 }}</textarea>
                             <span class="text-danger">@error('intruksi_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan 1</label>
-                            <textarea disabled name="penjelasan_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 1">{{ $materi->penjelasan_1 }}</textarea>
+                            <textarea disabled name="penjelasan_1" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 1">{{ $materi->penjelasan_1 }}</textarea>
                             <span class="text-danger">@error('penjelasan_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Pertanyaan 1</label>
-                            <textarea disabled name="pertanyaan_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan 1">{{ $materi->pertanyaan_1 }}</textarea>
+                            <textarea disabled name="pertanyaan_1" class="form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan 1">{{ $materi->pertanyaan_1 }}</textarea>
                             <span class="text-danger">@error('pertanyaan_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -49,42 +49,42 @@
                         </div>
                         <div class="form-group">
                             <label>Intruksi 2</label>
-                            <textarea disabled name="intruksi_2" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 2">{{ $materi->intruksi_2 }}</textarea>
+                            <textarea disabled name="intruksi_2" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi 2">{{ $materi->intruksi_2 }}</textarea>
                             <span class="text-danger">@error('intruksi_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan 2</label>
-                            <textarea disabled name="penjelasan_2" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 2">{{ $materi->penjelasan_2 }}</textarea>
+                            <textarea disabled name="penjelasan_2" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 2">{{ $materi->penjelasan_2 }}</textarea>
                             <span class="text-danger">@error('penjelasan_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Instruksi Studi Kasus</label>
-                            <textarea disabled name="instruksi_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Instruksi Studi Kasus">{{ $materi->instruksi_studi_kasus }}</textarea>
+                            <textarea disabled name="instruksi_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Instruksi Studi Kasus">{{ $materi->instruksi_studi_kasus }}</textarea>
                             <span class="text-danger">@error('instruksi_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan Studi Kasus</label>
-                            <textarea disabled name="penjelasan_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan Studi Kasus">{{ $materi->penjelasan_studi_kasus }}</textarea>
+                            <textarea disabled name="penjelasan_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan Studi Kasus">{{ $materi->penjelasan_studi_kasus }}</textarea>
                             <span class="text-danger">@error('penjelasan_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Pertanyaan Studi Kasus</label>
-                            <textarea disabled name="pertanyaan_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan Studi Kasus">{{ $materi->pertanyaan_studi_kasus }}</textarea>
+                            <textarea disabled name="pertanyaan_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan Studi Kasus">{{ $materi->pertanyaan_studi_kasus }}</textarea>
                             <span class="text-danger">@error('pertanyaan_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Praktekan</label>
-                            <textarea disabled name="praktekkan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Praktekan">{{ $materi->praktekkan }}</textarea>
+                            <textarea disabled name="praktekkan" class="form-control h-150px" rows="6" id="comment" placeholder="Praktekan">{{ $materi->praktekkan }}</textarea>
                             <span class="text-danger">@error('praktekkan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Intruksi Essay</label>
-                            <textarea disabled name="instruksi_essay" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi Essay">{{ $materi->instruksi_essay }}</textarea>
+                            <textarea disabled name="instruksi_essay" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi Essay">{{ $materi->instruksi_essay }}</textarea>
                             <span class="text-danger">@error('instruksi_essay'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Urutan Materi</label>
-                            <textarea disabled name="urutan_materi" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Urutan Materi">{{ $materi->urutan_materi }}</textarea>
+                            <textarea disabled name="urutan_materi" class="form-control h-150px" rows="6" id="comment" placeholder="Urutan Materi">{{ $materi->urutan_materi }}</textarea>
                             <span class="text-danger">@error('urutan_materi'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-row">
@@ -217,6 +217,4 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection
