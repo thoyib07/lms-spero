@@ -36,7 +36,7 @@
                           <tr>
                               <td>{{ $id }}</td>
                               <td>{{ $projects->judul_project }}</td>
-                              <td>{!! $projects->deskripsi !!}</td>
+                              <td>{{ $projects->deskripsi }}</td>
                               @if(auth()->user()->level == 1 or auth()->user()->level == 2)
                                 <td>{{ $projects->agensis->nama_usaha }}</td>
                               @endif

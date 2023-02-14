@@ -11,17 +11,17 @@
                         @csrf
                         <div class="form-group">
                             <label>Skill Pekerjaan</label>
-                            <textarea disabled name="skill_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
+                            <textarea disabled name="skill_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
                             <span class="text-danger">@error('skill_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Syarat Pekerjaan</label>
-                            <textarea disabled name="syarat_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
+                            <textarea disabled name="syarat_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
                             <span class="text-danger">@error('syarat_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Deskripsi Pekerjaan</label>
-                            <textarea disabled name="deskripsi_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
+                            <textarea disabled name="deskripsi_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
                             <span class="text-danger">@error('deskripsi_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -59,30 +59,6 @@
                           <textarea disabled name="lokasi" class="form-control h-150px" rows="6" id="comment" placeholder="Lokasi">{{ $lowongan->lokasi }}</textarea>
                           <span class="text-danger">@error('lokasi'){{ $message }}@enderror</span>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label>Created By</label>
-                            <input type="text" disabled name="created_by" value="{{ $lowongan->created_by }}" class="form-control" placeholder="">
-                            <span class="text-danger">@error('created_by'){{ $message }}@enderror</span>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label>Updated By</label>
-                            <input type="text" disabled name="updated_by" value="{{ $lowongan->updated_by }}" class="form-control" placeholder="">
-                            <span class="text-danger">@error('updated_by'){{ $message }}@enderror</span>
-                          </div>
-                        </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label>Created At</label>
-                            <input type="text" disabled name="created_at" value="{{ $lowongan->created_at }}" class="form-control" placeholder="">
-                            <span class="text-danger">@error('created_at'){{ $message }}@enderror</span>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label>Updated At</label>
-                            <input type="text" disabled name="updated_at" value="{{ $lowongan->updated_at }}" class="form-control" placeholder="">
-                            <span class="text-danger">@error('updated_at'){{ $message }}@enderror</span>
-                          </div>
-                        </div>
                         @if($lowongan->status_aktif == 1)
                             @if(auth()->user()->level == 1)
                                 <a href="{{ route('superadmin.lowongan.index') }}" class="btn btn-dark">Back</a>
@@ -92,7 +68,13 @@
                                 <a href="{{ route('agensi.lowongan.index') }}" class="btn btn-dark">Back</a>
                             @endif
                         @elseif($lowongan->status_aktif == 2)
-                            <a href="{{ route('agensi.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @if(auth()->user()->level == 1)
+                                <a href="{{ route('superadmin.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 2)
+                                <a href="{{ route('admin.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 3)
+                                <a href="{{ route('agensi.lowongan.terhapus') }}" class="btn btn-dark">Back</a>
+                            @endif
                         @endif
                     </form>
                 </div>
@@ -100,6 +82,4 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection

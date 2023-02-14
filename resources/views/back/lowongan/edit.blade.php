@@ -12,17 +12,17 @@
                         @method('PUT')
                         <div class="form-group">
                             <label>Skill Pekerjaan</label>
-                            <textarea name="skill_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
+                            <textarea name="skill_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Skill Pekerjaan">{{ $lowongan->skill_pekerjaan }}</textarea>
                             <span class="text-danger">@error('skill_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Syarat Pekerjaan</label>
-                            <textarea name="syarat_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
+                            <textarea name="syarat_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Syarat Pekerjaan">{{ $lowongan->syarat_pekerjaan }}</textarea>
                             <span class="text-danger">@error('syarat_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Deskripsi Pekerjaan</label>
-                            <textarea name="deskripsi_pekerjaan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
+                            <textarea name="deskripsi_pekerjaan" class="form-control h-150px" rows="6" id="comment" placeholder="Desktipsi Pekerjaan">{{ $lowongan->deskripsi_pekerjaan }}</textarea>
                             <span class="text-danger">@error('deskripsi_pekerjaan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -73,6 +73,4 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection

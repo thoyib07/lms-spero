@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lowongan;
+use App\Models\Materi;
+use App\Models\PreTest;
 use App\Models\Project;
+use App\Models\Lowongan;
+use App\Models\PostTest;
 use Illuminate\Http\Request;
 
 class LowonganController extends Controller
@@ -89,11 +92,36 @@ class LowonganController extends Controller
 
     public function destroy($id){
         $lowongan = Lowongan::find($id);
+        $materi = Materi::where('lowongan_id', $id)->first();
 
         $lowongan->update([
             'status_aktif' => 2,
         ]);
+
+        $materi->update([
+            'status_aktif' => 2,
+        ]);
+
+        return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
+    }
+
+    public function terhapus(){
+        $lowongan = Lowongan::all();
+        return view('back.lowongan.terhapus', compact('lowongan'));
+    }
+
+    public function pulihkan($id){
+        $lowongan = Lowongan::find($id);
+        $materi = Materi::where('lowongan_id', $id)->first();
         
+        $lowongan->update([
+            'status_aktif' => 1,
+        ]);
+
+        $materi->update([
+            'status_aktif' => 1,
+        ]);
+
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
     }
 

@@ -21,17 +21,17 @@
                         </div>
                         <div class="form-group">
                             <label>Intruksi 1</label>
-                            <textarea disabled name="intruksi_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 1">{{ $materi->intruksi_1 }}</textarea>
+                            <textarea disabled name="intruksi_1" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi 1">{{ $materi->intruksi_1 }}</textarea>
                             <span class="text-danger">@error('intruksi_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan 1</label>
-                            <textarea disabled name="penjelasan_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 1">{{ $materi->penjelasan_1 }}</textarea>
+                            <textarea disabled name="penjelasan_1" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 1">{{ $materi->penjelasan_1 }}</textarea>
                             <span class="text-danger">@error('penjelasan_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Pertanyaan 1</label>
-                            <textarea disabled name="pertanyaan_1" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan 1">{{ $materi->pertanyaan_1 }}</textarea>
+                            <textarea disabled name="pertanyaan_1" class="form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan 1">{{ $materi->pertanyaan_1 }}</textarea>
                             <span class="text-danger">@error('pertanyaan_1'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
@@ -49,42 +49,42 @@
                         </div>
                         <div class="form-group">
                             <label>Intruksi 2</label>
-                            <textarea disabled name="intruksi_2" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi 2">{{ $materi->intruksi_2 }}</textarea>
+                            <textarea disabled name="intruksi_2" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi 2">{{ $materi->intruksi_2 }}</textarea>
                             <span class="text-danger">@error('intruksi_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan 2</label>
-                            <textarea disabled name="penjelasan_2" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 2">{{ $materi->penjelasan_2 }}</textarea>
+                            <textarea disabled name="penjelasan_2" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan 2">{{ $materi->penjelasan_2 }}</textarea>
                             <span class="text-danger">@error('penjelasan_2'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Instruksi Studi Kasus</label>
-                            <textarea disabled name="instruksi_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Instruksi Studi Kasus">{{ $materi->instruksi_studi_kasus }}</textarea>
+                            <textarea disabled name="instruksi_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Instruksi Studi Kasus">{{ $materi->instruksi_studi_kasus }}</textarea>
                             <span class="text-danger">@error('instruksi_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Penjelasan Studi Kasus</label>
-                            <textarea disabled name="penjelasan_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Penjelasan Studi Kasus">{{ $materi->penjelasan_studi_kasus }}</textarea>
+                            <textarea disabled name="penjelasan_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Penjelasan Studi Kasus">{{ $materi->penjelasan_studi_kasus }}</textarea>
                             <span class="text-danger">@error('penjelasan_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Pertanyaan Studi Kasus</label>
-                            <textarea disabled name="pertanyaan_studi_kasus" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan Studi Kasus">{{ $materi->pertanyaan_studi_kasus }}</textarea>
+                            <textarea disabled name="pertanyaan_studi_kasus" class="form-control h-150px" rows="6" id="comment" placeholder="Pertanyaan Studi Kasus">{{ $materi->pertanyaan_studi_kasus }}</textarea>
                             <span class="text-danger">@error('pertanyaan_studi_kasus'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Praktekan</label>
-                            <textarea disabled name="praktekkan" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Praktekan">{{ $materi->praktekkan }}</textarea>
+                            <textarea disabled name="praktekkan" class="form-control h-150px" rows="6" id="comment" placeholder="Praktekan">{{ $materi->praktekkan }}</textarea>
                             <span class="text-danger">@error('praktekkan'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Intruksi Essay</label>
-                            <textarea disabled name="instruksi_essay" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Intruksi Essay">{{ $materi->instruksi_essay }}</textarea>
+                            <textarea disabled name="instruksi_essay" class="form-control h-150px" rows="6" id="comment" placeholder="Intruksi Essay">{{ $materi->instruksi_essay }}</textarea>
                             <span class="text-danger">@error('instruksi_essay'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
                             <label>Urutan Materi</label>
-                            <textarea disabled name="urutan_materi" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Urutan Materi">{{ $materi->urutan_materi }}</textarea>
+                            <textarea disabled name="urutan_materi" class="form-control h-150px" rows="6" id="comment" placeholder="Urutan Materi">{{ $materi->urutan_materi }}</textarea>
                             <span class="text-danger">@error('urutan_materi'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-row">
@@ -111,6 +111,89 @@
                             <span class="text-danger">@error('updated_at'){{ $message }}@enderror</span>
                           </div>
                         </div>
+
+                        <?php $id = 0; ?>
+                        <h4 class="card-title">Pretest</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates facilis molestias quos impedit recusandae nesciunt maiores accusantium, voluptatum cumque ea eaque ipsum. Iusto rem id laboriosam repudiandae laborum dolores reiciendis!</p>
+                        @foreach($materi->pre_tests as $pretest)
+                        <?php $id++; ?>
+                            <div class="form-group">
+                                <label>Soal {{ $id }}</label>
+                                <textarea disabled name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $pretest->soal }}</textarea>
+                                <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban A</label>
+                                    <input type="text" disabled name="jawaban_a" value="{{ $pretest->jawaban_a }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban B</label>
+                                    <input type="text" disabled name="jawaban_b" value="{{ $pretest->jawaban_b }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban C</label>
+                                    <input type="text" disabled name="jawaban_c" value="{{ $pretest->jawaban_c }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban D</label>
+                                    <input type="text" disabled name="jawaban_d" value="{{ $pretest->jawaban_d }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban Benar</label>
+                                <input type="text" disabled name="jawaban_true" value="{{ $pretest->jawaban_true }}" class="form-control" placeholder="">
+                                <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
+                            </div>
+                        @endforeach
+
+                        <?php $id = 0; ?>
+                        <h4 class="card-title">Posttest</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste laboriosam odio veritatis eum vero delectus, iure repudiandae deserunt minus nulla odit error voluptas quas minima itaque animi magni officia nostrum!</p>
+                        @foreach($materi->post_tests as $posttest)
+                        <?php $id++; ?>
+                            <div class="form-group">
+                                <label>Soal {{ $id }}</label>
+                                <textarea disabled name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $posttest->soal }}</textarea>
+                                <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban A</label>
+                                    <input type="text" disabled name="jawaban_a" value="{{ $posttest->jawaban_a }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban B</label>
+                                    <input type="text" disabled name="jawaban_b" value="{{ $posttest->jawaban_b }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban C</label>
+                                    <input type="text" disabled name="jawaban_c" value="{{ $posttest->jawaban_c }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Jawaban D</label>
+                                    <input type="text" disabled name="jawaban_d" value="{{ $posttest->jawaban_d }}" class="form-control" placeholder="">
+                                    <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban Benar</label>
+                                <input type="text" disabled name="jawaban_true" value="{{ $posttest->jawaban_true }}" class="form-control" placeholder="">
+                                <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
+                            </div>
+                        @endforeach
+
                         @if($materi->status_aktif == 1)
                           @if(auth()->user()->level == 1)
                               <a href="{{ route('superadmin.materi.index') }}" class="btn btn-dark">Back</a>
@@ -134,6 +217,4 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection

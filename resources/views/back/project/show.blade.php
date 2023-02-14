@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                           <label>Deskripsi</label>
-                          <textarea disabled name="deskripsi" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Address">{{ $project->deskripsi }}</textarea>
+                          <textarea disabled name="deskripsi" class="form-control h-150px" rows="6" id="comment" placeholder="Address">{{ $project->deskripsi }}</textarea>
                           <span class="text-danger">@error('deskripsi'){{ $message }}@enderror</span>
                         </div>
                         @if($project->status_aktif == 1)
@@ -36,6 +36,4 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.ckeditor.com/4.20.1/basic/ckeditor.js"></script>
 @endsection
