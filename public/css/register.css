@@ -28,9 +28,31 @@ body a{
     font-weight: 600;
     font-size: 15px;
 }
-.dropup button{
-    border: 1px solid black;
-    border-radius: 5px;
+.parentbirthDay{
+    flex-wrap: wrap;
+}
+.BirthDay{
+    margin-top: 5px;
+}
+.BirthDay select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1.5px solid #515151;
+    border-radius: 8px;
+}
+.BirthDay p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.03em;
+    color: #515151;
+}
+.BirthDay select:focus{
+    border: none;
+    outline: none;
 }
 .btn-submit{
     font-weight: 700;
@@ -39,6 +61,18 @@ body a{
     border-radius: 5px;
     background-color: #F0AE00;
     border: none;
+}
+.ddm__hari{
+    position: absolute;
+    inset: auto auto 0px 0px;
+    margin: 0px;
+    transform: translate(0px, -40px);
+    height: 10rem;
+    overflow: auto;
+    width: max-content;
+}
+.ddm__hari li{
+    transform: translate(40px, 0);
 }
 .title-section{
     color: #003579;

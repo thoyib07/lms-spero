@@ -22,7 +22,7 @@
         <div class="row d-flex align-items-center">
             <div class="col-md-7">
                 <img class="regist-icon d-none d-sm-block" src="{{asset('../img/regist-icon.png')}} " alt="">
-                <img class="regist-icon-2" src="{{asset('../img/regist-icon-2.png')}} " alt="">
+                <img class="regist-icon-2 d-none d-sm-block" src="{{asset('../img/regist-icon-2.png')}} " alt="">
             </div>
             <div class="col-md-4 col-10 mt-2 mx-auto">
                 <h2 class="mb-3 title-section">Registration</h2>
@@ -39,65 +39,144 @@
                       <label for="exampleInputPassword1" class="form-label">Password</label>
                       <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <div class="title mt-4 mb-3">
+                    <div class="row">
+                      <div class="title mt-4 mb-2">
                         <label for="">Birth Of Day</label>
+                      </div>
+                      <div class="parentbirthDay d-flex gap-2">
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Hari</p></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                          </select>
+                        </div>
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Bulan</p></option>
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                          </select>
+                        </div>
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Tahun</p></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
-                    <div class="group-dropdown d-flex gap-3">
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Hari
-                            </button>
-                            <ul class="dropdown-menu">
-                              <!-- Dropdown menu links -->
-                            </ul>
-                        </div>
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Bulan
-                            </button>
-                            <ul class="dropdown-menu">
-                              <!-- Dropdown menu links -->
-                            </ul>
-                        </div>
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Tahun
-                            </button>
-                            <ul class="dropdown-menu">
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="title mt-4 mb-3">
+                    <div class="row">
+                      <div class="title mt-4 mb-2">
                         <label for="">Address</label>
-                    </div>
-                    <div class="group-dropdown d-flex gap-3">
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Provinsi
-                            </button>
-                            <ul class="dropdown-menu">
-                              <!-- Dropdown menu links -->
-                            </ul>
+                      </div>
+                      <div class="parentbirthDay d-flex gap-2">
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Hari</p></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                          </select>
                         </div>
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Kota
-                            </button>
-                            <ul class="dropdown-menu">
-                              <!-- Dropdown menu links -->
-                            </ul>
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Bulan</p></option>
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                          </select>
                         </div>
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              Kecamatan
-                            </button>
-                            <ul class="dropdown-menu">
-                              <!-- Dropdown menu links -->
-                            </ul>
+                        <div class="BirthDay">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected><p>Tahun</p></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
                         </div>
+                      </div>
                     </div>
                 </form>
-                <a href="login.html">
+                <a href="/">
                     <button type="submit" class="btn btn-primary w-100 btn-submit">Registration</button>
                 </a>
                 <div class="register d-flex justify-content-center mt-3">

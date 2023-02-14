@@ -12,7 +12,7 @@
               </div>
           @endif
 
-          <form action="{{ route('agensi.post-create-step-one') }}" method="POST">
+          <form action="{{ route('post-create-step-one') }}" method="POST">
             @csrf
             <label>Direktur</label>
             <div class="form-group">
@@ -28,8 +28,8 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Email</label>
-                <input type="email" name="email2" value="{{ $direktur->email ?? '' }}" class="form-control" placeholder="Email">
-                <span class="text-danger">@error('email2'){{ $message }}@enderror</span>
+                <input type="email" name="email" value="{{ $direktur->email ?? '' }}" class="form-control" placeholder="Email">
+                <span class="text-danger">@error('email'){{ $message }}@enderror</span>
               </div>
               <div class="form-group col-md-6">
                   <label>Nomor Handphone</label>
@@ -39,8 +39,8 @@
               </div>
               <div class="form-group">
                 <label>Alamat</label>
-                <textarea name="alamat2" class="form-control h-150px" rows="4" id="comment" placeholder="Alamat">{{ $direktur->alamat ?? '' }}</textarea>
-                <span class="text-danger">@error('alamat2'){{ $message }}@enderror</span>
+                <textarea name="alamat" class="form-control h-150px" rows="4" id="comment" placeholder="Alamat">{{ $direktur->alamat ?? '' }}</textarea>
+                <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
               </div>
               <button type="submit" class="btn btn-dark">Next</button>
           </form>

@@ -68,6 +68,8 @@ nav{
     background-color: #FAE3D3;
     padding: 1.25rem 1.75rem;
     border-radius: 10px;
+    height: 10rem;
+    overflow: auto;
 }
 .pc__content h4{
     font-family: 'Poppins';
@@ -86,6 +88,9 @@ nav{
 .pcc__c .c-right p{
     text-align: right;
     color: rgb(10, 75, 10);
+}
+.pcc__c .c-left P{
+    font-weight: 300;
 }
 .pcc__c p{
     font-family: 'Poppins';

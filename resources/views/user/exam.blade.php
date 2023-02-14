@@ -73,6 +73,24 @@
                     </div>
                 </div>
                 <div class="col-md-12 px-lg-5 px-2">
+                    <div class="form-check">
+                        <form id="form1" name="form1" method="post" action="">
+                            <ol start="1" type="1">
+                                <li>Dibawah ini yang termasuk sistem operasi berbasis TEKS saja adalah...</li>
+                                <br>
+                                  <ol start="1" type="a">
+                                    <i>
+                                        <li><input type="radio" name="NO1" value="a">Windows XP</li>
+                                        <li><input type="radio" name="NO1" value="b">LINUX</li>
+                                        <li><input type="radio" name="NO1" value="c">Machintos</li>
+                                        <li><input type="radio" name="NO1" value="d">Windows 98</li>
+                                        <li><input type="radio" name="NO1" value="e">UNIX</li>
+                                    </i>  
+                                  </ol>
+                                <br>
+                           </form>
+
+
                     <div class="pg__answer d-flex gap-4 mt-3">
                         <div class="pa__left">
                             <h4 class="mb-0 text-center">A</h4>

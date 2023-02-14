@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\lowonganController;
+use App\Http\Controllers\Api\NotifikasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('notifikasi', NotifikasiController::class);
+
+// A G E N S I
+Route::get('lowongan', [lowonganController::class, 'indexLowongan']);
+Route::get('lowongan/{id}', [lowonganController::class, 'show'])->name('lowonganById');

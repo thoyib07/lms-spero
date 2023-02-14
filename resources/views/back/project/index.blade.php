@@ -13,6 +13,7 @@
             <h4 class="card-title">@yield('title')</h4>
             @if(auth()->user()->level == 3)
               <a href="{{ route('agensi.project.create') }}" class="btn mb-1 btn-primary"><i class="fa fa-plus color-muted"></i></a>
+              <a href="{{ route('agensi.project.terhapus') }}" class="btn mb-1 btn-primary"><i class="fa fa-trash color-muted"></i></a>
             @endif
             <div class="table-responsive">
                 <table class="table header-border table-hover verticle-middle">
@@ -47,8 +48,7 @@
                                       <a href="{{ route('superadmin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     @elseif(auth()->user()->level == 2)
                                       <a href="{{ route('admin.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
-                                    @endif
-                                    @if(auth()->user()->level == 3)
+                                    @elseif(auth()->user()->level == 3)
                                       <a href="{{ route('agensi.project.show', $projects->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                       <a href="{{ route('agensi.project.edit', $projects->id) }}" class="btn mb-1 btn-primary"><i class="fa fa-pencil color-muted"></i></a>
                                       <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-close color-muted"></i></button>

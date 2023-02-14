@@ -11,6 +11,7 @@ use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\SuperAdminController;
 use App\Models\Notifikasi;
+// use App\Http\Controllers\Api\lowonganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,8 @@ Route::get('/dashboard', function () {return view('user.lowongan');});
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});
 
 Route::get('/daftarLowongan', function () {return view('user.daftarLowongan');});
-Route::get('/daftarLowongan-2', function () {return view('user.daftarLowongan_2');});
+
+Route::get('/daftarLowongan/{id}', [lowonganController::class, 'show']);
 
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 
@@ -63,6 +65,13 @@ Route::prefix('user')->name('user.')->group(function(){
     Route::post('post-register', [PendaftarController::class, 'postregister'])->name('post-register');
 });
 
+Route::get('create-step-one', [AgensiController::class, 'createstepone'])->name('create-step-one');
+Route::post('post-create-step-one', [AgensiController::class, 'postcreatestepone'])->name('post-create-step-one');
+Route::get('create-step-two', [AgensiController::class, 'createsteptwo'])->name('create-step-two');
+Route::post('post-create-step-two', [AgensiController::class, 'postcreatesteptwo'])->name('post-create-step-two');
+Route::get('create-step-three', [AgensiController::class, 'createstepthree'])->name('create-step-three');
+Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
+
 $routes = [
     'superadmin',
     'admin',
@@ -74,6 +83,8 @@ foreach($routes as $routes){
         Route::get('/agensi/verification', [AgensiController::class, 'verification'])->name($routes.'.agensi.verification');
         Route::put('/agensi/verification/{id}', [AgensiController::class, 'postverification'])->name($routes.'.agensi.postverification');
 
+        Route::get('/project/terhapus', [ProjectController::class, 'terhapus'])->name($routes.'.project.terhapus');
+        Route::put('/project/pulihkan/{id}', [ProjectController::class, 'pulihkan'])->name($routes.'.project.pulihkan');
         Route::get('/lowongan/terhapus', [LowonganController::class, 'terhapus'])->name($routes.'.lowongan.terhapus');
         Route::put('/lowongan/pulihkan/{id}', [LowonganController::class, 'pulihkan'])->name($routes.'.lowongan.pulihkan');
 
@@ -117,12 +128,7 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::get('/dashboard', [AgensiController::class, 'dashboard'])->name('dashboard');
         Route::get('/settings', [AgensiController::class, 'settings'])->name('settings');
         Route::put('/postsettings', [AgensiController::class, 'postsettings'])->name('postsettings');
-        Route::get('create-step-one', [AgensiController::class, 'createstepone'])->name('create-step-one');
-        Route::post('post-create-step-one', [AgensiController::class, 'postcreatestepone'])->name('post-create-step-one');
-        Route::get('create-step-two', [AgensiController::class, 'createsteptwo'])->name('create-step-two');
-        Route::post('post-create-step-two', [AgensiController::class, 'postcreatesteptwo'])->name('post-create-step-two');
-        Route::get('create-step-three', [AgensiController::class, 'createstepthree'])->name('create-step-three');
-        Route::post('post-create-step-three', [AgensiController::class, 'postcreatestepthree'])->name('post-create-step-three');
+        
 
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);

@@ -19,12 +19,16 @@
                           <textarea disabled name="deskripsi" class="form-control h-150px" rows="6" id="comment" placeholder="Address">{{ $project->deskripsi }}</textarea>
                           <span class="text-danger">@error('deskripsi'){{ $message }}@enderror</span>
                         </div>
-                        @if(auth()->user()->level == 1)
-                            <a href="{{ route('superadmin.project.index') }}" class="btn btn-dark">Back</a>
-                        @elseif(auth()->user()->level == 2)
-                            <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Back</a>
-                        @elseif(auth()->user()->level == 3)
-                            <a href="{{ route('agensi.project.index') }}" class="btn btn-dark">Back</a>
+                        @if($project->status_aktif == 1)
+                            @if(auth()->user()->level == 1)
+                                <a href="{{ route('superadmin.project.index') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 2)
+                                <a href="{{ route('admin.project.index') }}" class="btn btn-dark">Back</a>
+                            @elseif(auth()->user()->level == 3)
+                                <a href="{{ route('agensi.project.index') }}" class="btn btn-dark">Back</a>
+                            @endif
+                        @elseif($project->status_aktif == 2)
+                            <a href="{{ route('agensi.project.terhapus') }}" class="btn btn-dark">Back</a>
                         @endif
                     </form>
                 </div>
