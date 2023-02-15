@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Agensi;
+use App\Models\Materi;
+use App\Models\Project;
 use App\Models\Direktur;
+use App\Models\Lowongan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class AgensiController extends Controller
 {
     public function dashboard(){
-        return view('back.agensi.dashboard');
+        $project = Project::count();
+        $lowongan = Lowongan::count();
+        $materi = Materi::count();
+        return view('back.agensi.dashboard', compact('project', 'lowongan', 'materi'));
     }
 
     public function settings(){
