@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Agensi;
+use App\Models\Materi;
+use App\Models\Project;
 use App\Models\Direktur;
+use App\Models\Lowongan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AgensiController extends Controller
 {
     public function dashboard(){
-        return view('back.agensi.dashboard');
+        $project = Project::count();
+        $lowongan = Lowongan::count();
+        $materi = Materi::count();
+        return view('back.agensi.dashboard', compact('project', 'lowongan', 'materi'));
     }
 
     public function settings(){
@@ -89,6 +96,12 @@ class AgensiController extends Controller
         $agensi->update([
             'status_verifikasi' => 1,
         ]);
+
+        Mail::send('back.emails.agensi-verifikasi-akun', $agensi->toArray(),
+        function($message){
+            $message->to(auth()->user()->email, 'Kepada Yth.')
+            ->subject('Akun dengan alamat email '.auth()->user()->email.' telah terverifikasi');
+        });
 
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.agensi.verification')->with('success', 'Data verified successfully');
@@ -171,6 +184,7 @@ class AgensiController extends Controller
                 'alamat' => $request['alamat'],
                 'nib' => $request['nib'],
                 'telepon' => $request['telepon'],
+                'status_verifikasi' => 2,
                 'status_aktif' => 2,
             );
 
@@ -203,7 +217,7 @@ class AgensiController extends Controller
         $request->session()->forget('direktur');
         $request->session()->forget('agensi');
 
-        return redirect()->route('create-step-one')->with('success', 'Data added successfully, please wait for further notification');
+        return redirect()->route('create-step-one')->with('success', 'Data berhasil dikirim, tunggu pemberitahuan lebih lanjut dan periksa email anda');
     }
 
     public function index(){
@@ -255,6 +269,7 @@ class AgensiController extends Controller
             'alamat' => $request['alamat'],
             'nib' => $request['nib'],
             'telepon' => $request['telepon'],
+            'status_verifikasi' => 1,
         );
 
         if($logo = $request->file('logo')){

@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Agensi;
+use App\Models\Pendaftar;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function dashboard(){
-        return view('back.admin.dashboard');
+        $pendaftar = Pendaftar::count();
+        $agensi = Agensi::count();
+        return view('back.admin.dashboard', compact('agensi', 'pendaftar'));
     }
 
     public function index(){
