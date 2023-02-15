@@ -263,6 +263,7 @@ class AgensiController extends Controller
             'alamat' => $request['alamat'],
             'nib' => $request['nib'],
             'telepon' => $request['telepon'],
+            'status_verifikasi' => 1,
         );
 
         if($logo = $request->file('logo')){
