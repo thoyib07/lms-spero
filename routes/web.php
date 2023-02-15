@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// Angga
 use App\Http\Controllers\newsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
@@ -14,7 +16,9 @@ use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\SuperAdminController;
 use App\Models\Notifikasi;
-// use App\Http\Controllers\Api\lowonganController;
+
+// Alvin
+use App\Http\Controllers\Front\LowonganFrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +40,9 @@ Route::get('/dashboard', function () {return view('user.lowongan');});
 
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});
 
-Route::get('/daftarLowongan', function () {return view('user.daftarLowongan');});
+Route::get('/daftarLowongan', [LowonganFrontController::class, 'indexLowongan']);
 
-Route::get('/daftarLowongan/{id}', [lowonganController::class, 'show']);
+Route::get('/daftarLowongan/{id}', [LowonganFrontController::class, 'show'])->name('detailLowongan');
 
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 

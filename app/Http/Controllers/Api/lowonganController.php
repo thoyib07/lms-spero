@@ -24,6 +24,7 @@ class lowonganController extends Controller
         ]);
         return view("user.daftarLowongan",compact('Lowongan'));
     }
+    
     public function index(){
         $Agensi = Agensi::all();
         $Project = Project::all();

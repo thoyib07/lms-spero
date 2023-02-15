@@ -129,13 +129,21 @@ nav{
     font-size: 15px;
 }
 
-
-
+#par_daftarLowongan{
+    display: flex;
+}
+#par_daftarLowongan a{
+    text-decoration: none;
+    color: black;
+    /* width: 25em; */
+}
 .dl__content{
     padding: 10px 30px 15px 30px;
     background: #FFFFFF;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    /* width: 24em; */
+    border: none;
 }
 .dl__content a{
     text-decoration: none;

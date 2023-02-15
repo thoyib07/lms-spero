@@ -121,17 +121,17 @@
                     </div>
                 </div>
                 <div class="col-md-8 mt-sm-0 mt-5">
-                    <div class="row d-flex gap-3" id="par_daftarLowongan">
-
-                        {{-- <div class="col-md-5 dl__content" id="daftarLowongan">
-                            <a href="/daftarLowongan-2" id="tag_lowongan">
+                    <div class="row d-flex" id="par_daftarLowongan">
+                        @foreach ($Lowongan as $item)
+                        <a class="col-md-6 mt-3 " href=" {{ route('detailLowongan', $item->id) }}">
+                            <div class="dl__content" id="daftarLowongan">
                                 <div class="top__content d-flex my-auto">
                                     <div class="tc__left">
                                         <img src="{{asset('../img/spero-under.png')}}" alt="">
                                     </div>
                                     <div class="tc__right my-auto mb-0">
-                                        <h1>'+v.sales+'</h1>
-                                        <p>'+v.client+'</p>
+                                        <h1>{{$item->level}}</h1>
+                                        <p>{{$item->client}}</p>
                                     </div>
                                 </div>
                                 <hr class="bg-dark border-2 border-top border-dark">
@@ -141,7 +141,7 @@
                                             <img src="{{asset('../img/location-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>'+v.lokasi+'</p>
+                                            <p>{{$item->lokasi}}</p>
                                         </div>
                                     </div>
                                     <div class="bc__gaji d-flex gap-2">
@@ -149,7 +149,7 @@
                                             <img src="{{asset('../img/dollar-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>'+v.gaji+'</p>
+                                            <p id="gajinya">Rp. {{ number_format($item->gaji, 0,",",".") }}</p>
                                         </div>
                                     </div>
                                     <div class="bc__pengalaman d-flex gap-2">
@@ -157,12 +157,13 @@
                                             <img src="{{asset('../img/pengalaman-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>'+v.tahun_pengalaman+'</p>
+                                            <p>Min {{$item->tahun_pengalaman}} Tahun Pengalaman</p>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div> --}}
+                            </div>
+                        </a>
+                        @endforeach
                         
                     </div>
                 </div>
@@ -175,33 +176,16 @@
 
 @section('custom__script')
     <script type="text/javascript">
-    let html = '';
-        $(function() {
-        $.ajax({
-            type    :"GET",
-            url     :"{{env('APP_URL')}}/api/lowongan",
-            dataType:"json",
-            data    :{},
-            success: function (data) {
-            $.each(data.data, function(k, v,) {
-                let appendHtml = '<button href="" class="col-md-5 dl__content" id="daftarLowongan"><div class="top__content d-flex my-auto"><div class="tc__left"><img src="{{asset('../img/spero-under.png')}}" alt=""></div><div class="tc__right my-auto mb-0 text-start"><h1>'+v.level+'</h1><p>'+v.client+'</p></div></div><hr class="bg-dark border-2 border-top border-dark"><div class="bottom__content"><div class="bc__location d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/location-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.lokasi+'</p></div></div><div class="bc__gaji d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/dollar-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.gaji+'</p></div></div><div class="bc__pengalaman d-flex gap-2"><div class="bcl__left"><img src="{{asset('../img/pengalaman-icon.png')}}" alt=""></div><div class="bcl__right"><p>'+v.tahun_pengalaman+'</p></div></div></div></button>';
-                $("#par_daftarLowongan").prepend(appendHtml);
-                html += appendHtml
-                });
-                console.log(data);
-            }
-        })
-    });
-    var dataLowongan = html;
-
+    
+   
 
     </script>
 @endsection
 
-{{-- @section('custom__script__filter')
+@section('custom__script__filter')
     <script type="text/javascript" name="Filtering">
        var valueList =  document.getElementById('value_list');
-       var text = '<span> You Have Selected : </span>';
+       var text = [];
        var listArray = [];
 
        var checkBox = document.querySelectorAll('.checkbox');
@@ -211,13 +195,13 @@
         checkbox.addEventListener('click',function(){
             if(this.checked == true){
                 listArray.push(this.value);
-                valueList.innerHTML = text + listArray.join(' , ')
+                valueList.innerHTML ='Filter By : ' + text + listArray.join(' , ')
             }else{
                 //REMOVE VALUE FROM ARRAY 
                 listArray = listArray.filter(e => e !== this.value);
-                valueList.innerHTML = text + listArray.join(' , ')
+                valueList.innerHTML ='Filter By : ' + text + listArray.join(' , ')
             }
         })
        }
     </script>
-@endsection --}}
+@endsection
