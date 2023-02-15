@@ -93,8 +93,8 @@ class AgensiController extends Controller
 
         Mail::send('back.emails.agensi-verifikasi-akun', $agensi->toArray(),
         function($message){
-            $message->to('emmanuelpablobenjamin@gmail.com', 'Kepada Yth.')
-            ->subject('Akun telah terverifikasi');
+            $message->to(auth()->user()->email, 'Kepada Yth.')
+            ->subject('Akun dengan alamat email '.auth()->user()->email.' telah terverifikasi');
         });
 
         if(auth()->user()->level == 1){
