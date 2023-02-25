@@ -149,7 +149,9 @@ class MateriController extends Controller
             'urutan_materi' => 'required',
         ]);
 
-        $materi = Materi::find($id);
+        $materi    = Materi::with('pre_tests', 'post_tests')->find($id);
+        $preTests  = $materi->pre_tests;
+        $postTests = $materi->post_tests;
 
         if($file_pdf = $request->file('file_pdf')){
             $destination_path = 'pdf/';
@@ -174,6 +176,30 @@ class MateriController extends Controller
             'instruksi_essay' => $request->instruksi_essay,
             'urutan_materi' => $request->urutan_materi,
         ]);
+
+        /* Joy Nyoba */
+        foreach ($preTests as $key => $preTest) {
+            $preTest->soal         = $request->soal_pretest[$key];
+            $preTest->jawaban_a    = $request->jawaban_a_pretest[$key];
+            $preTest->jawaban_b    = $request->jawaban_b_pretest[$key];
+            $preTest->jawaban_c    = $request->jawaban_c_pretest[$key];
+            $preTest->jawaban_d    = $request->jawaban_d_pretest[$key];
+            $preTest->jawaban_true = $request->jawaban_true_pretest[$key];
+            
+            $preTest->save();
+        }
+        
+        foreach ($postTests as $key => $postTest) {
+            $postTest->soal         = $request->soal_posttest[$key];
+            $postTest->jawaban_a    = $request->jawaban_a_posttest[$key];
+            $postTest->jawaban_b    = $request->jawaban_b_posttest[$key];
+            $postTest->jawaban_c    = $request->jawaban_c_posttest[$key];
+            $postTest->jawaban_d    = $request->jawaban_d_posttest[$key];
+            $postTest->jawaban_true = $request->jawaban_true_posttest[$key];
+            
+            $postTest->save();
+        }
+        /* /Joy Nyoba */
 
         if(auth()->user()->level == 1){
             return redirect()->route('superadmin.materi.index')->with('success', 'Data successfully updated');

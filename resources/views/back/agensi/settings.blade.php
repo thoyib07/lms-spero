@@ -78,12 +78,12 @@
                         </ul>
                         <div class="form-group">
                           <label>Email</label>
-                          <input type="email" name="email"  value="{{ $agensi->users->email }}" class="form-control" placeholder="Email">
+                          <input type="email" name="email" value="{{ $agensi->users->email }}" class="form-control" placeholder="Email">
                           <span class="text-danger">@error('email'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                          <label>Password</label>
-                          <input type="text" name="password"  value="{{ $agensi->users->password }}" class="form-control" placeholder="Password">
+                          <label>New Password</label>
+                          <input type="text" name="password" class="form-control" placeholder="New Password">
                           <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>
                       <a href="{{ route('agensi.dashboard') }}" class="btn btn-dark">Back</a>

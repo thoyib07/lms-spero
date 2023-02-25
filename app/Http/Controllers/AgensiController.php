@@ -28,7 +28,7 @@ class AgensiController extends Controller
     public function postsettings(Request $request){
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:8',
+            'password' => 'nullable|min:8',
             'logo' => 'nullable',
             'nama_usaha' => 'required',
             'alamat' => 'required',
@@ -42,6 +42,15 @@ class AgensiController extends Controller
         ]);
 
         $agensi = Agensi::with('users', 'direkturs')->where('user_id', auth()->user()->id)->first();
+
+        if ($request->password) {
+            $agensi->users->email = $request->email;
+            $agensi->users->password = bcrypt($request->password);
+            $agensi->users->save();
+        } else {
+            $agensi->users->email = $request->email;
+            $agensi->users->save();
+        }
 
         if($logo = $request->file('logo')){
             $destination_path = 'logo/';
@@ -65,10 +74,10 @@ class AgensiController extends Controller
             'no_hp' => $request->no_hp,
         ]);
 
-        $agensi->users()->update([
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
+        // $agensi->users()->update([
+        //     'email' => $request->email,
+        //     'password' => $request->password,
+        // ]);
 
         return redirect()->route('agensi.settings')->with('success', 'Data successfully updated');
     }
