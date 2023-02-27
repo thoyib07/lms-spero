@@ -124,6 +124,4 @@ class LowonganController extends Controller
 
         return redirect()->route('agensi.lowongan.index')->with('success', 'Data deleted successfully');
     }
-
-    
 }
