@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Models\Notifikasi;
 // Angga
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\newsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
@@ -10,15 +10,13 @@ use App\Http\Controllers\AgensiController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\LowonganController;
-use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\PendaftarController;
-use App\Http\Controllers\PostTestController;
-use App\Http\Controllers\PreTestController;
+use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\SuperAdminController;
-use App\Models\Notifikasi;
 
 // Alvin
 use App\Http\Controllers\Front\LowonganFrontController;
+use App\Http\Controllers\Front\PostTestFrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +44,13 @@ Route::get('/daftarLowongan/{id}', [LowonganFrontController::class, 'show'])->na
 
 Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
 
-Route::get('/exam', function () {return view('user.exam');});
+Route::get('/exam', [PostTestFrontController::class, 'index2']);
 Route::get('/exam-2', function () {return view('user.exam__2');});
 Route::get('/exam-nilai', function () {return view('user.exam__nilai');});
 Route::get('/exam-vid', function () {return view('user.exam__vid');});
+
+
+Route::get('/ulangan', [PostTestFrontController::class, 'index']);
 
 // Route::get('/lowongan', function () {return view('user.lowongan');});
 
@@ -92,7 +93,6 @@ foreach($routes as $routes){
 
         Route::get('/project/terhapus', [ProjectController::class, 'terhapus'])->name($routes.'.project.terhapus');
         Route::put('/project/pulihkan/{id}', [ProjectController::class, 'pulihkan'])->name($routes.'.project.pulihkan');
-
         Route::get('/lowongan/terhapus', [LowonganController::class, 'terhapus'])->name($routes.'.lowongan.terhapus');
         Route::put('/lowongan/pulihkan/{id}', [LowonganController::class, 'pulihkan'])->name($routes.'.lowongan.pulihkan');
 
@@ -114,8 +114,6 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });
@@ -129,8 +127,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });
@@ -145,8 +141,6 @@ Route::prefix('agensi')->name('agensi.')->group(function(){
         Route::resource('project', ProjectController::class);
         Route::resource('lowongan', LowonganController::class);
         Route::resource('materi', MateriController::class);
-        Route::resource('pretest', PreTestController::class);
-        Route::resource('posttest', PostTestController::class);
         Route::resource('notifikasi', NotifikasiController::class);
     });
 });

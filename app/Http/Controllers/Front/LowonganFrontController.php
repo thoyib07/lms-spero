@@ -22,11 +22,6 @@ class LowonganFrontController extends Controller
         } else{
             return response()->json(['message'=>'Tidak Ada Data'], 200);
         };
-        // return response()->json([
-        //     'data' => LowonganResource::collection($Lowongan),
-        //     'message' => 'Berhasil',
-        //     'success' => true,  
-        // ]);
 
         return view("user.daftarLowongan",compact('Lowongan'));
     }

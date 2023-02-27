@@ -31,7 +31,7 @@
                           <tr>
                               <td>{{ $id }}</td>
                               <td>{{ $projects->judul_project }}</td>
-                              <td>{!! $projects->deskripsi !!}</td>
+                              <td>{{ $projects->deskripsi }}</td>
                               <td>{{ $projects->created_at }}</td>
                               <td>
                                 <form action="{{ route('agensi.project.pulihkan', $projects->id) }}" method="POST">

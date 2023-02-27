@@ -22,7 +22,6 @@
                             <th scope="col">Kuota</th>
                             <th scope="col">Level</th>
                             <th scope="col">Lokasi</th>
-                            <th scope="col">Created At</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -38,14 +37,13 @@
                               <td>{{ $lowongans->kuota }}</td>
                               <td>{{ $lowongans->level }}</td>
                               <td>{{ $lowongans->lokasi }}</td>
-                              <td>{{ $lowongans->created_at }}</td>
                               <td>
                                 <form action="{{ route('agensi.lowongan.pulihkan', $lowongans->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <a href="{{ route('agensi.lowongan.show', $lowongans->id) }}" class="btn mb-1 btn-info"><i class="fa fa-exclamation-circle color-muted"></i></a>
                                     <button type="submit" class="btn mb-1 btn-danger"><i class="fa fa-plus color-muted"></i></button>
-                                </form>
+                                  </form>
                               </td>
                           </tr>
                         @endif

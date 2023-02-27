@@ -85,7 +85,7 @@
                     <p class="desc__mapel mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti fuga id, dicta placeat eveniet enim iusto beatae recusandae deserunt illum et odio ullam cum sed.</p>
                   </div>
                   <button type="button" class="btn btn-play-vid w-100">
-                    <a href="/exam" class="btn__isi d-flex gap-2">
+                    <a href="/ulangan" class="btn__isi d-flex gap-2">
                       <div class="bi__left">
                         <img src="{{asset ('../img/play-vid-icon.png')}}  " alt="">
                       </div>

@@ -58,24 +58,6 @@
             <ul aria-expanded="false">
                 <li><a href="{{ route('superadmin.materi.index') }}">Materi</a></li>
                 <li><a href="{{ route('superadmin.materi.create') }}">Tambah</a></li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PreTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('superadmin.pretest.index') }}">PreTest</a></li>
-                      <li><a href="{{ route('superadmin.pretest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PostTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('superadmin.posttest.index') }}">PostTest</a></li>
-                      <li><a href="{{ route('superadmin.posttest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
             </ul>
           </li>
           <li>
@@ -135,24 +117,6 @@
             <ul aria-expanded="false">
                 <li><a href="{{ route('admin.materi.index') }}">Materi</a></li>
                 <li><a href="{{ route('admin.materi.create') }}">Tambah</a></li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PreTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('admin.pretest.index') }}">PreTest</a></li>
-                      <li><a href="{{ route('admin.pretest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PostTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('admin.posttest.index') }}">PostTest</a></li>
-                      <li><a href="{{ route('admin.posttest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
             </ul>
           </li>
           <li>
@@ -195,24 +159,6 @@
             <ul aria-expanded="false">
                 <li><a href="{{ route('agensi.materi.index') }}">Materi</a></li>
                 <li><a href="{{ route('agensi.materi.create') }}">Tambah</a></li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PreTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('agensi.pretest.index') }}">PreTest</a></li>
-                      <li><a href="{{ route('agensi.pretest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <span class="nav-text">PostTest</span>
-                  </a>
-                  <ul aria-expanded="false">
-                      <li><a href="{{ route('agensi.posttest.index') }}">PostTest</a></li>
-                      <li><a href="{{ route('agensi.posttest.create') }}">Tambah</a></li>
-                  </ul>
-                </li>
             </ul>
           </li>
           <li>
