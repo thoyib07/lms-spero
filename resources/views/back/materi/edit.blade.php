@@ -96,36 +96,36 @@
                         @foreach($materi->pre_tests as $pretest)
                             <div class="form-group">
                                 <label>Soal</label>
-                                <textarea name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $pretest->soal }}</textarea>
+                                <textarea name="soal_pretest[]" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $pretest->soal }}</textarea>
                                 <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Jawaban A</label>
-                                    <input type="text" name="jawaban_a" value="{{ $pretest->jawaban_a }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_a_pretest[]" value="{{ $pretest->jawaban_a }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Jawaban B</label>
-                                    <input type="text" name="jawaban_b" value="{{ $pretest->jawaban_b }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_b_pretest[]" value="{{ $pretest->jawaban_b }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Jawaban C</label>
-                                    <input type="text" name="jawaban_c" value="{{ $pretest->jawaban_c }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_c_pretest[]" value="{{ $pretest->jawaban_c }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Jawaban D</label>
-                                    <input type="text" name="jawaban_d" value="{{ $pretest->jawaban_d }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_d_pretest[]" value="{{ $pretest->jawaban_d }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Jawaban Benar</label>
-                                <input type="text" name="jawaban_true" value="{{ $pretest->jawaban_true }}" class="form-control" placeholder="">
+                                <input type="text" name="jawaban_true_pretest[]" value="{{ $pretest->jawaban_true }}" class="form-control" placeholder="">
                                 <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
                             </div>
                         @endforeach
@@ -135,36 +135,36 @@
                         @foreach($materi->post_tests as $posttest)
                             <div class="form-group">
                                 <label>Soal</label>
-                                <textarea name="soal" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $posttest->soal }}</textarea>
+                                <textarea name="soal_posttest[]" class="ckeditor form-control h-150px" rows="6" id="comment" placeholder="Soal">{{ $posttest->soal }}</textarea>
                                 <span class="text-danger">@error('soal'){{ $message }}@enderror</span>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Jawaban A</label>
-                                    <input type="text" name="jawaban_a" value="{{ $posttest->jawaban_a }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_a_posttest[]" value="{{ $posttest->jawaban_a }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_a'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Jawaban B</label>
-                                    <input type="text" name="jawaban_b" value="{{ $posttest->jawaban_b }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_b_posttest[]" value="{{ $posttest->jawaban_b }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_b'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Jawaban C</label>
-                                    <input type="text" name="jawaban_c" value="{{ $posttest->jawaban_c }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_c_posttest[]" value="{{ $posttest->jawaban_c }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_c'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Jawaban D</label>
-                                    <input type="text" name="jawaban_d" value="{{ $posttest->jawaban_d }}" class="form-control" placeholder="">
+                                    <input type="text" name="jawaban_d_posttest[]" value="{{ $posttest->jawaban_d }}" class="form-control" placeholder="">
                                     <span class="text-danger">@error('jawaban_d'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Jawaban Benar</label>
-                                <input type="text" name="jawaban_true" value="{{ $posttest->jawaban_true }}" class="form-control" placeholder="">
+                                <input type="text" name="jawaban_true_posttest[]" value="{{ $posttest->jawaban_true }}" class="form-control" placeholder="">
                                 <span class="text-danger">@error('jawaban_true'){{ $message }}@enderror</span>
                             </div>
                         @endforeach

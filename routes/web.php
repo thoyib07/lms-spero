@@ -85,6 +85,7 @@ foreach($routes as $routes){
 
         Route::get('/project/terhapus', [ProjectController::class, 'terhapus'])->name($routes.'.project.terhapus');
         Route::put('/project/pulihkan/{id}', [ProjectController::class, 'pulihkan'])->name($routes.'.project.pulihkan');
+        
         Route::get('/lowongan/terhapus', [LowonganController::class, 'terhapus'])->name($routes.'.lowongan.terhapus');
         Route::put('/lowongan/pulihkan/{id}', [LowonganController::class, 'pulihkan'])->name($routes.'.lowongan.pulihkan');
 
