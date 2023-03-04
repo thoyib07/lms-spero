@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Api;
 use App\Models\Notifikasi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NotifikasiResource;
-use App\Http\Controllers\Api\NotifikasiController;
+// use App\Http\Controllers\Api\NotifikasiController;
 
 class NotifikasiController extends Controller
 {
     public function index(){
-        $notifikasi = Notifikasi::latest()->get();
+        $Notifikasi = Notifikasi::latest()->get();
         return response()->json([
-            'data' => NotifikasiResource::collection($notifikasi),
+            'data' => NotifikasiResource::collection($Notifikasi),
             'message' => 'Berhasil',
             'success' => true,  
         ]);
-        return view("user.lowongan",compact('notifikasi'));
+        return view("user.lowongan",compact('Notifikasi'));
     }
 }

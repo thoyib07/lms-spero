@@ -59,7 +59,7 @@
       <h3 id="pgggg">Soal Pilihan Ganda</h3>
     </div>
     <div class="mydivs">
-     @foreach ($PostTest as $item)
+     @foreach ($PostTest as $key => $item)
        <div>
          <div class="row parent_exam" id="parent_exam">
            <div class="col-md-12 mt-5">
@@ -72,12 +72,13 @@
               <div class="form-check">
                        <ol start="1" type="1">
                            <ul start="1" type="a" style="list-style: none">
-                               <i>
-                                   <li><input type="radio" name="pilihan" id="a">A. {{$item->jawaban_a}}</li>
-                                   <li><input type="radio" name="pilihan" id="b">B. {{$item->jawaban_b}}</li>
-                                   <li><input type="radio" name="pilihan" id="c">C. {{$item->jawaban_c}}</li>
-                                   <li><input type="radio" name="pilihan" id="d">D. {{$item->jawaban_d}}</li>
+                               <i id="par_pilihan" data-id="{{isset($_GET['page']) ? $_GET['page'] : '1'}}">
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="a">A. {{$item->jawaban_a}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="b">B. {{$item->jawaban_b}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="c">C. {{$item->jawaban_c}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="d">D. {{$item->jawaban_d}}</li>
                                </i>  
+                               <h1 id="nilai_benar">{{$item->jawaban_true}}</h1>
                            </ul>
                        </ol>
              `</div>
@@ -89,9 +90,42 @@
   </div>
 </section>
 
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
+  function save_jawaban(e){
+    let val = $(e).val()
+    let id = $(e).closest('#par_pilihan').attr('data-id')
+    var simpanLocal = localStorage.setItem('data_jawaban_'+id, JSON.stringify(val));
+    simpanLocal;
+
+    const getLocal = localStorage.getItem("simpanLocal");
+    const nilai_benar =  document.getElementByid('nilai_benar'.val);
+    const nilai = ()
+
+    if ($simpanLocal.val == $nilai_benar.val) {
+      nilai.push=20;
+    }else{
+      nilai.push=0;
+    }
+
+    
+
+  }
+
+
+  // function selesai(){
+  //   const getData = localStorage.getItem("simpanLocal");
+  //   console.log(getData);
+  // }
+
+  // function show_value(){
+  //   let selected_radio = document.querySelector('input[name="pilihan"]:checked').value
+
+  //   if (selected_radio.value) {
+  //     radio:checked;
+  //   }
+  // }
     
     // $(document).ready(function () {
     //   var divs = $('.mydivs>div');

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\lowonganController;
 use App\Http\Controllers\Api\PostTestController;
 use App\Http\Controllers\Api\NotifikasiController;
+use App\Http\Controllers\Api\MateriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::get('lowongan/{id}', [lowonganController::class, 'show'])->name('lowongan
 
 // P O S T T E S T
 Route::get('PostTest', [PostTestController::class, 'index']);
+
+// M A T E R I
+Route::get('materi', [MateriController::class, 'index']);

@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Models\Agensi;
 use App\Models\Project;
 use App\Models\Lowongan;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AgensiResource;
 use App\Http\Resources\ProjectResource;
 use App\Http\Resources\LowonganResource;
 use Illuminate\Database\Eloquent\Collection;
-use App\Http\Controllers\Api\lowonganController;
+// use App\Http\Controllers\Api\lowonganController;
 
 class lowonganController extends Controller
 {

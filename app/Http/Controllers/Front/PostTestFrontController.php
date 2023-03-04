@@ -21,14 +21,14 @@ class PostTestFrontController extends Controller
         return view("user.ulangan",compact('PostTest'));
     }
     
-    public function index2(){
-        $PostTest = PostTest::first()->get();
-        if ($PostTest) {
-            return view("user.exam",compact('PostTest'));
-        }else {
-            return response()->json(['message'=>'Tidak Ada Data'], 200);
-        }
-        // return view("user.exam",compact('PostTest'));
-        return view("user.exam",compact('PostTest'));
-    }
+    // public function index2(){
+    //     $PostTest = PostTest::first()->get();
+    //     if ($PostTest) {
+    //         return view("user.exam",compact('PostTest'));
+    //     }else {
+    //         return response()->json(['message'=>'Tidak Ada Data'], 200);
+    //     }
+    //     // return view("user.exam",compact('PostTest'));
+    //     return view("user.exam",compact('PostTest'));
+    // }
 }

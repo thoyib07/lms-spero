@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use App\Http\Resources\LowonganResource;
+// use App\Http\Resources\LowonganResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class LowonganResource extends JsonResource

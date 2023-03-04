@@ -15,6 +15,7 @@ use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\SuperAdminController;
 
 // Alvin
+use App\Http\Controllers\Front\materiFrontController;
 use App\Http\Controllers\Front\LowonganFrontController;
 use App\Http\Controllers\Front\PostTestFrontController;
 
@@ -34,7 +35,8 @@ Route::get('/regist', function () {return view('user.register');});
 
 Route::get('/profil', function () {return view('user.profil');});
 
-Route::get('/dashboard', function () {return view('user.lowongan');});
+Route::get('/dashboard', [materiFrontController::class, 'index']);
+// Route::get('/dashboard', [materiFrontController::class, 'notifikasi']);
 
 Route::get('/dashboard-2', function () {return view('user.dashboard_1-2');});
 

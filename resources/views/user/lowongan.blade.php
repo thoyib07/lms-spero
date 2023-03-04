@@ -59,9 +59,17 @@
                  <h2 class="mb-4">Pengumuman</h2>
                     <div class="pengumuman__content mt-2">
                         <div class="pc__content mt-2" id="place__notifikasi">
-                          {{-- @foreach ($notifikasi as $item)
-                           
-                            @endforeach --}}
+                          {{-- @foreach ($Notifikasi as $item)
+                            <h4>{{$item->judul_notifikasi}}</h4> 
+                            <div class="pcc__c"> 
+                              <div class="c-left"> 
+                                <p>{{$item->keterangan}}</p>
+                              </div>
+                              <div class="c-right"> 
+                                <p>{{$item->tanggal}}</p>
+                              </div>
+                            </div>
+                          @endforeach --}}
                         
                         
                         </div>
@@ -82,344 +90,51 @@
 
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-materiSales" role="tabpanel" aria-labelledby="pills-materiSales-tab">
-                          <div class="row d-flex tc__mapel">
-                            <div class="col-md-4 mt-3 col-10">
+                          <div class="row d-flex tc__mapel" >
+                            <div class="col-md-4 mt-3 col-10" id="mapel">
+                              @foreach ($Materi  as $item)
                                 <a href="/lowonganHomeExam">
                                   <div class="tc__content ">
                                     <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Matematika</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
+                                    <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  " alt=""></div>
+                                    <div class="tcc__right">
+                                        <h3>{{$item->judul_materi}}</h3>
+                                        <p>07:00 - 08.40 WIB</p>
                                     </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                               <a href="">
-                                <div class="tc__content" style="background-color: #FF5057;">
-                                  <div class="tcc__top d-flex gap-3">
-                                   <div class="tcc__left"><img src="{{ asset('../img/senibudaya-icon.png')}}  " alt=""></div>
-                                   <div class="tcc__right">
-                                       <h3>Seni Budaya</h3>
-                                       <p>07:00 - 08.40 WIB</p>
-                                   </div>
-                                  </div>
-                                   <div class="tcc__bottom">
-                                       <div class="tccb__content gap-2 ">
-                                         <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                         </div>
-                                         <div class="tccbl__right">
-                                               <p >15</p>
-                                         </div>
-                                       </div>
-                                       <div class="tccb__content gap-2">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >10</p>
-                                           </div>
-                                       </div>
-                                       <div class="tccb__content gap-2" id="tccb__last">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >35</p>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                                <a href="">
-                                  <div class="tc__content" style="background-color: #F0AE00;">
-                                    <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/kimia-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Kimia</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
                                     </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                                <a href="">
-                                  <div class="tc__content" style="background-color: #01EEC3;">
-                                    <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Matematika</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
+                                    <div class="tcc__bottom">
+                                        <div class="tccb__content gap-2 ">
+                                          <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
+                                          </div>
+                                          <div class="tccbl__right">
+                                                <p >15</p>
+                                          </div>
+                                        </div>
+                                        <div class="tccb__content gap-2">
+                                            <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
+                                            </div>
+                                            <div class="tccbl__right">
+                                                  <p >10</p>
+                                            </div>
+                                        </div>
+                                        <div class="tccb__content gap-2" id="tccb__last">
+                                            <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
+                                            </div>
+                                            <div class="tccbl__right">
+                                                  <p >35</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
+                                </div>
                                 </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                               <a href="">
-                                <div class="tc__content" style="background-color: #FF8F50;">
-                                  <div class="tcc__top d-flex gap-3">
-                                   <div class="tcc__left"><img src="{{ asset('../img/senibudaya-icon.png')}}  " alt=""></div>
-                                   <div class="tcc__right">
-                                       <h3>Seni Budaya</h3>
-                                       <p>07:00 - 08.40 WIB</p>
-                                   </div>
-                                  </div>
-                                   <div class="tcc__bottom">
-                                       <div class="tccb__content gap-2 ">
-                                         <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                         </div>
-                                         <div class="tccbl__right">
-                                               <p >15</p>
-                                         </div>
-                                       </div>
-                                       <div class="tccb__content gap-2">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >10</p>
-                                           </div>
-                                       </div>
-                                       <div class="tccb__content gap-2" id="tccb__last">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >35</p>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                                <a href="">
-                                  <div class="tc__content" style="background-color: #8600F0;">
-                                    <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/kimia-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Kimia</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
-                                    </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                                <a href="">
-                                  <div class="tc__content" style="background-color: #5FA900;">
-                                    <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Matematika</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
-                                    </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                                <a href="">
-                                  <div class="tc__content" style="background-color: #BDB600;">
-                                    <div class="tcc__top d-flex gap-3">
-                                     <div class="tcc__left"><img src="{{ asset('../img/senibudaya-icon.png')}}  " alt=""></div>
-                                     <div class="tcc__right">
-                                         <h3>Seni Budaya</h3>
-                                         <p>07:00 - 08.40 WIB</p>
-                                     </div>
-                                    </div>
-                                     <div class="tcc__bottom">
-                                         <div class="tccb__content gap-2 ">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >15</p>
-                                           </div>
-                                         </div>
-                                         <div class="tccb__content gap-2">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >10</p>
-                                             </div>
-                                         </div>
-                                         <div class="tccb__content gap-2" id="tccb__last">
-                                             <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                             </div>
-                                             <div class="tccbl__right">
-                                                   <p >35</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-3 col-10">
-                               <a href="">
-                                <div class="tc__content" style="background-color: #777570;">
-                                  <div class="tcc__top d-flex gap-3">
-                                   <div class="tcc__left"><img src="{{ asset('../img/kimia-icon.png')}}  " alt=""></div>
-                                   <div class="tcc__right">
-                                       <h3>Kimia</h3>
-                                       <p>07:00 - 08.40 WIB</p>
-                                   </div>
-                                  </div>
-                                   <div class="tcc__bottom">
-                                       <div class="tccb__content gap-2 ">
-                                         <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  " alt="" style="width: 1.5rem;">
-                                         </div>
-                                         <div class="tccbl__right">
-                                               <p >15</p>
-                                         </div>
-                                       </div>
-                                       <div class="tccb__content gap-2">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/check-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >10</p>
-                                           </div>
-                                       </div>
-                                       <div class="tccb__content gap-2" id="tccb__last">
-                                           <div class="tccbl__left"><img src="{{ asset('../img/people-icon.png')}}  " alt="" style="width: 1.25rem;">
-                                           </div>
-                                           <div class="tccbl__right">
-                                                 <p >35</p>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               </a>
+                              @endforeach
                             </div>
                     </div>
                         </div>
-
-
                         <div class="tab-pane fade" id="pills-materiTeamLeader" role="tabpanel" aria-labelledby="pills-materiTeamLeader-tab">SELASA</div>
                         <div class="tab-pane fade" id="pills-materiAreaKoordinator" role="tabpanel" aria-labelledby="pills-materiAreaKoordinator-tab">RABU</div>
                       </div>
                 </div>
-
-
-
-
-
 
                 <div class="col-md-4 mt-5">
                     <div class="right__top d-flex">

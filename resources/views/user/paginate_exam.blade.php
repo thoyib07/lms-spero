@@ -102,7 +102,7 @@
                     </a>
                 </li>
             @else
-                <li id="selesai" class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                <li onclick="selesai()" id="selesai" class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
                     <a class="text-white d-flex align-items-center gap-2" aria-hidden="true">
                         <img src="{{asset('../img/play-icon.png')}} " alt="">
                         <p class="mb-0">Selesai</p>
