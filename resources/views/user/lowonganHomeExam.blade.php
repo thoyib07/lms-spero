@@ -81,7 +81,7 @@
               <div class="left__side d-flex gap-5">
                 <div class="is__right"> 
                   <div class="isr__top px-auto">
-                    <h1 class="mt-lg-0 mt-5 mapel">Seni Budaya</h1>
+                    <h1 class="mt-lg-0 mt-5 mapel">{{$Materi->judul_materi}}</h1>
                     <p class="desc__mapel mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti fuga id, dicta placeat eveniet enim iusto beatae recusandae deserunt illum et odio ullam cum sed.</p>
                   </div>
                   <button type="button" class="btn btn-play-vid w-100">

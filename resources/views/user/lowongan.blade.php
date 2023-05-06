@@ -91,9 +91,9 @@
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-materiSales" role="tabpanel" aria-labelledby="pills-materiSales-tab">
                           <div class="row d-flex tc__mapel" >
+                            @foreach ($Materi  as $item)
                             <div class="col-md-4 mt-3 col-10" id="mapel">
-                              @foreach ($Materi  as $item)
-                                <a href="/lowonganHomeExam">
+                                <a href="{{url('/lowonganHomeExam/'.$item->id)}}">
                                   <div class="tc__content ">
                                     <div class="tcc__top d-flex gap-3">
                                     <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  " alt=""></div>
@@ -127,8 +127,8 @@
                                     </div>
                                 </div>
                                 </a>
+                              </div>
                               @endforeach
-                            </div>
                     </div>
                         </div>
                         <div class="tab-pane fade" id="pills-materiTeamLeader" role="tabpanel" aria-labelledby="pills-materiTeamLeader-tab">SELASA</div>

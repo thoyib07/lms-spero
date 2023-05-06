@@ -44,7 +44,7 @@ Route::get('/daftarLowongan', [LowonganFrontController::class, 'indexLowongan'])
 
 Route::get('/daftarLowongan/{id}', [LowonganFrontController::class, 'show'])->name('detailLowongan');
 
-Route::get('/lowonganHomeExam', function () {return view('user.lowonganHomeExam');});
+Route::get('/lowonganHomeExam/{id}', [materiFrontController::class, 'lowonganHomeExam']);
 
 Route::get('/exam', [PostTestFrontController::class, 'index2']);
 Route::get('/exam-2', function () {return view('user.exam__2');});

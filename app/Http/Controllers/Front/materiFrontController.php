@@ -20,6 +20,16 @@ class materiFrontController extends Controller
             return view("user.lowongan",compact('Materi'));
     }
 
+    public function lowonganHomeExam($id){
+        $Materi = Materi::find($id);
+        if ($Materi) {
+            return view("user.lowonganHomeExam",compact('Materi'));
+        }else {
+            return response()->json(['message'=>'Tidak Ada Data'], 200);
+        }
+        // return view("user.exam",compact('Materi'));
+        return view("user.lowonganHomeExam",compact('Materi'));
+    }
     // public function notifikasi(){
     //     $Notifikasi = Notifikasi::latest()->get();
     //         if ($Notifikasi) {
