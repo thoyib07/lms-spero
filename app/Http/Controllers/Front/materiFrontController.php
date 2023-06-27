@@ -7,7 +7,7 @@ use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class materiFrontController extends Controller
+class   materiFrontController extends Controller
 {
     public function index(){
         $Materi = Materi::latest()->get();

@@ -74,7 +74,7 @@
                           </a>
                         </div>
                         <div class="mulai">
-                          <a class="btn btn-success" href="#" role="button">Kerjakan Soal</a>
+                          <a class="btn btn-success" href="#" role="button">Selesai</a>
                         </div>
                     </div>
                 </div>

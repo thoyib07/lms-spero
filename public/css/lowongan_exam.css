@@ -114,7 +114,7 @@ nav{
 }
 @media only screen and (max-width: 768px) {
     .ls__left img{
-        width: 50%;
+        width: 30%;
     }
 }
 .is__right h1{
@@ -149,13 +149,13 @@ nav{
     }
 }
 .tcc__bottom{
+    width: max-content;
     background-color: #4A6D8B;
     border-radius: 5px;
     padding: 5px 7px 5px 17px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: auto; */
     gap: .5rem;
 }
 .tccb__content{
@@ -171,7 +171,7 @@ nav{
     margin: auto 0;
     font-weight: bold;
     color: #fff;
-    font-size: 15px;
+    font-size: calc(20% + 1vmax);
 }
 @media only screen and (max-width: 600px) {
     .tccbl__right p{
@@ -197,13 +197,7 @@ nav{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
-}
-.tccr__right p{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-size: calc(25% + 1vmax);
 }
 .btn-play-vid{
     background-color: #47E1A8;
@@ -213,12 +207,7 @@ nav{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
-}
-@media only screen and (max-width: 600px) {
-    .bi__right h4{
-        font-size: 15px;
-    }
+    font-size: calc(25% + 1vmax);
 }
 
 .btn__isi{
@@ -265,4 +254,48 @@ nav{
 .rscr{
     align-items: center;
     gap: 2rem;
+}
+
+
+.for_content{
+    background-color: #4A6D8B; border-radius: 1rem;
+}
+.right_content h1{
+    font-size: calc(25% + 1vmax);
+}
+.fc_left img{
+    width: 80%;
+}
+.fc_middle h1{
+    font-size: calc(25% + 1vmax);
+}
+.fc_middle p{
+    font-size: calc(2% + 1vmax);
+}
+.fc_right svg{
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .tccbl__right p {
+        font-size: calc(40% + 1vmax);
+    }
+    .tccr__right h2 {
+        font-size: calc(60% + 1vmax);
+    }
+    .bi__right h4 {
+        font-size: calc(50% + 1vmax);
+    }
+    .right_content h1 {
+        font-size: calc(40% + 1vmax);
+    }
+    .fc_left img{
+        width: 70%;
+    }
+    .fc_middle p {
+        font-size: calc(20% + 1vmax);
+    }
+    .fc_right svg{
+        width: 25%;
+    }
 }

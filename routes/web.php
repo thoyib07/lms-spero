@@ -46,10 +46,12 @@ Route::get('/daftarLowongan/{id}', [LowonganFrontController::class, 'show'])->na
 
 Route::get('/lowonganHomeExam/{id}', [materiFrontController::class, 'lowonganHomeExam']);
 
-Route::get('/exam', [PostTestFrontController::class, 'index2']);
+// Route::get('/exam', [PostTestFrontController::class, 'index2']);
 Route::get('/exam-2', function () {return view('user.exam__2');});
 Route::get('/exam-nilai', function () {return view('user.exam__nilai');});
 Route::get('/exam-vid', function () {return view('user.exam__vid');});
+
+Route::get('/page-chat', function () {return view('user.pageChat');});
 
 
 Route::get('/ulangan', [PostTestFrontController::class, 'index']);
