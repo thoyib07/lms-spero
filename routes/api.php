@@ -21,15 +21,3 @@ use App\Http\Controllers\Api\MateriController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::resource('notifikasi', NotifikasiController::class);
-
-// A G E N S I
-Route::get('lowongan', [lowonganController::class, 'indexLowongan']);
-Route::get('lowongan/{id}', [lowonganController::class, 'show'])->name('lowonganById');
-
-// P O S T T E S T
-Route::get('PostTest', [PostTestController::class, 'index']);
-
-// M A T E R I
-Route::get('materi', [MateriController::class, 'index']);
