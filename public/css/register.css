@@ -79,17 +79,21 @@ body a{
 }
 .regist-icon{
     position: absolute;
-    width: 450px;
-    height: 402px;
+    width: 35%;
     top: 0;
     left: 0;
+    /* width: 50%; */
 }
 .regist-icon-2{
     position: absolute;
-    width: 522.97px;
-    height: 140.67px;
+    width: 50%;
     bottom: 0;
     left: 0;
+}
+@media only screen and (min-width: 1037px) {
+    .regist-icon-2{
+        width: 25%;
+    }
 }
 .register p{
     font-size: 12.5px;

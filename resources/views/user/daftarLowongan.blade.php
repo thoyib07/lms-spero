@@ -53,8 +53,8 @@
 
     <section class="daftarLowongan mt-5 mx-auto">
         <div class="container daftarLowonganContainerx`">
-            <div class="row">
-                <div class="col-md-3 me-5 left__content">
+            <div class="row" id="rowDaftarLowongan">
+                <div class="col-md-3 me-lg-5 me-2 left__content">
                     <h2>Filter Pencarianmu</h2>
                     <hr class="bg-dark border-2 border-top border-dark">
                     <div class="print_value mb-4">

@@ -20,11 +20,11 @@
    <section class="register">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-md-7">
-                <img class="regist-icon d-none d-sm-block" src="{{asset('../img/regist-icon.png')}} " alt="">
+            <div class="col-md-5 col-lg-7">
+                <img class="regist-icon d-none d-md-block" src="{{asset('../img/regist-icon.png')}} " alt="">
                 <img class="regist-icon-2 d-none d-sm-block" src="{{asset('../img/regist-icon-2.png')}} " alt="">
             </div>
-            <div class="col-md-4 col-10 mt-2 mx-auto">
+            <div class="col-md-7 col-lg-5 col-10  mt-2 mx-auto">
                 <h2 class="mb-3 title-section">Registration</h2>
                 <form class="mb-4">
                     <div class="mb-3">

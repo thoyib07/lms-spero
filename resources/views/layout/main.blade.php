@@ -19,6 +19,11 @@
    <style>
      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;500;700&display=swap');
 
+/* p{
+  font-size: calc(50% + 1vmin) !important;
+  margin-bottom: 0 !important;
+} */
+
 @font-face {
   font-family: "seven segment";
   src: url('../fonts/Seven-Segment.ttf');

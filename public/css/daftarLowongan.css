@@ -128,6 +128,9 @@ nav{
     font-weight: 300;
     font-size: 15px;
 }
+.dl__filter .form-check{
+    padding-left: 0 !important;
+}
 
 #par_daftarLowongan{
     display: flex;
