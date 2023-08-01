@@ -125,13 +125,13 @@
                         @foreach ($Lowongan as $item)
                         <a class="col-md-6 mt-3 " href=" {{ route('detailLowongan', $item->id) }}">
                             <div class="dl__content" id="daftarLowongan">
-                                <div class="top__content d-flex my-auto">
+                                <div class="top__content d-flex align-items-center">
                                     <div class="tc__left">
                                         <img src="{{asset('../img/spero-under.png')}}" alt="">
                                     </div>
-                                    <div class="tc__right my-auto mb-0">
-                                        <h1>{{$item->level}}</h1>
-                                        <p>{{$item->client}}</p>
+                                    <div class="tc__right mb-0">
+                                        <h4>{{$item->level}}</h4>
+                                        <p class="md">{{$item->client}}</p>
                                     </div>
                                 </div>
                                 <hr class="bg-dark border-2 border-top border-dark">
@@ -141,7 +141,7 @@
                                             <img src="{{asset('../img/location-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>{{$item->lokasi}}</p>
+                                            <h3 class="mb-0">{{$item->lokasi}}</h3>
                                         </div>
                                     </div>
                                     <div class="bc__gaji d-flex gap-2">
@@ -149,7 +149,7 @@
                                             <img src="{{asset('../img/dollar-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p id="gajinya">Rp. {{ number_format($item->gaji, 0,",",".") }}</p>
+                                            <h3 class="mb-0" id="gajinya">Rp. {{ number_format($item->gaji, 0,",",".") }}</h3>
                                         </div>
                                     </div>
                                     <div class="bc__pengalaman d-flex gap-2">
@@ -157,7 +157,7 @@
                                             <img src="{{asset('../img/pengalaman-icon.png')}}" alt="">
                                         </div>
                                         <div class="bcl__right">
-                                            <p>Min {{$item->tahun_pengalaman}} Tahun Pengalaman</p>
+                                            <h3 class="mb-0">Min {{$item->tahun_pengalaman}} Tahun Pengalaman</h3>
                                         </div>
                                     </div>
                                 </div>

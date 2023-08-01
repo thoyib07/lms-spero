@@ -60,7 +60,7 @@
     <div class="px-4 px-lg-5">
         <div class="row">
             <div class="col-md-8 top mt-5">
-                <h2 class="mb-4">Pengumuman</h2>
+                <h1 class="mb-4">Pengumuman</h1>
                 <div class="pengumuman__content mt-2">
                     <div class="pc__content mt-2" id="place__notifikasi">
                         {{-- @foreach ($Notifikasi as $item)
@@ -114,7 +114,7 @@
                                                         alt="" style="width: 1.5rem;">
                                                 </div>
                                                 <div class="tccbl__right">
-                                                    <p>15</p>
+                                                    <p class="lg">15</p>
                                                 </div>
                                             </div>
                                             <div class="tccb__content gap-2">
@@ -123,7 +123,7 @@
                                                         style="width: 1.25rem;">
                                                 </div>
                                                 <div class="tccbl__right">
-                                                    <p>10</p>
+                                                    <p class="lg">10</p>
                                                 </div>
                                             </div>
                                             <div class="tccb__content gap-2" id="tccb__last">
@@ -132,7 +132,7 @@
                                                         style="width: 1.25rem;">
                                                 </div>
                                                 <div class="tccbl__right">
-                                                    <p>35</p>
+                                                    <p class="lg">35</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,13 +162,13 @@
                     <h2>Informasi</h2>
                     <hr class="bg-dark border-2 border-top border-dark">
                     <div class="rb__belum py-2">
-                        <h2 class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, similique
+                        <h4 class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, similique
                             incidunt non cupiditate illo tempore perferendis reiciendis repudiandae? Dicta, officia
                             ducimus facilis laborum placeat commodi libero reprehenderit soluta aliquid molestiae saepe
                             fugit consectetur inventore dolores labore. Numquam tempora nesciunt repudiandae magnam
                             nobis vel consequuntur. Quo explicabo suscipit enim ullam eum. Lorem ipsum dolor sit amet
                             consectetur adipisicing elit. Quisquam, iusto nesciunt a sit mollitia, officia eligendi odit
-                            nam numquam adipisci provident ullam. Inventore, rerum itaque?</h2>
+                            nam numquam adipisci provident ullam. Inventore, rerum itaque?</h4>
                     </div>
                     <center>
                         <img src="{{ asset('../img/Roket-lowongan.png')}} " alt="">

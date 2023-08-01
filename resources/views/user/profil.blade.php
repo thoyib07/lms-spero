@@ -60,7 +60,7 @@
                     <div class="bg__atas">
                         <img src="{{asset('../img/kontak-rainbow.png')}} " alt="">
                         <a href="">
-                            <button type="button" class="btn btn-up__cover mt-3">Upload Cover</button>
+                            <button type="button" class="btn btn-up__cover">Upload Cover</button>
                         </a>
                     </div>
                     <div class="middle gap-2 ms-0 ms-lg-5">
@@ -68,7 +68,7 @@
                             <img src="{{asset('../img/owl-profile.png')}} " alt="">
                         </div>
                         <div class="m__right">
-                            <h2 class="fs-lg-2 fs-5 mt-5">Cadis Extrama Di Raizer</h2>
+                            <h2 class="fs-lg-2 fs-5 mt-0">Cadis Extrama Di Raizer</h2>
                             <p class="fs-lg-3 fs-5">UI/UX Designer</p>
                         </div>
                     </div>
@@ -112,14 +112,14 @@
                 </div>
                 <div class="col-md-3">
                     <div class="right__content">
-                        <h1 class="ms-3">Pilihan Bahasa</h1>
+                        <h2 class="text-center">Pilihan Bahasa</h2>
                     <hr class="bg-dark border-2 border-top border-dark m-0 mb-3">
                     <div class="language__option gap-2 mt-2 ms-2">
                         <div class="il__left">
                             <img src="{{asset('../img/indonesian-flag.png')}} " alt="">
                         </div>
                         <div class="il__right">
-                            <h2 class="mb-0">Indonesia</h2>
+                            <h3 class="mb-0">Indonesia</h3>
                         </div>
                     </div>
                     <div class="language__option gap-2 mt-2 ms-2">
@@ -127,7 +127,7 @@
                             <img src="{{asset('../img/english-flag.png')}} " alt="">
                         </div>
                         <div class="il__right">
-                            <h2 class="mb-0">Inggris</h2>
+                            <h3 class="mb-0">Inggris</h3>
                         </div>
                     </div>
                     </div>
@@ -139,7 +139,7 @@
                                     <img src="{{asset('../img/profil-logout.png')}} " alt="" class="w-75">
                                 </div>
                                 <div class="right">
-                                    <h2 class="mb-0">Logout</h2>
+                                    <h3 class="mb-0">Logout</h3>
                                 </div>
                             </button>
                         </a>

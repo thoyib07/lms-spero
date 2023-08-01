@@ -75,9 +75,9 @@
                                             <img style="width: calc(50% + 1vmax);" src="{{asset ('../img/star-icon.png')}}  " alt="">
                                         </div>
                                         <div class="tccr__right d-flex align-items-center">
-                                            <h2 class="mb-0">4.9</h2>
-                                            <h2 class="mb-0">/</h2>
-                                            <h2 class="mb-0">5.0</h2>
+                                            <h3 class="mb-0">4.9</>
+                                            <h3 class="mb-0">/</>
+                                            <h3 class="mb-0">5.0</>
                                         </div>
                                     </div>
                                 </div>
@@ -102,14 +102,14 @@
 
                 <div class="col-md-5 mt-3 mt-md-0">
                   <div class="right_content text-white p-4 p-xl-5 fw-bold" style="background-color: #6b859b; border-radius: 1rem;">
-                    <h1>Materi yang Telah Anda selesaikan</h1>
+                    <h2>Materi yang Telah Anda selesaikan</h2>
                     <div class="for_content mt-3  p-3  d-flex justify-content-between align-items-center">
                       <div class="fc_left" style="flex-basis: 20%;">
                         <img src="{{asset ('../img/senbud-icon.png')}}" alt="">
                       </div>
                       <div class="fc_middle" style="flex-basis: 80%;">
-                        <h1 class="mb-0">Materi 5</h1>
-                        <p class="fw-light mb-0">Anda belum mengikuti Materi Ini</p>
+                        <h4 class="mb-0">Materi 5</h4>
+                        <p class="sm fw-light mb-0">Anda belum mengikuti Materi Ini</p>
                       </div>
                       <div class="fc_right d-flex justify-content-end" style="flex-basis: 20%;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:#fbff00;"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM224 192V320c0 17.7-14.3 32-32 32s-32-14.3-32-32V192c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0V320c0 17.7-14.3 32-32 32s-32-14.3-32-32V192c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg>
@@ -120,8 +120,8 @@
                         <img src="{{asset ('../img/senbud-icon.png')}}" alt="">
                       </div>
                       <div class="fc_middle" style="flex-basis: 80%;">
-                        <h1 class="mb-0">Materi 5</h1>
-                        <p class="fw-light mb-0">Anda belum mengikuti Materi Ini</p>
+                        <h4 class="mb-0">Materi 5</h4>
+                        <p class="sm fw-light mb-0">Anda belum mengikuti Materi Ini</p>
                       </div>
                       <div class="fc_right d-flex justify-content-end" style="flex-basis: 20%;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:#4ce68f;"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
@@ -132,8 +132,8 @@
                         <img src="{{asset ('../img/senbud-icon.png')}}" alt="">
                       </div>
                       <div class="fc_middle" style="flex-basis: 80%;">
-                        <h1 class="mb-0">Materi 5</h1>
-                        <p class="fw-light mb-0">Anda belum mengikuti Materi Ini</p>
+                        <h4 class="mb-0">Materi 5</h4>
+                        <p class="sm fw-light mb-0">Anda belum mengikuti Materi Ini</p>
                       </div>
                       <div class="fc_right d-flex justify-content-end" style="flex-basis: 20%;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:#d31717"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H384zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg>

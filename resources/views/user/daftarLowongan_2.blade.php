@@ -145,17 +145,17 @@
                            <div class="row d-flex rctrm">
                             <div class="col-md-6 col-12">
                               <div class="m__left">
-                                <div class="ml__content mt-1 d-flex gap-2">
+                                <div class="mb-2 ml__content mt-1 d-flex gap-2">
                                   <h2 class="fs-6">Client :</h2>
-                                  <p class="mb-1">{{$data->client}}</p>
+                                  <p>{{$data->client}}</p>
                                 </div>
-                                <div class="ml__content mt-1 d-flex gap-2">
+                                <div class="mb-2 ml__content mt-1 d-flex gap-2">
                                   <h2 class="fs-6">Project :</h2>
-                                  <p class="mb-1">{{$data->projects->judul_project}}</p>
+                                  <p>{{$data->projects->judul_project}}</p>
                                 </div>
-                                <div class="ml__content mt-1 d-flex gap-2">
+                                <div class="mb-2 ml__content mt-1 d-flex gap-2">
                                   <h2 class="fs-6">Kuota Terisi :</h2>
-                                  <p class="mb-1">{{$data->kuota}}</p>
+                                  <p>{{$data->kuota}}</p>
                                   <img src="{{asset('')}} " alt="">
                                 </div>
                               </div>
@@ -188,7 +188,7 @@
                           </div>
                           <div class="rctr__bottom d-flex gap-3 mt-4">
                             <div class="bottom__left">
-                              <a class="btn btn-dl" href="#" role="button">Daftar Lowongan</a>
+                              <a class="btn btn-dl" href="#" role="button"><p>Daftar Lowongan</p></a>
                             </div>
                             <div class="bottom__right">
                               <a class="btn btn-outline-share d-flex gap-2" href="#" role="button">

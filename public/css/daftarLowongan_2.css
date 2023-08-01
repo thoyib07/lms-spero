@@ -170,7 +170,7 @@ nav{
     color: #fff;
 }
 .btn-outline-share{
-    align-items: center;
+    align-items: center !important;
     height: 2.4rem;
     border-color: #00367A;
     color: #00367A;

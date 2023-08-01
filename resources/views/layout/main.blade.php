@@ -19,10 +19,142 @@
    <style>
      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;500;700&display=swap');
 
-/* p{
-  font-size: calc(50% + 1vmin) !important;
-  margin-bottom: 0 !important;
-} */
+  
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 0px) {
+  h1{
+    font-size: calc(50% + 3vmin)!important;
+  }
+  h1.xl{
+    font-size: calc(50% + 5vmin)!important;
+  }
+  h2{
+    font-size: calc(50% + 2vmin)!important;
+    margin-bottom: 0!important;
+  }
+  h3{
+    font-size: calc(50% + 1vmin)!important;
+  }
+  h4{
+    font-size: calc(50% + 1.5vmin)!important;
+    margin-bottom: 0!important;
+  }
+  p{
+    font-size: calc(50% + 1vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.nav{
+    font-size: calc(50% + 1vmin) !important;
+    margin-bottom: 0!important;
+    font-weight: 400;
+  }
+  p.sm{
+    font-size: calc(50% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.md{
+    font-size: calc(50% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.xl{
+    font-size: calc(50% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  .xl{
+    font-size: calc(50% + .5vmin) !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  h1{
+    font-size: calc(45% + 3vmin)!important;
+  }
+  h1.xl{
+    font-size: calc(45% + 5vmin)!important;
+  }
+  h2{
+    font-size: calc(45% + 2vmin)!important;
+    margin-bottom: 0!important;
+  }
+  h3{
+    font-size: calc(45% + 1vmin)!important;
+  }
+  h4{
+    font-size: calc(45% + 1.5vmin)!important;
+    margin-bottom: 0!important;
+  }
+  p{
+    font-size: calc(45% + 1vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.nav{
+    font-size: calc(45% + 1vmin) !important;
+    margin-bottom: 0!important;
+    font-weight: 400;
+  }
+  p.sm{
+    font-size: calc(45% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.md{
+    font-size: calc(45% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.xl{
+    font-size: calc(45% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  .xl{
+    font-size: calc(45% + .5vmin) !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  h1{
+    font-size: calc(55% + 3vmin)!important;
+  }
+  h1.xl{
+    font-size: calc(55% + 6.5vmin)!important;
+  }
+  h2{
+    font-size: calc(55% + 2vmin)!important;
+    margin-bottom: 0!important;
+  }
+  h3{
+    font-size: calc(55% + 1vmin)!important;
+  }
+  h4{
+    font-size: calc(55% + 1.5vmin)!important;
+    margin-bottom: 0!important;
+  }
+  p{
+    font-size: calc(55% + 1vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.nav{
+    font-size: calc(55% + 1vmin) !important;
+    margin-bottom: 0!important;
+    font-weight: 400;
+  }
+  p.sm{
+    font-size: calc(55% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.md{
+    font-size: calc(55% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  p.xl{
+    font-size: calc(55% + .5vmin) !important;
+    margin-bottom: 0!important;
+  }
+  .xl{
+    font-size: calc(55% + .5vmin) !important;
+  }
+}
 
 @font-face {
   font-family: "seven segment";

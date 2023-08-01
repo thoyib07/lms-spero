@@ -154,7 +154,7 @@ nav{
 }
 .top__content{
     display: flex;
-    align-items: center;
+    align-items: center !important;
 }
 .tc__left img{
     width: 5rem;
