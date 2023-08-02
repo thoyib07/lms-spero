@@ -14,6 +14,9 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 3;
 }
+.navbar-brand{
+    width: 25%;
+}
 .form-control{
     border: none;
     background-color: #d4cfcf;
@@ -63,7 +66,7 @@
 <body>
     <nav style="z-index: 99;" class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 py-3">
         <div class="container-fluid px-4 px-lg-5">
-            <a class="navbar-brand" href="/dashboard"><img src="{{asset('../img/spero-logo-removebg-preview-edit.png')}} " class="w-75 me-0" alt=""></a>
+            <a class="navbar-brand" href="/dashboard"><img src="{{asset('../img/logo-baru.png')}} " class="w-75 me-0" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

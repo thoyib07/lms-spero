@@ -7,7 +7,7 @@
 <!-- NAV REKAYASA -->
     <nav style="z-index: 2;" class="navbar navbar-expand-lg navbar-light bg-light position-relative w-100 py-3">
      <div class="container-fluid px-4 px-lg-5">
-      <a class="navbar-brand" href="#"><img src="{{asset('../img/spero-logo-removebg-preview-edit.png')}} " class="w-75" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="{{asset('../img/logo-baru.png')}} " class="w-75" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,16 +65,16 @@
                         </div>
                     </div>
                     <div class="col-md-6 tl__right d-flex gap-2 mt-lg-0 mt-3">
-                        <div class="pdf__download">
+                        {{-- <div class="pdf__download">
                           <a class="btn btn-primary d-flex gap-2" href="#" role="button">
                             <div class="pdf__image ">
                               <img class="w-75" src="{{asset('../img/pdf-icon.png')}}" alt="">
                             </div>
                             <p class="mb-0">Unduh PDF</p>
                           </a>
-                        </div>
+                        </div> --}}
                         <div class="mulai">
-                          <a class="btn btn-success" href="#" role="button">Selesai</a>
+                          <a class="btn btn-success" href="page-chat" role="button">Lanjut Pembelajaran</a>
                         </div>
                     </div>
                 </div>

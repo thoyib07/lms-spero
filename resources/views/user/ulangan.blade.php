@@ -78,7 +78,7 @@
                                    <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="c">C. {{$item->jawaban_c}}</li>
                                    <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="d">D. {{$item->jawaban_d}}</li>
                                </i>  
-                               <h1 id="nilai_benar">{{$item->jawaban_true}}</h1>
+                               {{-- <h1 id="nilai_benar">{{$item->jawaban_true}}</h1> --}}
                            </ul>
                        </ol>
              `</div>
