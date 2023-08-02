@@ -63,8 +63,8 @@
                 <h1 class="mb-4">Pengumuman</h1>
                 <div class="pengumuman__content mt-2">
                     <div class="pc__content mt-2" id="place__notifikasi">
-                        {{-- @foreach ($Notifikasi as $item)
-                            <h4>{{$item->judul_notifikasi}}</h4>
+                        @foreach ($Notifikasi as $item)
+                            <h4 class="mt-2">{{$item->judul_notifikasi}}</h4>
                         <div class="pcc__c">
                             <div class="c-left">
                                 <p>{{$item->keterangan}}</p>
@@ -73,7 +73,7 @@
                                 <p>{{$item->tanggal}}</p>
                             </div>
                         </div>
-                        @endforeach --}}
+                        @endforeach
 
 
                     </div>
@@ -270,22 +270,22 @@
 
 @section('custom__script')
 <script type="text/javascript">
-    $(function () {
-        $.ajax({
-            type: "GET",
-            url: "{{env('APP_URL')}}/api/notifikasi",
-            dataType: "json",
-            data: {},
-            success: function (data) {
-                $.each(data.data, function (k, v) {
-                    $("#place__notifikasi").prepend(' <h4 class="mt-2">' + v.judul_notifikasi +
-                        '</h4> <div class="pcc__c"> <div class="c-left"> <p>' + v
-                        .keterangan + '</p></div><div class="c-right"> <p>' + v
-                        .tanggal + '</p></div></div>');
-                });
-            }
-        })
-    });
+    // $(function () {
+    //     $.ajax({
+    //         type: "GET",
+    //         url: "{{env('APP_URL')}}/api/notifikasi",
+    //         dataType: "json",
+    //         data: {},
+    //         success: function (data) {
+    //             $.each(data.data, function (k, v) {
+    //                 $("#place__notifikasi").prepend(' <h4 class="mt-2">' + v.judul_notifikasi +
+    //                     '</h4> <div class="pcc__c"> <div class="c-left"> <p>' + v
+    //                     .keterangan + '</p></div><div class="c-right"> <p>' + v
+    //                     .tanggal + '</p></div></div>');
+    //             });
+    //         }
+    //     })
+    // });
     // Jquery Random Color
     $( document ).ready(function() {
         $(".tc__content").each(function(index) {

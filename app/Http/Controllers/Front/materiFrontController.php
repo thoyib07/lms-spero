@@ -11,13 +11,10 @@ class   materiFrontController extends Controller
 {
     public function index(){
         $Materi = Materi::latest()->get();
-            if ($Materi) {
-                return view("user.lowongan",compact('Materi'));
-            }else {
-                return response()->json(['message'=>'Tidak Ada Data'], 200);
-            }
+            $Notifikasi = Notifikasi::latest()->get();
+        
             // return view("user.exam",compact('Materi'));
-            return view("user.lowongan",compact('Materi'));
+            return view("user.lowongan",compact('Materi','Notifikasi'));
     }
 
     public function lowonganHomeExam($id){
