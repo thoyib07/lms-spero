@@ -88,13 +88,6 @@
                       Browsermu tidak mendukung tag ini, upgrade donk!
                     </video>
                   </div>
-                  <div class="instruction mt-lg-2 mt-3">
-                    <h4 class=" fw-bold">Intruksi</h4>
-                    <p>Anda akan menjawab tentang studi kasus dari Personality Plus (PP+) dan berikan penjelasan anda ke kolom jawaban
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-6 right__exam">
                   <div class="exam mt-lg-2 mt-3">
                     <h4 class="text-start fw-bold">Salam ActivaSpro,</h4>
                     <p>Dari ratusan orang yang anda temui saat bertugas sebagai tenaga penjual promo aktivasi, anda tentunya pernah bertanya-tanya cara terbaik membujuk target anda agar mau membeli dari anda. Ya kan? 
@@ -114,8 +107,15 @@
                       Yuk! activaSpro kita terapkan di lapangan.
                     </p>
                   </div>
-                  <div class="form-floating">
-                    <textarea  style="height: 10rem;" class="form-control"placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                </div>
+                <div class="col-md-6 right__exam">
+                  <div class="instruction mt-lg-2 mt-3">
+                    <h4 class=" fw-bold">Intruksi</h4>
+                    <p>Anda akan menjawab tentang studi kasus dari Personality Plus (PP+) dan berikan penjelasan anda ke kolom jawaban
+                    </p>
+                  </div>
+                  <div class="form-floating mt-3">
+                    <textarea  style="height: 50vh;" class="form-control"placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                     <label for="floatingTextarea">Jawaban</label>
                   </div>
                 </div>

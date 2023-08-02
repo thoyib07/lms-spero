@@ -36,9 +36,7 @@
                         <div class="is__right">
                             <div class="isr__top px-auto">
                                 <h1 class="mt-md-0 mt-5 mapel">{{$Materi->judul_materi}}</h1>
-                                <p class="desc__mapel mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Corrupti fuga id, dicta placeat eveniet enim iusto beatae recusandae deserunt illum
-                                    et odio ullam cum sed.</p>
+                                <p class="desc__mapel my-3">Lakukan Yang Terbaik !</p>
                             </div>
                             <div class="row d-flex right__desc">
                                 <div class="col-md-5 col-6 ">

@@ -2,13 +2,37 @@
 @section('container')
 <link rel="stylesheet" href=" {{ asset('css/pageChat.css')}}">
 
+<!-- The Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Modal content goes here -->
+          <p>This is a Bootstrap modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
 <div class="Content px-4 px-lg-5">
     <div class="row">
         <div class="col mx-auto">
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
                 title="NDX AKA - Nemen HipHop Dangdut Version ( Official Lyric Video )" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+                allowfullscreen>
+                </iframe>
+            
         </div>
     </div>
     <div class="row mt-3">
@@ -40,7 +64,7 @@
                 </svg>
                 <p class="mb-0">Unduh PDF</p>
             </a>
-            <a class="btn btn-success fw-semibold" href="#" role="button">Selesai</a>
+            <a class="btn btn-success fw-semibold" href="/dashboard" role="button">Selesai</a>
         </div>
     </div>
     <div class="row mt-3">
@@ -489,6 +513,12 @@
     <script src="text/javascript"></script>
 
    <script>
+
+$(function () {
+        $("#mybtn").click(function () {
+            $("#exampleModal").modal("show");
+        });
+    });       
 
     $(document).ready(function(){
         $('#btn-balasan').click(function(){

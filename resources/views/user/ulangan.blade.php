@@ -62,21 +62,21 @@
      @foreach ($PostTest as $key => $item)
        <div>
          <div class="row parent_exam" id="parent_exam">
-           <div class="col-md-12 mt-5">
+           <div class="col-md-12 mt-1">
                <div class="pg__question d-flex gap-4">
-                   <h4 class="mt-1">{{$item->id}}. </h4>
+                   <h4>{{ $loop->iteration * $PostTest->currentPage() }}. </h4>
                    <p class="mb-1">{{$item->soal}}</p>
                </div>
            </div>
-           <div class="col-md-12 px-lg-5 px-2">
-              <div class="form-check">
+           <div class="col-md-12 px-lg-0 px-2">
+              <div class="form-check ps-0">
                        <ol start="1" type="1">
-                           <ul start="1" type="a" style="list-style: none">
+                           <ul start="1" type="a" style="list-style: none; padding-left: 1rem !important;">
                                <i id="par_pilihan" data-id="{{isset($_GET['page']) ? $_GET['page'] : '1'}}">
-                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="a">A. {{$item->jawaban_a}}</li>
-                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="b">B. {{$item->jawaban_b}}</li>
-                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="c">C. {{$item->jawaban_c}}</li>
-                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="d">D. {{$item->jawaban_d}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="a" class="me-3">A. {{$item->jawaban_a}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="b" class="me-3">B. {{$item->jawaban_b}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="c" class="me-3">C. {{$item->jawaban_c}}</li>
+                                   <li><input onchange="save_jawaban(this)" type="radio" name="pilihan" value="d" class="me-3">D. {{$item->jawaban_d}}</li>
                                </i>  
                                {{-- <h1 id="nilai_benar">{{$item->jawaban_true}}</h1> --}}
                            </ul>

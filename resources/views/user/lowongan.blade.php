@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                {{-- <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link daylist active" id="pills-materiSales-tab" data-bs-toggle="pill" data-bs-target="#pills-materiSales" type="button" role="tab" aria-controls="pills-materiSales" aria-selected="true">Materi Sales</button>
                         </li>
@@ -89,7 +89,7 @@
                         <li class="nav-item" role="presentation">
                           <button class="nav-link daylist" id="pills-materiAreaKoordinator-tab" data-bs-toggle="pill" data-bs-target="#pills-materiAreaKoordinator" type="button" role="tab" aria-controls="pills-materiAreaKoordinator" aria-selected="false">Materi Area Koordinator</button>
                         </li>
-                      </ul> --}}
+                      </ul>
                 <hr class="bg-dark border-2 border-top border-dark">
 
                 <div class="tab-content" id="pills-tabContent">
@@ -143,9 +143,103 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-materiTeamLeader" role="tabpanel"
-                        aria-labelledby="pills-materiTeamLeader-tab">SELASA</div>
+                        aria-labelledby="pills-materiTeamLeader-tab">
+                        <div class="row d-flex tc__mapel">
+                            @foreach ($Materi as $item)
+                            <div class="col-lg-6 col-xl-4 col-md-6 col-sm-6 mt-3" id="mapel">
+                                <a href="{{url('/lowonganHomeExam/'.$item->id)  }}">
+                                    <div class="tc__content ">
+                                        <div class="tcc__top d-flex gap-3">
+                                            <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  "
+                                                    alt=""></div>
+                                            <div class="tcc__right">
+                                                <h3>{{$item->judul_materi}}</h3>
+                                                <p>07:00 - 08.40 WIB</p>
+                                            </div>
+                                        </div>
+                                        <div class="tcc__bottom">
+                                            <div class="tccb__content gap-2 ">
+                                                <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  "
+                                                        alt="" style="width: 1.5rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">15</p>
+                                                </div>
+                                            </div>
+                                            <div class="tccb__content gap-2">
+                                                <div class="tccbl__left"><img
+                                                        src="{{ asset('../img/check-icon.png')}}  " alt=""
+                                                        style="width: 1.25rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">10</p>
+                                                </div>
+                                            </div>
+                                            <div class="tccb__content gap-2" id="tccb__last">
+                                                <div class="tccbl__left"><img
+                                                        src="{{ asset('../img/people-icon.png')}}  " alt=""
+                                                        style="width: 1.25rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">35</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="pills-materiAreaKoordinator" role="tabpanel"
-                        aria-labelledby="pills-materiAreaKoordinator-tab">RABU</div>
+                        aria-labelledby="pills-materiAreaKoordinator-tab">
+                        <div class="row d-flex tc__mapel">
+                            @foreach ($Materi as $item)
+                            <div class="col-lg-6 col-xl-4 col-md-6 col-sm-6 mt-3" id="mapel">
+                                <a href="{{url('/lowonganHomeExam/'.$item->id)  }}">
+                                    <div class="tc__content ">
+                                        <div class="tcc__top d-flex gap-3">
+                                            <div class="tcc__left"><img src="{{ asset('../img/matematica-icon.png')}}  "
+                                                    alt=""></div>
+                                            <div class="tcc__right">
+                                                <h3>{{$item->judul_materi}}</h3>
+                                                <p>07:00 - 08.40 WIB</p>
+                                            </div>
+                                        </div>
+                                        <div class="tcc__bottom">
+                                            <div class="tccb__content gap-2 ">
+                                                <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  "
+                                                        alt="" style="width: 1.5rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">15</p>
+                                                </div>
+                                            </div>
+                                            <div class="tccb__content gap-2">
+                                                <div class="tccbl__left"><img
+                                                        src="{{ asset('../img/check-icon.png')}}  " alt=""
+                                                        style="width: 1.25rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">10</p>
+                                                </div>
+                                            </div>
+                                            <div class="tccb__content gap-2" id="tccb__last">
+                                                <div class="tccbl__left"><img
+                                                        src="{{ asset('../img/people-icon.png')}}  " alt=""
+                                                        style="width: 1.25rem;">
+                                                </div>
+                                                <div class="tccbl__right">
+                                                    <p class="lg">35</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -159,16 +253,10 @@
                     </div>
                 </div>
                 <div class="right__bottom p-4">
-                    <h2>Informasi</h2>
-                    <hr class="bg-dark border-2 border-top border-dark">
+                    <h2>CSS</h2>
+                    <hr class="hr-list bg-dark border-2 border-top border-dark">
                     <div class="rb__belum py-2">
-                        <h4 class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, similique
-                            incidunt non cupiditate illo tempore perferendis reiciendis repudiandae? Dicta, officia
-                            ducimus facilis laborum placeat commodi libero reprehenderit soluta aliquid molestiae saepe
-                            fugit consectetur inventore dolores labore. Numquam tempora nesciunt repudiandae magnam
-                            nobis vel consequuntur. Quo explicabo suscipit enim ullam eum. Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Quisquam, iusto nesciunt a sit mollitia, officia eligendi odit
-                            nam numquam adipisci provident ullam. Inventore, rerum itaque?</h4>
+                        <h4 class="mb-4">Lengkapi Pembelajaran CSS Mu</h4>
                     </div>
                     <center>
                         <img src="{{ asset('../img/Roket-lowongan.png')}} " alt="">
@@ -190,7 +278,7 @@
             data: {},
             success: function (data) {
                 $.each(data.data, function (k, v) {
-                    $("#place__notifikasi").prepend(' <h4>' + v.judul_notifikasi +
+                    $("#place__notifikasi").prepend(' <h4 class="mt-2">' + v.judul_notifikasi +
                         '</h4> <div class="pcc__c"> <div class="c-left"> <p>' + v
                         .keterangan + '</p></div><div class="c-right"> <p>' + v
                         .tanggal + '</p></div></div>');
