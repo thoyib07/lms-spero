@@ -64,7 +64,7 @@
                 </svg>
                 <p class="mb-0">Unduh PDF</p>
             </a>
-            <a class="btn btn-success fw-semibold" href="/dashboard" role="button">Selesai</a>
+            <a class="btn btn-success fw-semibold" href="/ulangan" role="button">Selesai</a>
         </div>
     </div>
     <div class="row mt-3">

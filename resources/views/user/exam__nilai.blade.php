@@ -75,6 +75,11 @@
                           <p class="mb-0">Materi Lainnya</p>
                       </div>
                   </a>
+                  <a class="btn btn-next" href="/lowonganHomeExam/3" role="button">
+                      <div class="bn__isi d-flex gap-2">
+                          <p class="mb-0">selesai</p>
+                      </div>
+                  </a>
               
               </div>
           </div>
