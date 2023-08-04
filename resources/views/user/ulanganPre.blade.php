@@ -54,17 +54,17 @@
    
 <section id="exam" class="mt-5">
   <div class="container">
-    {{ $PostTest->links('user.paginate_exam') }}
+    {{ $Pretest->links('user.paginate_Pretest') }}
     <div class="col-md-12 title mt-3">
       <h3 id="pgggg">Soal Pilihan Ganda</h3>
     </div>
     <div class="mydivs">
-     @foreach ($PostTest as $key => $item)
+     @foreach ($Pretest as $key => $item)
        <div>
          <div class="row parent_exam" id="parent_exam">
            <div class="col-md-12 mt-1">
                <div class="pg__question d-flex gap-4">
-                   <h4>{{ $loop->iteration * $PostTest->currentPage() }}. </h4>
+                   <h4>{{ $loop->iteration * $Pretest->currentPage() }}. </h4>
                    <p class="mb-1">{{$item->soal}}</p>
                </div>
            </div>

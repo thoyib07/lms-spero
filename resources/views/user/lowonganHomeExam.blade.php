@@ -36,7 +36,7 @@
                         <div class="is__right">
                             <div class="isr__top px-auto">
                                 <h1 class="mt-md-0 mt-5 mapel">{{$Materi->judul_materi}}</h1>
-                                <p class="desc__mapel my-3">Lakukan Yang Terbaik !</p>
+                                <p class="desc__mapel my-3">{{$Materi->intruksi_1}}</p>
                             </div>
                             <div class="row d-flex right__desc">
                                 <div class="col-md-5 col-6 ">

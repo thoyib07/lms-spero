@@ -49,12 +49,14 @@ Route::get('/lowonganHomeExam/{id}', [materiFrontController::class, 'lowonganHom
 // Route::get('/exam', [PostTestFrontController::class, 'index2']);
 Route::get('/exam-2', function () {return view('user.exam__2');});
 Route::get('/exam-nilai', function () {return view('user.exam__nilai');});
+Route::get('/nilai-pretest', function () {return view('user.nilaiPretest');});
 Route::get('/exam-vid', function () {return view('user.exam__vid');});
 
 Route::get('/page-chat', function () {return view('user.pageChat');});
 
 
 Route::get('/ulangan', [PostTestFrontController::class, 'index']);
+Route::get('/ulanganPre', [PostTestFrontController::class, 'Pretest']);
 
 // Route::get('/lowongan', function () {return view('user.lowongan');});
 

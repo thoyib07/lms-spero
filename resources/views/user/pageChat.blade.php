@@ -2,38 +2,34 @@
 @section('container')
 <link rel="stylesheet" href=" {{ asset('css/pageChat.css')}}">
 
+    
 <!-- The Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Modal content goes here -->
-          <p>This is a Bootstrap modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+<div id="bg"></div>
+<div id="modal-kotak">
+    <div id="atas">
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
+                    title="NDX AKA - Nemen HipHop Dangdut Version ( Official Lyric Video )" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>   
     </div>
-</div>
+    <div id="bawah">
+        <button id="tombol-tutup">CLOSE</button>
+    </div>
+</div>	
 
 <div class="Content px-4 px-lg-5">
     <div class="row">
         <div class="col mx-auto">
-                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
+                <button id="tombol">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
                 title="NDX AKA - Nemen HipHop Dangdut Version ( Official Lyric Video )" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
                 </iframe>
-            
+                </button>
         </div>
+        {{-- <button id="tombol">KLIK SAYA !!</button> --}}
     </div>
     <div class="row mt-3">
         <div class="col-md-7 col-sm-6 col-12">
@@ -64,7 +60,7 @@
                 </svg>
                 <p class="mb-0">Unduh PDF</p>
             </a>
-            <a class="btn btn-success fw-semibold" href="/ulangan" role="button">Selesai</a>
+            <a class="btn btn-success fw-semibold" href="/dashboard" role="button">Selesai</a>
         </div>
     </div>
     <div class="row mt-3">
@@ -506,20 +502,23 @@
     </div>
 </div>
 
+
    {{-- Jquery --}}
    <script src="{{ asset('https://code.jquery.com/jquery-3.6.3.min.js')}} " integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="text/javascript"></script>
-
+<script>
+    $(document).ready(function(){
+			$('#tombol').click(function(){
+				$('#modal-kotak , #bg').fadeIn("slow");
+			});
+			$('#tombol-tutup').click(function(){
+				$('#modal-kotak , #bg').fadeOut("slow");
+			});
+		}); 
+</script>
    <script>
-
-$(function () {
-        $("#mybtn").click(function () {
-            $("#exampleModal").modal("show");
-        });
-    });       
-
     $(document).ready(function(){
         $('#btn-balasan').click(function(){
             $('#balasan').toggle(500);
