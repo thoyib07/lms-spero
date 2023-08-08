@@ -203,6 +203,10 @@ nav{
     background-color: #47E1A8;
     border-radius: 5px;
 }
+.btn-play-vid:hover{
+    background-color: #42b48a;
+    border-radius: 5px;
+}
 .bi__right h4{
     font-family: 'Poppins';
     font-style: normal;
@@ -276,7 +280,31 @@ nav{
     width: 50%;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 500px){
+    .tccbl__right p {
+        font-size: calc(40% + 1vmax);
+    }
+    .tccr__right h2 {
+        font-size: calc(60% + 1vmax);
+    }
+    .bi__right h4 {
+        font-size: calc(50% + 1vmax);
+    }
+    .right_content h1 {
+        font-size: calc(40% + 1vmax);
+    }
+    .fc_left img{
+        width: 70%;
+    }
+    .fc_middle p {
+        font-size: calc(20% + 1vmax);
+    }
+    .fc_right svg{
+        width: 45%;
+    }
+}
+@media (min-width: 500px) and (max-width: 768px) {
     .tccbl__right p {
         font-size: calc(40% + 1vmax);
     }

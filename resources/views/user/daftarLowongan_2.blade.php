@@ -7,7 +7,7 @@
 
     <nav style="z-index: 2;" class="navbar navbar-expand-lg navbar-light bg-light position-relative w-100 py-3">
      <div class="container-fluid px-4 px-lg-5">
-      <a class="navbar-brand" href="#"><img src="{{asset('../img/spero-logo-removebg-preview-edit.png')}} " class="w-75" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="{{asset('../img/logo-baru.png')}} " class="w-75" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -56,8 +56,8 @@
       <div class="container daftarLowonganContainerx`">
           <div class="row">
             <div class="col-12 back_home mb-5">
-              <div class="back__he d-flex gap-2">
-                  <a href="/daftarLowongan">
+              <div class="back__he">
+                  <a href="/daftarLowongan" class="d-flex gap-2 align-items-center">
                   <div class="bh__left">
                     <i class="fa fa-angle-left fs-5"></i>
                   </div>
@@ -205,7 +205,7 @@
                       <div class="rc__middle mt-3">
                         <h1>Skills Wajib</h1>
                         <div class="skill__option d-flex gap-3 mt-3">
-                          <a class="btn btn-so" href="#" role="button">{{$data->skill_pekerjaan}}</a>
+                          <p id="desc_kerja">{{$data->skill_pekerjaan}}</p>
                         </div>
                       </div>
                       <hr class="bg-dark border-2 border-top border-dark m-0 mt-4">

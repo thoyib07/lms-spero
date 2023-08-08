@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row title__left d-flex">
-                    <div class="col-md-6 tl__left d-flex gap-3">
+                    <div class="col-sm-6 tl__left d-flex gap-3">
                         <div class="tll__img">
                             <img src="{{asset('../img/bg-senbud-list.png')}} " alt="" class="">
                         </div>
@@ -64,7 +64,7 @@
                             <p class="mb-0">Materi 6</p>
                         </div>
                     </div>
-                    <div class="col-md-6 tl__right d-flex gap-2 mt-lg-0 mt-3">
+                    <div class="col-sm-6 tl__right d-flex justify-content-sm-end justify-content-start gap-2 my-sm-0 my-2">
                         {{-- <div class="pdf__download">
                           <a class="btn btn-primary d-flex gap-2" href="#" role="button">
                             <div class="pdf__image ">
@@ -74,7 +74,7 @@
                           </a>
                         </div> --}}
                         <div class="mulai">
-                          <a class="btn btn-success" href="page-chat" role="button">Lanjut Pembelajaran</a>
+                          <a class="btn btn-success" href="page-chat" role="button"><p class="sm">Lanjut Pembelajaran</p></a>
                         </div>
                     </div>
                 </div>

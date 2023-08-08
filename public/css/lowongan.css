@@ -71,6 +71,25 @@ nav{
     height: 10rem;
     overflow: auto;
 }
+@media (max-width: 576px) { 
+    .pengumuman__content{
+        padding: .75rem 1rem;
+    }    
+}
+a {
+    color: #0254EB
+}
+a:visited {
+    color: #0254EB
+}
+a.morelink {
+    text-decoration:none;
+    outline: none;
+}
+.morecontent span {
+    display: none;
+    font-weight: 400;
+}
 .pc__content h4{
     font-family: 'Poppins';
     font-style: normal;
@@ -83,7 +102,10 @@ nav{
     /* align-items: center; */
 }
 .pcc__c .c-left{
-    width: 80%;
+    flex-basis: 80%;
+}
+.pcc__c .c-right{
+    flex-basis: 20%;
 }
 .pcc__c .c-right p{
     text-align: right;
@@ -97,6 +119,14 @@ nav{
     font-style: normal;
     font-weight: 400;
     font-size: calc(40% + 1vmin);
+}
+@media (max-width: 500px) {
+    .pcc__c .c-left{
+        flex-basis: 68%;
+    }
+    .pcc__c .c-right{
+        flex-basis: 32%;
+    }
 }
 
 

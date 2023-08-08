@@ -53,8 +53,86 @@
 
     <section class="daftarLowongan mt-5 mx-auto">
         <div class="container daftarLowonganContainerx`">
+            <button class="btn btn-primary d-lg-none d-block d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                <i class="fa-solid fa-filter"></i>
+                <p>Filter</p>
+            </button>
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <h2 class="offcanvas-title" id="offcanvasScrollingLabel">Filter Lowongan Pekerjaan</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="left__content">
+                        <h2>Filter Pencarianmu</h2>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="print_value mb-4">
+                            <p id="value_list">Filter By :</p>
+                        </div>
+                        <div class="dl__filter" name="searchData" id="searchData">
+                            <h3>Level Pekerjaan</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Sales" id="Sales">
+                                <label class="form-check-label" for="Sales"> Sales</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Team_Leader" id="Team_Leader">
+                                <label class="form-check-label" for="Team_Leader"> Team Leader</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Area_Koordinator" id="Area_Koordinator">
+                                <label class="form-check-label" for="Area_Koordinator"> Area Koordinator</label>
+                            </div>
+                        </div>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="dl__filter">
+                            <h3>Kota</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="depok" id="depok">
+                                <label class="form-check-label" for="depok">Depok, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="jakarta" id="jakarta">
+                                <label class="form-check-label" for="jakarta">Jakarta, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="bandung" id="bandung">
+                                <label class="form-check-label" for="bandung">Bandung, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="surabaya" id="surabaya">
+                                <label class="form-check-label" for="surabaya">Surabaya, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="tangerang" id="tangerang">
+                                <label class="form-check-label" for="tangerang">Tangerang, Indonesia</label>
+                            </div>
+                        </div>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="dl__filter">
+                            <h3>Pengalaman</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="1-3" id="1-3">
+                                <label class="form-check-label" for="1-3">1-3 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="3-5" id="3-5">
+                                <label class="form-check-label" for="3-5">3-5 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="5-10" id="5-10">
+                                <label class="form-check-label" for="5-10">5-10 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="lebih10" id="lebih10">
+                                <label class="form-check-label" for="lebih10">Lebih Dari 10 Tahun</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row" id="rowDaftarLowongan">
-                <div class="col-md-3 me-lg-5 me-2 left__content">
+                <div class="col-lg-3 me-lg-5 me-2 d-lg-block d-none left__content">
                     <h2>Filter Pencarianmu</h2>
                     <hr class="bg-dark border-2 border-top border-dark">
                     <div class="print_value mb-4">
@@ -120,10 +198,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 mt-sm-0 mt-5">
+                <div class="col-lg-8 col-12 mt-sm-0 mt-2">
                     <div class="row d-flex" id="par_daftarLowongan">
                         @foreach ($Lowongan as $item)
-                        <a class="col-md-6 mt-3 " href=" {{ route('detailLowongan', $item->id) }}">
+                        <a class="col-sm-6 mt-3 " href=" {{ route('detailLowongan', $item->id) }}">
                             <div class="dl__content" id="daftarLowongan">
                                 <div class="top__content d-flex align-items-center">
                                     <div class="tc__left">

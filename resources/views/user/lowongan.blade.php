@@ -64,10 +64,10 @@
                 <div class="pengumuman__content mt-2">
                     <div class="pc__content mt-2" id="place__notifikasi">
                         @foreach ($Notifikasi as $item)
-                            <h4 class="mt-2">{{$item->judul_notifikasi}}</h4>
+                            <h4 class="comment more mt-2">{{$item->judul_notifikasi}}</h4>
                         <div class="pcc__c">
                             <div class="c-left">
-                                <p>{{$item->keterangan}}</p>
+                                <p class="comment more">{{$item->keterangan}}</p>
                             </div>
                             <div class="c-right">
                                 <p>{{$item->tanggal}}</p>
@@ -108,7 +108,7 @@
                                                 <p>07:00 - 08.40 WIB</p>
                                             </div>
                                         </div>
-                                        <div class="tcc__bottom">
+                                        <div class="tcc__bottom mt-2">
                                             <div class="tccb__content gap-2 ">
                                                 <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  "
                                                         alt="" style="width: 1.5rem;">
@@ -157,7 +157,7 @@
                                                 <p>07:00 - 08.40 WIB</p>
                                             </div>
                                         </div>
-                                        <div class="tcc__bottom">
+                                        <div class="tcc__bottom mt-2">
                                             <div class="tccb__content gap-2 ">
                                                 <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  "
                                                         alt="" style="width: 1.5rem;">
@@ -206,7 +206,7 @@
                                                 <p>07:00 - 08.40 WIB</p>
                                             </div>
                                         </div>
-                                        <div class="tcc__bottom">
+                                        <div class="tcc__bottom mt-2">
                                             <div class="tccb__content gap-2 ">
                                                 <div class="tccbl__left"><img src="{{ asset('../img/book-icon.png')}}  "
                                                         alt="" style="width: 1.5rem;">
@@ -256,7 +256,7 @@
                     <h2>CSS</h2>
                     <hr class="hr-list bg-dark border-2 border-top border-dark">
                     <div class="rb__belum py-2">
-                        <h4 class="mb-4">Lengkapi Pembelajaran CSS Mu</h4>
+                        <p class="mb-4">Lengkapi Pembelajaran CSS Mu</p>
                     </div>
                     <center>
                         <img src="{{ asset('../img/Roket-lowongan.png')}} " alt="">
@@ -286,6 +286,42 @@
     //         }
     //     })
     // });
+
+    // Jquery Limit Text
+    $(document).ready(function() {
+            var showChar = 60;
+            var ellipsestext = "...";
+            var moretext = "Lihat";
+            var lesstext = "Tutup";
+            $('.more').each(function() {
+                var content = $(this).html();
+
+                if(content.length > showChar) {
+
+                    var c = content.substr(0, showChar);
+                    var h = content.substr(showChar-1, content.length - showChar);
+
+                    var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+                    $(this).html(html);
+                }
+
+            });
+
+            $(".morelink").click(function(){
+                if($(this).hasClass("less")) {
+                    $(this).removeClass("less");
+                    $(this).html(moretext);
+                } else {
+                    $(this).addClass("less");
+                    $(this).html(lesstext);
+                }
+                $(this).parent().prev().toggle();
+                $(this).prev().toggle();
+                return false;
+            });
+        });
+
     // Jquery Random Color
     $( document ).ready(function() {
         $(".tc__content").each(function(index) {

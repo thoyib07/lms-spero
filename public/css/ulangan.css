@@ -140,14 +140,17 @@ nav{
     font-weight: 600;
     font-size: 20px;
 }
-.pg__question{
+/* .pg__question{
     align-items: center;
-}
+} */
 .pg__question h4, p{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+}
+.form-check ol, .form-check ul{
+  padding: 0 1rem !important;
 }
 
 .pg__answer{

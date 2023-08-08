@@ -281,10 +281,13 @@ nav{
     {{-- Jquery --}}
     <script src="{{ asset('https://code.jquery.com/jquery-3.6.3.min.js')}} " integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
+
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js)}} "></script> --}}
 
 
-
+    {{-- FONT AWESOME --}}
+    <script src="https://kit.fontawesome.com/8def9595b8.js" crossorigin="anonymous"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

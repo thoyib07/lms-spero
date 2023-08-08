@@ -147,9 +147,6 @@ br{
 .tl__left{
     align-items: center;
 }
-.tl__right{
-    justify-content: end;
-}
 .tl__right .btn{
     align-items: center;
 }
@@ -184,9 +181,6 @@ br{
 }
 
 @media only screen and (max-width: 770px) {
-    .tl__right{
-        justify-content: start;
-    }
     .tl__right .btn{
         font-size: 15px;
     }

@@ -31,8 +31,8 @@
                         </div>
                     </center>
                 </div>
-                <div class="col-md-5">
-                    <div class="left__side d-flex gap-5">
+                <div class="col-md-5 col-12">
+                    <div class="left__side d-flex justify-content-center justify-content-md-start gap-5">
                         <div class="is__right">
                             <div class="isr__top px-auto">
                                 <h1 class="mt-md-0 mt-5 mapel">{{$Materi->judul_materi}}</h1>
@@ -86,7 +86,7 @@
                                         <img src="{{asset ('../img/play-vid-icon.png')}}" alt="" style="width: 75%;">
                                     </div>
                                     <div class="bi__right">
-                                        <H4 class="mb-0 text-white">Mulai Pembelajaran</H4>
+                                        <h4 class="mb-0 text-white">Mulai Pembelajaran</h4>
                                     </div>
                                 </a>
                             </button>
@@ -99,8 +99,8 @@
                 </div>
 
                 <div class="col-md-5 mt-3 mt-md-0">
-                  <div class="right_content text-white p-4 p-xl-5 fw-bold" style="background-color: #6b859b; border-radius: 1rem;">
-                    <h2>Materi yang Telah Anda selesaikan</h2>
+                  <div class="right_content text-white p-sm-4 p-3 p-xl-5 fw-bold" style="background-color: #6b859b; border-radius: 1rem;">
+                    <h4>Materi yang Telah Anda selesaikan</h4>
                     <div class="for_content mt-3  p-3  d-flex justify-content-between align-items-center">
                       <div class="fc_left" style="flex-basis: 20%;">
                         <img src="{{asset ('../img/senbud-icon.png')}}" alt="">

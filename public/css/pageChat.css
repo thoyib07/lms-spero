@@ -220,11 +220,13 @@
 
 
     #modal-kotak{
-        margin:5%;
         width: 90%;	
         height: auto;
         position: absolute;
-        position:fixed;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         z-index:1002;
         display: none;
         background: white;	
@@ -233,6 +235,10 @@
         font-size: 15pt;
         padding: 20px;	
         height: 50vh;
+    }
+    #tombol iframe{
+        overflow: hidden !important;
+        pointer-events: none !important;
     }
     #bawah{
         background: #fff;
