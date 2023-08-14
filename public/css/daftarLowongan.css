@@ -87,7 +87,11 @@ nav{
     width:1.5rem;
 }
 
-
+.btn-filter{
+    background-color: #00367A;
+    color: white;
+    width: max-content;
+}
 
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 95vw;

@@ -62,15 +62,15 @@
                               <circle cx="70" cy="70" r="70"></circle>
                           </svg>
                           <div class="number">
-                              <h1 class="xl mb-0">87</h1>
+                              <h1>87</h1>
                           </div>
                       </div>
                   </div>
                   <div class="desc">
                       <h2>Usaha Yang Bagus !</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, nobis!</p>
+                      <p>Lanjutkan Prestasimu !</p>
                   </div>
-                  <a class="btn btn-next" href="/ulanganPre" role="button">
+                  <a class="btn btn-next my-3" href="/ulanganPre" role="button">
                       <div class="bn__isi d-flex gap-2">
                           <p class="mb-0">selesai</p>
                       </div>

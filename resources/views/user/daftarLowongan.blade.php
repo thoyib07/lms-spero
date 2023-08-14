@@ -53,7 +53,7 @@
 
     <section class="daftarLowongan mt-5 mx-auto">
         <div class="container daftarLowonganContainerx`">
-            <button class="btn btn-primary d-lg-none d-block d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <button class="btn btn-filter d-lg-none d-block d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
                 <i class="fa-solid fa-filter"></i>
                 <p>Filter</p>
             </button>

@@ -52,12 +52,12 @@
     </nav>
 
 
-    <section class="daftarLowongan mt-5 mx-auto">
+    <section class="daftarLowongan mt-sm-5 mt-4 mx-auto">
       <div class="container daftarLowonganContainerx`">
           <div class="row">
-            <div class="col-12 back_home mb-5">
+            <div class="back_home mb-sm-3 mb-1">
               <div class="back__he">
-                  <a href="/daftarLowongan" class="d-flex gap-2 align-items-center">
+                  <a href="/daftarLowongan" class="d-flex d-inline-block gap-2 align-items-center">
                   <div class="bh__left">
                     <i class="fa fa-angle-left fs-5"></i>
                   </div>
@@ -66,8 +66,86 @@
                   </div>
                   </a>
                 </div>
+                <button class="btn btn-filter d-lg-none d-block d-flex align-items-center gap-2 my-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                  <i class="fa-solid fa-filter"></i>
+                  <p>Filter</p>
+                </button>
+              </div>
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <h2 class="offcanvas-title" id="offcanvasScrollingLabel">Filter Lowongan Pekerjaan</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="left__content">
+                        <h2>Filter Pencarianmu</h2>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="print_value mb-4">
+                            <p id="value_list">Filter By :</p>
+                        </div>
+                        <div class="dl__filter" name="searchData" id="searchData">
+                            <h3>Level Pekerjaan</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Sales" id="Sales">
+                                <label class="form-check-label" for="Sales"> Sales</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Team_Leader" id="Team_Leader">
+                                <label class="form-check-label" for="Team_Leader"> Team Leader</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="Area_Koordinator" id="Area_Koordinator">
+                                <label class="form-check-label" for="Area_Koordinator"> Area Koordinator</label>
+                            </div>
+                        </div>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="dl__filter">
+                            <h3>Kota</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="depok" id="depok">
+                                <label class="form-check-label" for="depok">Depok, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="jakarta" id="jakarta">
+                                <label class="form-check-label" for="jakarta">Jakarta, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="bandung" id="bandung">
+                                <label class="form-check-label" for="bandung">Bandung, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="surabaya" id="surabaya">
+                                <label class="form-check-label" for="surabaya">Surabaya, Indonesia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="tangerang" id="tangerang">
+                                <label class="form-check-label" for="tangerang">Tangerang, Indonesia</label>
+                            </div>
+                        </div>
+                        <hr class="bg-dark border-2 border-top border-dark">
+                        <div class="dl__filter">
+                            <h3>Pengalaman</h3>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="1-3" id="1-3">
+                                <label class="form-check-label" for="1-3">1-3 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="3-5" id="3-5">
+                                <label class="form-check-label" for="3-5">3-5 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="5-10" id="5-10">
+                                <label class="form-check-label" for="5-10">5-10 Tahun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="checkbox" type="checkbox" value="lebih10" id="lebih10">
+                                <label class="form-check-label" for="lebih10">Lebih Dari 10 Tahun</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-              <div class="col-md-3 me-5 left__content">
+              <div class="col-md-3 me-5 left__content d-lg-block d-none">
                   <h2>Filter Pencarianmu</h2>
                   <hr class="bg-dark border-2 border-top border-dark">
                   <div class="dl__filter">
@@ -130,16 +208,20 @@
                       </div>
                   </div>
               </div>
-              <div class="col-md-8 mt-sm-0 mt-5">
+              <div class="col-lg-8 col-12 mt-sm-0 mt-2">
                   <div class="row" id="par_lowonganDetail">
                     <div class="right__content" id="daftarLowongan2" data-numbl="test">
-                      <div class="rc__top d-flex gap-3">
-                        <div class="rct__left">
-                          <img src="{{asset('../img/spero-under.png')}} " alt="">
+                      <div class="rc__top">
+                        <div class="rct__left d-flex align-items-center">
+                          <div class="rctl_left">
+                            <img src="{{asset('../img/spero-under.png')}} " alt="">
+                          </div>
+                          <div class="rctl_right">
+                            <h1 class="mb-0">{{$data->level}}</h1>
+                            <p>{{$data->client}}</p>
+                          </div>
                         </div>
                         <div class="rct__right w-100">
-                          <h1 class="mb-1">{{$data->level}}</h1>
-                          <p>{{$data->client}}</p>
                           <hr class="bg-dark border-2 border-top border-dark m-0">
                           <div class="rctr__middle mt-4 ">
                            <div class="row d-flex rctrm">
@@ -165,8 +247,8 @@
                                 <div class="mr__content d-flex gap-2 mb-2">
                                   <div class="mrc__img mt-1"><img src="{{asset('../img/location-icon.png')}} " alt=""></div>
                                   <div class="mrc__p mt-0">
-                                    <div class="skill__option d-flex gap-1 mt-1">
-                                      {{$data->lokasi}}
+                                    <div class="skill__option d-flex gap-1 mt-1 align-items-center">
+                                      <p>{{$data->lokasi}}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -204,26 +286,22 @@
                       <hr class="bg-dark border-2 border-top border-dark m-0 mt-4">
                       <div class="rc__middle mt-3">
                         <h1>Skills Wajib</h1>
-                        <div class="skill__option d-flex gap-3 mt-3">
-                          <p id="desc_kerja">{{$data->skill_pekerjaan}}</p>
+                        <div class="skill__option">
+                            <p id="desc_kerja">{!!$data->skill_pekerjaan!!}</p>
                         </div>
                       </div>
                       <hr class="bg-dark border-2 border-top border-dark m-0 mt-4">
                       <div class="rc__bottom mt-3">
                         <h1>Deskripsi Pekerjaan</h1>
                         <div class="rcb__list">
-                          <ul>
-                            <li id="desc_kerja">{{$data->deskripsi_pekerjaan}}</li>
-                          </ul>
+                            <p class="desc_pekerjaan" id="desc_kerja">{!!$data->deskripsi_pekerjaan!!}</p> 
                         </div>
                       </div>
                       <hr class="bg-dark border-2 border-top border-dark m-0 mt-4">
                       <div class="rc__bottom mt-3">
                         <h1>Syarat Pekerjaan {{$data->sales}} (Chemical)</h1>
-                        <div class="rcb__list">
-                          <ul>
-                            <li>{{$data->syarat_pekerjaan}}</li>
-                          </ul>
+                        <div class="rcb__list"> 
+                            <p id="desc_kerja">{!!$data->syarat_pekerjaan!!}</p>  
                         </div>
                       </div>
                     </div>
@@ -237,7 +315,8 @@
 @section('custom__script')
 <script type="text/javascript">
 
-
+ var isiDescPekerjaan = $(".desc_pekerjaan").html(); 
+ document.getElementsByClassName(desc_pekerjaan).innerHTML = (isiDescPekerjaan);
 // $(function() {
 //   $.ajax({
 //     type    :"GET",

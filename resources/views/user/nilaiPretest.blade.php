@@ -68,9 +68,9 @@
                   </div>
                   <div class="desc">
                       <h2>Usaha Yang Bagus !</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, nobis!</p>
+                      <p>Lanjutkan Prestasimu !</p>
                   </div>
-                  <a class="btn btn-next" href="/exam-vid" role="button">
+                  <a class="btn btn-next my-3" href="/exam-vid" role="button">
                       <div class="bn__isi d-flex gap-2">
                           <p class="mb-0">selesai</p>
                       </div>
