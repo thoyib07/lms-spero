@@ -7,8 +7,7 @@
 <div id="bg"></div>
 <div id="modal-kotak">
     <div id="atas">
-                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
-                    title="NDX AKA - Nemen HipHop Dangdut Version ( Official Lyric Video )" frameborder="0"
+                <iframe class="responsive-iframe" src="{{ $pageChat->video_2 }}" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>   
@@ -22,8 +21,7 @@
     <div class="row">
         <div class="col mx-auto">
                 <button id="tombol">
-                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/UqA7zfsVlIg?list=RD0LxdzHBmCCM"
-                title="NDX AKA - Nemen HipHop Dangdut Version ( Official Lyric Video )" frameborder="0"
+                    <iframe class="responsive-iframe" src="{{ $pageChat->video_2 }}"frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
                 </iframe>
@@ -39,7 +37,7 @@
                         <img src="{{asset('../img/genjehhhhhhhhhh.jpg')}} " alt="" class="">
                     </div>
                     <div class="tpl_title">
-                        <p class="mb-0 fw-bold">Seni Budaya</p>
+                        <p class="mb-0 fw-bold">{{ $pageChat -> judul_materi}}</p>
                         <p class="mb-0 ">Materi 6</p>
                     </div>
                 </div>

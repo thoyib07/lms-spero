@@ -60,7 +60,7 @@
                             <img src="{{asset('../img/bg-senbud-list.png')}} " alt="" class="">
                         </div>
                         <div class="tll__title">
-                            <h3 class="mb-0">Seni Budaya</h3>
+                            <h3 class="mb-0">{{ $examVid->judul_materi }}</h3>
                             <p class="mb-0">Materi 6</p>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                           </a>
                         </div> --}}
                         <div class="mulai">
-                          <a class="btn btn-success" href="page-chat" role="button"><p class="sm">Lanjut Pembelajaran</p></a>
+                          <a class="btn btn-success" href="{{ route('pageChat', $examVid->id) }}" role="button"><p class="sm">Lanjut Pembelajaran</p></a>
                         </div>
                     </div>
                 </div>
@@ -89,30 +89,14 @@
                     </video>
                   </div>
                   <div class="exam mt-lg-2 mt-3">
-                    <h4 class="text-start fw-bold">Salam ActivaSpro,</h4>
-                    <p>Dari ratusan orang yang anda temui saat bertugas sebagai tenaga penjual promo aktivasi, anda tentunya pernah bertanya-tanya cara terbaik membujuk target anda agar mau membeli dari anda. Ya kan? 
-                    <br>
-                      Banyak cara, namun kali ini ActivaSpro akan berbagi yang paling sederhana untuk digunakan di lapangan. Yaitu 4 karakter berdasarkan Personality Plus.
-                      <br>
-                      1. sanguinis ia adalah karakter yang mudah bercerita. 
-                      <br>
-                      2. Koleris ia adalah karakter seorang pemimpin. 
-                      <br>
-                      3. Melankolis ia adalah karakter fokus dan teliti. 
-                      <br>
-                      4. Phlegmatis ia adalah karakter yang tenang. 
-                      <br>
-                      Jika dua Personality Plus ini bertemu yaitu, melankolis bertemu phlegmatis maka ada ketenangan dan fokus.
-                      <br>
-                      Yuk! activaSpro kita terapkan di lapangan.
-                    </p>
+                    <h4 class="text-start fw-bold">{{ $examVid->intruksi_2 }}</h4>
+                    <p>{{ $examVid->penjelasan_2 }}</p>
                   </div>
                 </div>
                 <div class="col-md-6 right__exam">
                   <div class="instruction mt-lg-2 mt-3">
-                    <h4 class=" fw-bold">Intruksi</h4>
-                    <p>Anda akan menjawab tentang studi kasus dari Personality Plus (PP+) dan berikan penjelasan anda ke kolom jawaban
-                    </p>
+                    <h4 class=" fw-bold">{{ $examVid->intruksi_2 }}</h4>
+                    <p>{{ $examVid->pertanyaan_studi_kasus }}</p>
                   </div>
                   <div class="form-floating mt-3">
                     <textarea  style="height: 50vh;" class="form-control"placeholder="Leave a comment here" id="floatingTextarea"></textarea>

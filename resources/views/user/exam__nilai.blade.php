@@ -70,7 +70,7 @@
                       <h2>Usaha Yang Bagus !</h2>
                       <p>Lanjutkan Prestasimu !</p>
                   </div>
-                  <a class="btn btn-next my-3" href="/ulanganPre" role="button">
+                  <a class="btn btn-next my-3" href="{{ route('ulanganPreById', $nilaiPostTest->id) }}" role="button">
                       <div class="bn__isi d-flex gap-2">
                           <p class="mb-0">selesai</p>
                       </div>

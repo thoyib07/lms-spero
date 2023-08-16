@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <button type="button" class="btn btn-play-vid w-100 mt-3">
-                                <a href="/ulangan" class="btn__isi d-flex gap-2 text-decoration-none">
+                                <a href="{{ route('ulanganById', $Materi->id) }}" class="btn__isi d-flex gap-2 text-decoration-none">
                                     <div class="bi__left">
                                         <img src="{{asset ('../img/play-vid-icon.png')}}" alt="" style="width: 75%;">
                                     </div>
